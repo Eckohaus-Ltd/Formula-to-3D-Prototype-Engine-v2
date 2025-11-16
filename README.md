@@ -1,61 +1,38 @@
 # Formula-to-3D Prototype Engine
-Prototype engine to convert physics formulas into volumetric 3D outputs.
+Prototype engine for converting physics formulas and scientific datasets into volumetric 3D visualisations.
 
-**Description:**  This project demonstrates how physics formulas (e.g., E = mc²) and external scientific datasets can be transformed into **interactive volumetric 3D visualizations**, deployable via cloud APIs and GitHub Pages.
+**Description:**  
+This project demonstrates how physics formulas (e.g., *E = mc²*) and external datasets (e.g., IERS Earth orientation parameters) can be transformed into **interactive volumetric 3D outputs**, deployed using GitHub Pages directly from the `main/docs` directory.
 
 ---
 
 ## Features
-- Compute volumetric data from formulas on a 3D grid
-- Fetch and process scientific datasets (currently IERS Earth orientation parameters)
-- Simple REST API to trigger computation
-- Interactive 3D visualization using Plotly.js
-- Mobile-accessible and cloud-deployable
+- Compute volumetric 3D datasets from physics formulas  
+- Fetch and process external scientific datasets  
+- Integrates IERS Earth Orientation Parameters (EOP)  
+- Weekday (Mon–Fri) scheduled data fetch workflow  
+- Interactive Plotly.js visualisation  
+- Clean deployment from `main/docs`  
+- Versioned development branches for ongoing experimental work (`dev/1.0`)
 
 ---
 
 ## Data Sources & Attribution
-This project integrates external datasets for visualization:
 
-- **IERS Earth Orientation Parameters (EOP) data**
-Provided by the [International Earth Rotation and Reference Systems Service (IERS)](https://www.iers.org/IERS/EN/DataProducts/EarthOrientationData/eop.html)
-The IERS is the authoritative source for Earth orientation parameters. This repository only fetches and reformats the data for visualization purposes.
+### **IERS Earth Orientation Parameters (EOP)**
+- Authoritative source: **International Earth Rotation and Reference Systems Service (IERS)**  
+- Canonical website: https://www.iers.org  
+- Data retrieved from operational mirrors hosted by **navy.mil**
 
-If you use or redistribute this project, please also credit the IERS as the original data provider.
-
----
-
-## Getting Started
-1. Clone the repository to your cloud IDE (e.g., Replit, Render.com)
-2. Install dependencies:
-    ```bash
-    pip install -r requirements.txt   # if using Python
-    ```
-3. Access the API endpoint:
-    ```
-    /get_volumetric
-    ```
-4. Open the visualization in a browser to see interactive 3D volumetric output
+This project only reformats publicly available datasets for visualisation.  
+If redistributed or referenced, please credit the IERS accordingly.
 
 ---
 
-### Example Usage
+## Deployment Structure
 
-This example shows how to fetch IERS data and generate a 3D formula dataset.
+As part of the November 2025 system cleanup, GitHub Pages has been migrated to use:
 
-```python
-# Import functions
-from engine.fetch_iers_data import fetch_iers
-from engine.compute import compute_formula_points
-
-# Fetch IERS data and save to JSON
-fetch_iers(output_path="docs/volumetric_data.json")
-print("IERS data saved to docs/volumetric_data.json")
-
-# Compute formula points
-formula_points = compute_formula_points()
-print("First 5 formula points:", formula_points[:5])
-```
 
 ---
 
@@ -64,12 +41,15 @@ print("First 5 formula points:", formula_points[:5])
 ```
 formula-to-3d-prototype/
 ├── engine/
-│   ├── compute.py              # Example formula computation (E = mc² placeholder)
-│   └── fetch_iers_data.py      # Script to pull, filter, and convert IERS data into JSON
-├── api/                        # REST API endpoints (optional)
-├── docs/                       # GitHub Pages deployment folder
+│   ├── compute.py                # Formula computation engine
+│   └── fetch_iers_data.py        # IERS data retrieval and conversion
+├── api/                          # Optional API endpoints
+├── docs/                         # GitHub Pages deployment folder
 │   ├── index.html
-│   └── volumetric_data.json
+│   ├── volumetric_data.json
+│   └── images/
+├── .github/workflows/
+│   └── scheduled-fetch.yml       # Weekday update workflow
 ├── requirements.txt
 ├── README.md
 └── LICENSE
@@ -78,21 +58,29 @@ formula-to-3d-prototype/
 ---
 
 ## Current Status
-- Static frontend deployed via GitHub Pages at https://toko.v1.eckohaus.com
-- Volumetric displays:
-  - IERS dataset (auto-updated daily at 02:00 UTC via GitHub Actions)
-  - Formula placeholder array from compute.py
-- CI/CD pipeline fetches and pushes new data to gh-pages
+
+- **Deployed directly from `main/docs`**
+- **Legacy `gh-pages` deployment retired**
+- **IERS volumetric visualisation functional** after path migration
+- **Repository prepared for versioned development** (`dev/1.0`)
+- **Domain-free by design**, pending future organisation-level hosting
+
+---
 
 ## Future Extensions
-- Replace placeholder formula with more complex physics models (QCD, energy fields, etc.)
-- Add additional scientific datasets
-- Integrate ML pipelines for prediction and simulation
-- Extend CMS-based user interface
-- Deploy as a SaaS platform
+
+- Formula pagination (Page 1 / Page 2 comparative displays)
+- Additional scientific datasets
+- Integration with AMRE boundary and energy constructs
+- Machine-learning predictive modelling
+- Reference atlas (planned for organisation-level hosting)
+- Optional SaaS deployment in later stages
 
 ---
 
 ## License
-This project is licensed under the **Creative Commons** License. See the LICENSE file for details.
-Please note: The IERS data remains subject to its own attribution and usage requirements.
+
+This project is licensed under the **Apache License 2.0**.
+
+See the full license text in the [`LICENSE`](./LICENSE) file at the root of the repository.
+
