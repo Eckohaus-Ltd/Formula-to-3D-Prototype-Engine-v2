@@ -14,6 +14,7 @@ jobs:
 
     env:
       PAT_TOKEN: ${{ secrets.PAT_TOKEN_FORMULA_3D_PUBLIC }}
+      EARTHDATA_BEARER_TOKEN: ${{ secrets.EARTHDATA_BEARER_TOKEN }}
 
     steps:
 
@@ -44,9 +45,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install pandas requests numpy plotly[kaleido]
 
-      # Step 5: Run data fetch
+      # Step 5: Run data fetch (now token-aware)
       - name: Run data fetch
         working-directory: main/engine
+        env:
+          EARTHDATA_BEARER_TOKEN: ${{ secrets.EARTHDATA_BEARER_TOKEN }}
         run: |
           python fetch_iers_data.py --output "../../gh-pages/docs/volumetric_data.json"
 
