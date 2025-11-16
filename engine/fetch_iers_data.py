@@ -4,13 +4,20 @@ import json
 from io import StringIO
 import argparse
 import os
-import compute  # assumes compute.py defines generate_formula_data()
+import compute
 import plotly.express as px
 from datetime import datetime, timezone
 import pathlib
 
-# Primary IERS URL
-CSV_URL = "https://datacenter.iers.org/data/csv/bulletina.longtime.csv"
+# -------------------------------------------------------------------
+# Primary + Fallback URLs
+# -------------------------------------------------------------------
+
+IERS_PRIMARY = "https://datacenter.iers.org/data/csv/bulletina.longtime.csv"
+
+# NASA Earthdata mirror (authenticated)
+# NOTE: Replace with the exact mirror endpoint once chosen
+NASA_FALLBACK_URL = "https://cddis.nasa.gov/archive/slr/products/iers/bulletin_a.csv"
 
 # -------------------------------------------------------------------
 # Helpers
@@ -27,28 +34,44 @@ def load_cached_json(cache_path):
         return cached
     except Exception as e:
         log(f"No valid cache found → {e}")
-        return {"iers": [], "formula": []}
+        return {"iers": [], "formula": [], "iers_status": "unavailable"}
 
 # -------------------------------------------------------------------
-# CSV Fetch & Parse
+# Fetchers
 # -------------------------------------------------------------------
 
-def fetch_and_parse_csv(url):
-    """Download CSV and parse semicolon-delimited content."""
+def fetch_from_primary():
+    """Attempt to fetch IERS Bulletin A from the primary IERS server."""
     try:
-        log(f"Attempting IERS download: {url}")
-        response = requests.get(url, timeout=15)
-        response.raise_for_status()
-    except requests.RequestException as e:
-        log(f"IERS download failed → {e}")
+        log(f"Attempting primary IERS download: {IERS_PRIMARY}")
+        r = requests.get(IERS_PRIMARY, timeout=15)
+        r.raise_for_status()
+        df = pd.read_csv(StringIO(r.text), sep=';', engine='python')
+        log("Primary IERS CSV parsed successfully.")
+        return df
+    except Exception as e:
+        log(f"Primary IERS fetch failed → {e}")
         return None
 
+
+def fetch_from_earthdata():
+    """Attempt to fetch from NASA Earthdata using Bearer token."""
+    token = os.getenv("EARTHDATA_BEARER_TOKEN")
+    if not token:
+        log("No EARTHDATA_BEARER_TOKEN provided. Skipping fallback.")
+        return None
+
+    headers = {"Authorization": f"Bearer {token}"}
+
     try:
-        df = pd.read_csv(StringIO(response.text), sep=';', engine='python')
-        log("IERS CSV parsed successfully.")
+        log(f"Attempting NASA Earthdata fallback: {NASA_FALLBACK_URL}")
+        r = requests.get(NASA_FALLBACK_URL, headers=headers, timeout=20)
+        r.raise_for_status()
+        df = pd.read_csv(StringIO(r.text), sep=';', engine='python')
+        log("NASA fallback CSV parsed successfully.")
         return df
-    except pd.errors.ParserError as e:
-        log(f"CSV parse failed → {e}")
+    except Exception as e:
+        log(f"NASA fallback fetch failed → {e}")
         return None
 
 # -------------------------------------------------------------------
@@ -56,17 +79,16 @@ def fetch_and_parse_csv(url):
 # -------------------------------------------------------------------
 
 def extract_3d_points(df):
-    """Extract x_pole, y_pole, Year columns for volumetric display."""
     if df is None:
         return None
 
     required_cols = ["x_pole", "y_pole", "Year"]
-    missing = [c for c in required_cols if c not in df.columns]
+    missing = [col for col in required_cols if col not in df.columns]
     if missing:
         log(f"Missing expected IERS columns: {missing}")
         return None
 
-    points = [
+    pts = [
         {"x": row["x_pole"], "y": row["y_pole"], "z": row["Year"]}
         for _, row in df.iterrows()
         if not pd.isnull(row["x_pole"])
@@ -74,63 +96,75 @@ def extract_3d_points(df):
         and not pd.isnull(row["Year"])
     ]
 
-    log(f"Extracted {len(points)} IERS points.")
-    return points
+    log(f"Extracted {len(pts)} IERS points.")
+    return pts
 
 # -------------------------------------------------------------------
 # Chart Rendering
 # -------------------------------------------------------------------
 
 def render_3d_chart(points, output_path, title="3D Scatter"):
-    """Render a 3D scatter plot and save as PNG using Plotly + Kaleido."""
     if not points:
-        log(f"No points to render for {title}.")
+        log(f"No points to render for {title}")
         return
 
     df = pd.DataFrame(points)
     fig = px.scatter_3d(df, x="x", y="y", z="z",
-                        color="z", title=title, opacity=0.8)
+                        color="z", opacity=0.8, title=title)
     fig.write_image(output_path)
     log(f"Pre-rendered chart saved to {output_path}")
 
 # -------------------------------------------------------------------
-# Main Logic (with caching + fallback)
+# Main Logic
 # -------------------------------------------------------------------
 
 def main(output_json, images_dir):
 
-    # Ensure directories exist
     os.makedirs(os.path.dirname(output_json), exist_ok=True)
     os.makedirs(images_dir, exist_ok=True)
 
-    # Location of cached volumetric_data.json (same as output)
     cache_path = output_json
 
     # ----------------------------------------------------
-    # 1. Try fetch IERS CSV
+    # 1. PRIMARY → if fail → EARTHDATA → if fail → CACHE
     # ----------------------------------------------------
-    df = fetch_and_parse_csv(CSV_URL)
-    iers_points = extract_3d_points(df)
 
-    if iers_points is None or len(iers_points) == 0:
-        log("IERS unavailable → using cached dataset.")
-        cached = load_cached_json(cache_path)
-        iers_points = cached.get("iers", [])
-        data_source = "cached"
+    data_source = "unavailable"
+
+    # Try primary
+    df = fetch_from_primary()
+    iers_points = extract_3d_points(df) if df is not None else None
+    if iers_points:
+        data_source = "ok"
     else:
-        data_source = "fetched"
+        # Try NASA fallback
+        df_fb = fetch_from_earthdata()
+        iers_points = extract_3d_points(df_fb) if df_fb is not None else None
+
+        if iers_points:
+            data_source = "fallback"
+        else:
+            # Cache fallback
+            cached = load_cached_json(cache_path)
+            iers_points = cached.get("iers", [])
+            if iers_points:
+                data_source = "cached"
+            else:
+                log("No cached IERS data available — using empty array.")
+                data_source = "unavailable"
+                iers_points = []
 
     # ----------------------------------------------------
-    # 2. Generate formula points (your compute engine)
+    # 2. Formula dataset
     # ----------------------------------------------------
     try:
         formula_points = compute.generate_formula_data()
     except Exception as e:
-        log(f"Error generating formula points: {e}")
+        log(f"Formula generation failed → {e}")
         formula_points = []
 
     # ----------------------------------------------------
-    # 3. Build JSON output
+    # 3. Build JSON
     # ----------------------------------------------------
     volumetric_data = {
         "iers": iers_points,
@@ -142,22 +176,16 @@ def main(output_json, images_dir):
     with open(output_json, "w") as f:
         json.dump(volumetric_data, f, indent=2)
 
-    log(f"volumetric_data.json updated: {len(iers_points)} IERS points, "
-        f"{len(formula_points)} formula points (source: {data_source}).")
+    log(f"volumetric_data.json updated → "
+        f"{len(iers_points)} IERS points, "
+        f"{len(formula_points)} formula points "
+        f"(status: {data_source}).")
 
     # ----------------------------------------------------
     # 4. Pre-render charts
     # ----------------------------------------------------
-    render_3d_chart(
-        iers_points,
-        os.path.join(images_dir, "iers.png"),
-        title="IERS Dataset"
-    )
-    render_3d_chart(
-        formula_points,
-        os.path.join(images_dir, "formula.png"),
-        title="Formula Dataset"
-    )
+    render_3d_chart(iers_points, os.path.join(images_dir, "iers.png"), "IERS Dataset")
+    render_3d_chart(formula_points, os.path.join(images_dir, "formula.png"), "Formula Dataset")
 
 
 # -------------------------------------------------------------------
@@ -179,4 +207,5 @@ if __name__ == "__main__":
         help="Directory to store pre-rendered chart images"
     )
     args = parser.parse_args()
+
     main(args.output_json, args.images_dir)
