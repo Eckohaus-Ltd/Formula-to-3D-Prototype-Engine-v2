@@ -16,7 +16,6 @@ import json
 import argparse
 from datetime import datetime, date
 import requests
-import matplotlib.pyplot as plt
 
 
 # ----------------------------------------------------------------------
