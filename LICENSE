@@ -1,33 +1,31 @@
-License & Copyright
+Copyright 2025 Corvin Dhali, Eckohaus Limited
 
-This repository, including its code, formulas, and experimental datasets, is © 2025 Corvin Dhali, Eckohaus Limited. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
-The abstract mathematical concepts and theories represented herein are not subject to copyright.
+   http://www.apache.org/licenses/LICENSE-2.0
 
-⸻
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
 
-LICENSE GRANT
+------------------------------------------------------------
+Additional Notice (Non-binding, for clarity)
+------------------------------------------------------------
 
-This work is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0).
+This repository contains computational engines, formulas,
+algorithms, and experimental datasets developed as part of the
+Formula-to-3D Prototype Engine and related research branches.
 
-To view a copy of this license, visit:
-https://creativecommons.org/licenses/by-nc/4.0/
+The abstract mathematical concepts, theories, and derived
+interpretations represented herein are not themselves subject to
+copyright, but the implementation, structure, and expression
+of the code, workflow, and visualisation system are protected
+under Apache License 2.0.
 
-This means you are free to:
-	•	Share – copy and redistribute the material in any medium or format.
-	•	Adapt – remix, transform, and build upon the material.
-
-Under the following terms:
-	•	Attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made.
-	•	NonCommercial – You may not use the material for commercial purposes.
-	•	No additional restrictions – You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
-
-⸻
-
-DISCLAIMER
-
-This repository is experimental and intended for research and educational purposes. The formulas, abstractions, and computational workflows are not guaranteed to be correct or functionally accurate.
-
-No warranties are given. The license may not grant you all permissions necessary for your intended use.
-
-For commercial licensing or inquiries, please contact info@eckohaus.blog.
+For commercial licensing, dual-licensing arrangements, or
+organisation-level integration, please contact:
+info@eckohaus.co.uk
