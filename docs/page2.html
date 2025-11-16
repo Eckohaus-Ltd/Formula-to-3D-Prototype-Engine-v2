@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formula-to-3D • Page 2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+
+    <nav style="margin-bottom: 20px;">
+        <a href="./index.html">Page 1</a> |
+        <a href="./page2.html"><strong>Page 2</strong></a>
+    </nav>
+
+    <h2>Page 2 — Comparative Volumetric Display</h2>
+    <p style="max-width: 600px;">
+        This page provides a second comparative layer for volumetric displays,
+        mirroring the Page 1 structure while allowing new datasets or formula
+        constructs to be introduced as the project evolves.
+    </p>
+
+    <div id="plot-container-1" style="width: 100%; height: 450px;"></div>
+    <div id="plot-container-2" style="width: 100%; height: 450px; margin-top: 30px;"></div>
+
+    <script>
+        /* Placeholder volumetric renderers */
+        function placeholderPlot(target, label) {
+            Plotly.newPlot(target, [{
+                z: [[1, 2], [3, 4]],
+                type: 'surface'
+            }], {
+                title: label
+            });
+        }
+
+        placeholderPlot('plot-container-1', 'Placeholder Dataset A');
+        placeholderPlot('plot-container-2', 'Placeholder Dataset B');
+    </script>
+
+    <footer style="margin-top: 40px; font-size: 0.85em; opacity: 0.7;">
+        Version: 1.0 (Main) — Page 2 Scaffold
+    </footer>
+
+</body>
+</html>
