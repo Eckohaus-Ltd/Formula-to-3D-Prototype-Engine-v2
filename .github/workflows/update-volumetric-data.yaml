@@ -1,4 +1,4 @@
-name: Update Volumetric Data (Private V1)
+name: Update Volumetric Data (IERS RS/PC – ser7.dat)
 
 on:
   schedule:
@@ -15,28 +15,25 @@ jobs:
     env:
       PAT_TOKEN: ${{ secrets.PAT_TOKEN_FORMULA_3D_PUBLIC }}
       IERS_SER7_URL: "https://maia.usno.navy.mil/ser7/ser7.dat"
-      IERS_DEBUG: "true"
+      IERS_DEBUG: "false"
 
     steps:
 
-      # --- MAIN CHECKOUT -----------------------------------------------------
       - name: Checkout main branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
         with:
           ref: main
           path: main
 
-      # --- GH-PAGES CHECKOUT -------------------------------------------------
       - name: Checkout gh-pages branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
         with:
           ref: gh-pages
-          path: gh-pages
           token: ${{ env.PAT_TOKEN }}
+          path: gh-pages
 
-      # --- PYTHON SETUP ------------------------------------------------------
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v4
         with:
           python-version: "3.x"
 
@@ -45,39 +42,37 @@ jobs:
           python -m pip install --upgrade pip
           pip install pandas requests numpy plotly[kaleido]
 
-      # --- RUN FETCH ENGINE --------------------------------------------------
-      - name: Run SER7 fetch engine
+      - name: Fetch IERS + generate volumetric dataset
         working-directory: main/engine
         env:
           IERS_SER7_URL: ${{ env.IERS_SER7_URL }}
-          IERS_DEBUG: "true"
+          IERS_DEBUG: ${{ env.IERS_DEBUG }}
         run: |
           python fetch_iers_data.py \
             --output_json "../../gh-pages/docs/volumetric_data.json" \
             --images_dir "../../gh-pages/docs/images"
 
-      # --- COMMIT CHANGES ----------------------------------------------------
       - name: Commit & push changes
         working-directory: gh-pages
         shell: bash
+        env:
+          PAT_TOKEN: ${{ env.PAT_TOKEN }}
         run: |
           git config --local user.email "github-actions@github.com"
           git config --local user.name "GitHub Actions"
 
-          # Stage dataset, images, debug logs
-          git add docs/volumetric_data.json docs/images/ docs/ser7_raw_debug.txt || true
+          git add docs/volumetric_data.json docs/images/ || true
 
-          # No change? Bail out politely
           if git diff --cached --quiet; then
             echo "No changes to commit."
             exit 0
           fi
 
-          git commit -m "ci: update IERS-only volumetric dataset (ser7.dat source)" \
-            -m "Daily weekday refresh using canonical RS/PC SER7 dataset from maia.usno.navy.mil." \
-            -m "Includes full debug capture (ser7_raw_debug.txt), improved parser logic, provenance block, and pre-rendered 3D charts." \
+          git commit -m "feat(iers): update RS/PC dataset from ser7.dat" \
+            -m "Automated weekday refresh using canonical USNO RS/PC source." \
+            -m "Includes combined+prediction parsing, updated volumetric 3D output, and chart regeneration." \
             -m "Co-authored-by: system operator <wanda@openai.com>" \
             -m "Co-authored-by: system administrator <Corvin Nehal Dhali> <info@eckohaus.co.uk>" \
-            -m "Co-authored-by: GitHub Copilot <copilot-no-reply@github.com>"
+            -m "Co-authored-by: GitHub Copilot <copilot@github.com>"
 
-          git push https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }}.git gh-pages
+          git push "https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }}.git" gh-pages
