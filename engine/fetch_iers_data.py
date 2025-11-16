@@ -10,14 +10,10 @@ from datetime import datetime, timezone
 import pathlib
 
 # -------------------------------------------------------------------
-# Primary + Fallback URLs
+# Canonical IERS RS/PC Source (USNO)
 # -------------------------------------------------------------------
 
-IERS_PRIMARY = "https://datacenter.iers.org/data/csv/bulletina.longtime.csv"
-
-# NASA Earthdata mirror (authenticated)
-# NOTE: Replace with the exact mirror endpoint once chosen
-NASA_FALLBACK_URL = "https://cddis.nasa.gov/archive/slr/products/iers/bulletin_a.csv"
+IERS_SER7 = "https://maia.usno.navy.mil/ser7/ser7.dat"
 
 # -------------------------------------------------------------------
 # Helpers
@@ -27,7 +23,7 @@ def log(msg):
     print(f"[fetch_iers] {msg}")
 
 def load_cached_json(cache_path):
-    """Load the existing volumetric_data.json from gh-pages/docs."""
+    """Load existing volumetric_data.json from gh-pages/docs if needed."""
     try:
         cached = json.loads(pathlib.Path(cache_path).read_text())
         log("Loaded cached volumetric_data.json from gh-pages/docs.")
@@ -37,66 +33,73 @@ def load_cached_json(cache_path):
         return {"iers": [], "formula": [], "iers_status": "unavailable"}
 
 # -------------------------------------------------------------------
-# Fetchers
+# IERS ser7.dat Fetch & Parse
 # -------------------------------------------------------------------
 
-def fetch_from_primary():
-    """Attempt to fetch IERS Bulletin A from the primary IERS server."""
+def fetch_ser7():
+    """
+    Fetch RS/PC Combined Earth Orientation Parameters (ser7.dat)
+    Format is fixed-width; we parse using whitespace splitting.
+    """
     try:
-        log(f"Attempting primary IERS download: {IERS_PRIMARY}")
-        r = requests.get(IERS_PRIMARY, timeout=15)
+        log(f"Fetching canonical IERS RS/PC dataset → {IERS_SER7}")
+        r = requests.get(IERS_SER7, timeout=20)
         r.raise_for_status()
-        df = pd.read_csv(StringIO(r.text), sep=';', engine='python')
-        log("Primary IERS CSV parsed successfully.")
-        return df
+        text = r.text
     except Exception as e:
-        log(f"Primary IERS fetch failed → {e}")
+        log(f"IERS RS/PC fetch failed → {e}")
         return None
 
+    rows = []
+    for line in text.splitlines():
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        parts = line.split()
+        if len(parts) < 8:
+            continue
 
-def fetch_from_earthdata():
-    """Attempt to fetch from NASA Earthdata using Bearer token."""
-    token = os.getenv("EARTHDATA_BEARER_TOKEN")
-    if not token:
-        log("No EARTHDATA_BEARER_TOKEN provided. Skipping fallback.")
-        return None
+        try:
+            year = int(parts[0])
+            mjd = int(parts[1])
+            xp = float(parts[2])    # arcseconds
+            yp = float(parts[3])    # arcseconds
+        except:
+            continue
 
-    headers = {"Authorization": f"Bearer {token}"}
+        rows.append({"year": year, "mjd": mjd, "x_pole": xp, "y_pole": yp})
 
-    try:
-        log(f"Attempting NASA Earthdata fallback: {NASA_FALLBACK_URL}")
-        r = requests.get(NASA_FALLBACK_URL, headers=headers, timeout=20)
-        r.raise_for_status()
-        df = pd.read_csv(StringIO(r.text), sep=';', engine='python')
-        log("NASA fallback CSV parsed successfully.")
-        return df
-    except Exception as e:
-        log(f"NASA fallback fetch failed → {e}")
-        return None
+    if rows:
+        log(f"Parsed {len(rows)} rows from ser7.dat.")
+        return pd.DataFrame(rows)
+
+    log("ser7.dat parsed but no valid rows found.")
+    return None
 
 # -------------------------------------------------------------------
-# Extract IERS 3D Points
+# Convert to 3D Points
 # -------------------------------------------------------------------
 
 def extract_3d_points(df):
     if df is None:
         return None
 
-    required_cols = ["x_pole", "y_pole", "Year"]
-    missing = [col for col in required_cols if col not in df.columns]
-    if missing:
-        log(f"Missing expected IERS columns: {missing}")
+    required = ["x_pole", "y_pole", "year"]
+    if any(col not in df.columns for col in required):
+        log("Missing required columns for 3D extraction.")
         return None
 
-    pts = [
-        {"x": row["x_pole"], "y": row["y_pole"], "z": row["Year"]}
-        for _, row in df.iterrows()
-        if not pd.isnull(row["x_pole"])
-        and not pd.isnull(row["y_pole"])
-        and not pd.isnull(row["Year"])
-    ]
+    pts = []
+    for _, row in df.iterrows():
+        if pd.isnull(row["x_pole"]) or pd.isnull(row["y_pole"]) or pd.isnull(row["year"]):
+            continue
+        pts.append({
+            "x": row["x_pole"],
+            "y": row["y_pole"],
+            "z": row["year"]
+        })
 
-    log(f"Extracted {len(pts)} IERS points.")
+    log(f"Extracted {len(pts)} 3D IERS points.")
     return pts
 
 # -------------------------------------------------------------------
@@ -112,7 +115,7 @@ def render_3d_chart(points, output_path, title="3D Scatter"):
     fig = px.scatter_3d(df, x="x", y="y", z="z",
                         color="z", opacity=0.8, title=title)
     fig.write_image(output_path)
-    log(f"Pre-rendered chart saved to {output_path}")
+    log(f"Chart saved → {output_path}")
 
 # -------------------------------------------------------------------
 # Main Logic
@@ -126,36 +129,21 @@ def main(output_json, images_dir):
     cache_path = output_json
 
     # ----------------------------------------------------
-    # 1. PRIMARY → if fail → EARTHDATA → if fail → CACHE
+    # 1. IERS-ONLY FETCH → fallback to cache
     # ----------------------------------------------------
 
-    data_source = "unavailable"
-
-    # Try primary
-    df = fetch_from_primary()
+    df = fetch_ser7()
     iers_points = extract_3d_points(df) if df is not None else None
-    if iers_points:
-        data_source = "ok"
-    else:
-        # Try NASA fallback
-        df_fb = fetch_from_earthdata()
-        iers_points = extract_3d_points(df_fb) if df_fb is not None else None
 
-        if iers_points:
-            data_source = "fallback"
-        else:
-            # Cache fallback
-            cached = load_cached_json(cache_path)
-            iers_points = cached.get("iers", [])
-            if iers_points:
-                data_source = "cached"
-            else:
-                log("No cached IERS data available — using empty array.")
-                data_source = "unavailable"
-                iers_points = []
+    if iers_points:
+        data_source = "primary"
+    else:
+        cached = load_cached_json(cache_path)
+        iers_points = cached.get("iers", [])
+        data_source = "cached" if iers_points else "unavailable"
 
     # ----------------------------------------------------
-    # 2. Formula dataset
+    # 2. Formula Dataset
     # ----------------------------------------------------
     try:
         formula_points = compute.generate_formula_data()
@@ -177,23 +165,21 @@ def main(output_json, images_dir):
         json.dump(volumetric_data, f, indent=2)
 
     log(f"volumetric_data.json updated → "
-        f"{len(iers_points)} IERS points, "
-        f"{len(formula_points)} formula points "
+        f"{len(iers_points)} IERS, {len(formula_points)} formula "
         f"(status: {data_source}).")
 
     # ----------------------------------------------------
-    # 4. Pre-render charts
+    # 4. Charts
     # ----------------------------------------------------
     render_3d_chart(iers_points, os.path.join(images_dir, "iers.png"), "IERS Dataset")
     render_3d_chart(formula_points, os.path.join(images_dir, "formula.png"), "Formula Dataset")
-
 
 # -------------------------------------------------------------------
 # CLI Entry
 # -------------------------------------------------------------------
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Fetch IERS data and output volumetric JSON + charts.")
+    parser = argparse.ArgumentParser(description="Fetch IERS data (ser7.dat) and output volumetric JSON + charts.")
     parser.add_argument(
         "--output_json",
         type=str,
@@ -204,7 +190,7 @@ if __name__ == "__main__":
         "--images_dir",
         type=str,
         default="gh-pages/docs/images",
-        help="Directory to store pre-rendered chart images"
+        help="Directory for chart images"
     )
     args = parser.parse_args()
 
