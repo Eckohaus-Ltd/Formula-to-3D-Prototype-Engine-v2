@@ -2,13 +2,14 @@ name: Update Volumetric Data (Private V1)
 
 on:
   schedule:
-    # Run at 02:00 UTC, Monday–Friday only
-    - cron: '0 2 * * 1-5'
+    # Monday–Friday at 02:00 UTC
+    - cron: "0 2 * * 1-5"
   workflow_dispatch:
 
 jobs:
   update-data:
     runs-on: ubuntu-latest
+
     permissions:
       contents: write
 
@@ -18,56 +19,54 @@ jobs:
 
     steps:
 
-      # ----------------------------
-      # 1. Checkout main branch
-      # ----------------------------
-      - name: Checkout main
+      # ------------------------------------------------------------
+      # 1. Checkout main branch (engine + compute + scripts)
+      # ------------------------------------------------------------
+      - name: Checkout main branch
         uses: actions/checkout@v4
         with:
           ref: main
           path: main
 
-      # ----------------------------
-      # 2. Checkout gh-pages branch
-      # ----------------------------
-      - name: Checkout gh-pages
+      # ------------------------------------------------------------
+      # 2. Checkout gh-pages branch (where data + charts live)
+      # ------------------------------------------------------------
+      - name: Checkout gh-pages branch
         uses: actions/checkout@v4
         with:
           ref: gh-pages
-          token: ${{ env.PAT_TOKEN }}
           path: gh-pages
+          token: ${{ env.PAT_TOKEN }}
 
-      # ----------------------------
+      # ------------------------------------------------------------
       # 3. Set up Python
-      # ----------------------------
+      # ------------------------------------------------------------
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.x"
 
-      # ----------------------------
+      # ------------------------------------------------------------
       # 4. Install dependencies
-      # ----------------------------
+      # ------------------------------------------------------------
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install pandas requests numpy plotly[kaleido]
 
-      # ----------------------------
-      # 5. Run IERS-only engine fetch
-      # ----------------------------
-      - name: Run IERS volumetric data pipeline
+      # ------------------------------------------------------------
+      # 5. Run the new ser7-only data engine
+      # ------------------------------------------------------------
+      - name: Run data fetch
         working-directory: main/engine
-        env:
-          IERS_SOURCE_URL: ${{ env.IERS_SER7_URL }}
         run: |
           python fetch_iers_data.py \
             --output_json "../../gh-pages/docs/volumetric_data.json" \
             --images_dir "../../gh-pages/docs/images"
 
-      # ----------------------------
-      # 6. Commit & push changes
-      # ----------------------------
+      # ------------------------------------------------------------
+      # 6. Commit and push changes (with your required footer)
+      # ------------------------------------------------------------
       - name: Commit & push changes
         working-directory: gh-pages
         shell: bash
@@ -75,29 +74,17 @@ jobs:
           git config --local user.email "github-actions@github.com"
           git config --local user.name "GitHub Actions"
 
-          python - <<'EOF'
-          import json, datetime, pathlib
-          p = pathlib.Path("docs/volumetric_data.json")
-          try:
-              data = json.loads(p.read_text())
-              if isinstance(data, dict):
-                  data["last_test_run"] = datetime.datetime.now(
-                      datetime.timezone.utc
-                  ).isoformat()
-                  p.write_text(json.dumps(data, indent=2))
-          except Exception as e:
-              print("⚠️ Could not append timestamp:", e)
-          EOF
-
           git add docs/volumetric_data.json docs/images/ || true
 
           if git diff --cached --quiet; then
             echo "No changes to commit."
-          else
-            git commit -m "ci: update IERS-only volumetric dataset (ser7.dat source)" \
-              -m "Daily M–F refresh using canonical RS/PC dataset via maia.usno.navy.mil." \
-              -m "Removes NASA/Earthdata dependency, aligns workflow with updated fetch engine and ser7 parsing." \
-              -m "Co-authored-by: system operator <wanda@openai.com>" \
-              -m "Co-authored-by: system administrator <Corvin Nehal Dhali> <info@eckohaus.co.uk>"
-            git push https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }}.git gh-pages
+            exit 0
           fi
+
+          git commit -m "ci: update IERS-only volumetric dataset (ser7.dat source)" \
+            -m "Daily M–F refresh using canonical RS/PC dataset via maia.usno.navy.mil." \
+            -m "Includes full ser7 parser, new provenance block, and updated volumetric 3D outputs." \
+            -m "Co-authored-by: system operator <wanda@openai.com>" \
+            -m "Co-authored-by: system administrator <Corvin Nehal Dhali> <info@eckohaus.co.uk>"
+
+          git push https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }}.git gh-pages
