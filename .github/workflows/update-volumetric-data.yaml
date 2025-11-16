@@ -9,28 +9,24 @@ on:
 jobs:
   update-data:
     runs-on: ubuntu-latest
-
     permissions:
       contents: write
 
     env:
       PAT_TOKEN: ${{ secrets.PAT_TOKEN_FORMULA_3D_PUBLIC }}
       IERS_SER7_URL: "https://maia.usno.navy.mil/ser7/ser7.dat"
+      IERS_DEBUG: "true"
 
     steps:
 
-      # ------------------------------------------------------------
-      # 1. Checkout main branch (engine + compute + scripts)
-      # ------------------------------------------------------------
+      # --- MAIN CHECKOUT -----------------------------------------------------
       - name: Checkout main branch
         uses: actions/checkout@v4
         with:
           ref: main
           path: main
 
-      # ------------------------------------------------------------
-      # 2. Checkout gh-pages branch (where data + charts live)
-      # ------------------------------------------------------------
+      # --- GH-PAGES CHECKOUT -------------------------------------------------
       - name: Checkout gh-pages branch
         uses: actions/checkout@v4
         with:
@@ -38,35 +34,29 @@ jobs:
           path: gh-pages
           token: ${{ env.PAT_TOKEN }}
 
-      # ------------------------------------------------------------
-      # 3. Set up Python
-      # ------------------------------------------------------------
+      # --- PYTHON SETUP ------------------------------------------------------
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.x"
 
-      # ------------------------------------------------------------
-      # 4. Install dependencies
-      # ------------------------------------------------------------
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install pandas requests numpy plotly[kaleido]
 
-      # ------------------------------------------------------------
-      # 5. Run the new ser7-only data engine
-      # ------------------------------------------------------------
-      - name: Run data fetch
+      # --- RUN FETCH ENGINE --------------------------------------------------
+      - name: Run SER7 fetch engine
         working-directory: main/engine
+        env:
+          IERS_SER7_URL: ${{ env.IERS_SER7_URL }}
+          IERS_DEBUG: "true"
         run: |
           python fetch_iers_data.py \
             --output_json "../../gh-pages/docs/volumetric_data.json" \
             --images_dir "../../gh-pages/docs/images"
 
-      # ------------------------------------------------------------
-      # 6. Commit and push changes (with your required footer)
-      # ------------------------------------------------------------
+      # --- COMMIT CHANGES ----------------------------------------------------
       - name: Commit & push changes
         working-directory: gh-pages
         shell: bash
@@ -74,17 +64,20 @@ jobs:
           git config --local user.email "github-actions@github.com"
           git config --local user.name "GitHub Actions"
 
-          git add docs/volumetric_data.json docs/images/ || true
+          # Stage dataset, images, debug logs
+          git add docs/volumetric_data.json docs/images/ docs/ser7_raw_debug.txt || true
 
+          # No change? Bail out politely
           if git diff --cached --quiet; then
             echo "No changes to commit."
             exit 0
           fi
 
           git commit -m "ci: update IERS-only volumetric dataset (ser7.dat source)" \
-            -m "Daily M–F refresh using canonical RS/PC dataset via maia.usno.navy.mil." \
-            -m "Includes full ser7 parser, new provenance block, and updated volumetric 3D outputs." \
+            -m "Daily weekday refresh using canonical RS/PC SER7 dataset from maia.usno.navy.mil." \
+            -m "Includes full debug capture (ser7_raw_debug.txt), improved parser logic, provenance block, and pre-rendered 3D charts." \
             -m "Co-authored-by: system operator <wanda@openai.com>" \
-            -m "Co-authored-by: system administrator <Corvin Nehal Dhali> <info@eckohaus.co.uk>"
+            -m "Co-authored-by: system administrator <Corvin Nehal Dhali> <info@eckohaus.co.uk>" \
+            -m "Co-authored-by: GitHub Copilot <copilot-no-reply@github.com>"
 
           git push https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }}.git gh-pages
