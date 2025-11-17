@@ -2,23 +2,29 @@
 """
 fetch_iers_data.py
 
-Full ingestion pipeline for the canonical IERS Rapid Service/Prediction Center
-dataset (ser7.dat). Parses both combined EOP and prediction blocks, merges with
-existing formula-derived points, writes volumetric_data.json, and exports PNG
-charts via Plotly/Kaleido.
+Updated ingestion pipeline for the canonical IERS Rapid Service/
+Prediction Center dataset (ser7.dat).
 
-This script must remain compatible with GitHub Actions (non-interactive).
+This version matches the new modular architecture:
+
+- Outputs ONLY the IERS dataset → <output_json_path>
+- Does NOT merge or embed formula data (handled separately by compute.py)
+- Optional PNG chart export via --images_dir (recommended but not required)
+- Clean CLI compatible with GitHub Actions
+
+Usage:
+    python fetch_iers_data.py docs/volumetric/iers.json
+    python fetch_iers_data.py docs/volumetric/iers.json --images_dir docs/images
 """
 
 import os
-import re
 import json
 import argparse
 from datetime import date, datetime
 
 import requests
-import plotly.express as px
 import pandas as pd
+import plotly.express as px
 
 
 # ----------------------------------------------------------------------
@@ -35,18 +41,18 @@ def debug(msg: str):
 
 
 # ----------------------------------------------------------------------
-# PARSER: Robust Option-B tokenizer for ser7.dat
+# PARSER: Robust RS/PC tokenizer for ser7.dat
 # ----------------------------------------------------------------------
 
 def parse_ser7(text: str):
     """
-    Parse RS/PC ser7.dat ASCII file.
+    Parses IERS RS/PC ser7.dat ASCII file.
 
-    Returns:
-        {
-           "combined": [...],
-           "predictions": [...]
-        }
+    Returns dict:
+    {
+        "combined": [...],
+        "predictions": [...]
+    }
     """
 
     combined = []
@@ -57,11 +63,7 @@ def parse_ser7(text: str):
         if not parts:
             continue
 
-        # -----------------------------------------
-        # PREDICTIONS BLOCK
-        # Example:
-        # 2025 11 14 60993 0.1565 0.3154 0.08640
-        # -----------------------------------------
+        # PREDICTION BLOCK
         if (
             len(parts) == 7
             and parts[0].isdigit() and len(parts[0]) == 4
@@ -89,11 +91,7 @@ def parse_ser7(text: str):
             })
             continue
 
-        # -----------------------------------------
         # COMBINED BLOCK (RS/PC)
-        # Example:
-        # 25 11 7 60986 0.16583 .00009 0.31782 .00009 0.088185 0.000014
-        # -----------------------------------------
         if (
             len(parts) == 10
             and parts[0].isdigit() and len(parts[0]) <= 2
@@ -133,15 +131,17 @@ def parse_ser7(text: str):
 
 
 # ----------------------------------------------------------------------
-# PLOTLY CHART EXPORT (PNG)
+# OPTIONAL: Plotly PNG export
 # ----------------------------------------------------------------------
 
 def save_charts(iers_combined, images_dir):
-    if not os.path.exists(images_dir):
-        os.makedirs(images_dir, exist_ok=True)
+    if not images_dir:
+        return
+
+    os.makedirs(images_dir, exist_ok=True)
 
     if len(iers_combined) == 0:
-        print("[fetch_iers] No IERS combined rows → skipping chart generation")
+        print("[fetch_iers] No combined rows → skipping chart generation")
         return
 
     df = pd.DataFrame(iers_combined)
@@ -163,13 +163,10 @@ def save_charts(iers_combined, images_dir):
 # MAIN PIPELINE
 # ----------------------------------------------------------------------
 
-def main(output_json: str, images_dir: str):
+def main(output_json: str, images_dir: str | None):
 
-    print(f"[fetch_iers] Fetching canonical IERS RS/PC dataset → {IERS_SER7_URL}")
+    print(f"[fetch_iers] Fetching IERS RS/PC → {IERS_SER7_URL}")
 
-    # -------------------------------
-    # Fetch raw text from RS/PC server
-    # -------------------------------
     try:
         r = requests.get(IERS_SER7_URL, timeout=20)
         r.raise_for_status()
@@ -184,25 +181,9 @@ def main(output_json: str, images_dir: str):
 
     print(
         f"[fetch_iers] Parsed {len(combined)} combined rows, "
-        f"{len(predictions)} prediction rows (total: {len(combined) + len(predictions)})"
+        f"{len(predictions)} prediction rows"
     )
 
-    # -------------------------------
-    # Load existing formula data
-    # -------------------------------
-    existing = {}
-    if os.path.exists(output_json):
-        try:
-            with open(output_json, "r") as f:
-                existing = json.load(f)
-        except Exception:
-            existing = {}
-
-    formula_rows = existing.get("formula", [])
-
-    # -------------------------------
-    # Build final payload
-    # -------------------------------
     payload = {
         "meta": {
             "source": IERS_SER7_URL,
@@ -211,32 +192,36 @@ def main(output_json: str, images_dir: str):
         "iers": {
             "combined_eop": combined,
             "predictions": predictions,
-        },
-        "formula": formula_rows,
+        }
     }
 
-    # -------------------------------
-    # Write JSON
-    # -------------------------------
     os.makedirs(os.path.dirname(output_json), exist_ok=True)
     with open(output_json, "w") as f:
         json.dump(payload, f, indent=2)
 
-    print(f"[fetch_iers] volumetric_data.json updated → {len(combined)}+{len(predictions)} rows")
+    print(f"[fetch_iers] Saved IERS JSON → {output_json}")
 
-    # -------------------------------
-    # Render PNG charts
-    # -------------------------------
     save_charts(combined, images_dir)
 
 
 # ----------------------------------------------------------------------
-# CLI
+# CLI ENTRYPOINT
 # ----------------------------------------------------------------------
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("--output_json", required=True)
-    ap.add_argument("--images_dir", required=True)
+
+    ap.add_argument(
+        "output_json",
+        help="Path to write IERS dataset JSON (e.g. docs/volumetric/iers.json)",
+    )
+
+    ap.add_argument(
+        "--images_dir",
+        help="Optional directory for PNG chart export",
+        default=None,
+    )
+
     args = ap.parse_args()
+
     main(args.output_json, args.images_dir)
