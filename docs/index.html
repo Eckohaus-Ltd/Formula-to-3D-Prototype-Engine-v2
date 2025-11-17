@@ -82,7 +82,7 @@
     <div class="description">
       <strong>Formula-Derived Volumetric Data</strong><br>
       Generated from <code>compute.py</code> within the engine.<br>
-      Underlying placeholder model: <em>E = mc²</em><br>
+      Source: <em>formula_a.json</em><br>
       Axes: <b>x</b>, <b>y</b>, <b>z</b>.
     </div>
   </section>
@@ -90,13 +90,8 @@
 </main>
 
 <script>
-  /* Convert Modified Julian Date → approximate Gregorian year */
-  function mjdToYear(mjd) {
-    const mjdEpoch = new Date(Date.UTC(1858, 10, 17)); // 1858-11-17
-    return new Date(mjdEpoch.getTime() + mjd * 86400000).getUTCFullYear();
-  }
 
-  /* Load both JSON files */
+  /* Load both JSON files together */
   Promise.all([
     fetch('volumetric/iers.json').then(r => r.json()),
     fetch('volumetric/formula_a.json').then(r => r.json())
@@ -104,7 +99,7 @@
   .then(([iersData, formulaA]) => {
 
     /* ------------------------------
-       IERS Dataset
+       IERS DATASET
     ------------------------------- */
     const combined = iersData?.iers?.combined_eop || [];
     const predictions = iersData?.iers?.predictions || [];
@@ -117,21 +112,15 @@
           Only formula-derived data could be loaded.
         </div>`;
     } else {
-      const iersXYZ = {
+      Plotly.newPlot('iersPlot', [{
         x: fullSeries.map(p => p.x_arcsec),
         y: fullSeries.map(p => p.y_arcsec),
-        z: fullSeries.map(p => p.mjd)
-      };
-
-      Plotly.newPlot('iersPlot', [{
-        x: iersXYZ.x,
-        y: iersXYZ.y,
-        z: iersXYZ.z,
+        z: fullSeries.map(p => p.mjd),
         mode: 'markers',
         type: 'scatter3d',
         marker: {
           size: 3,
-          color: iersXYZ.z,
+          color: fullSeries.map(p => p.mjd),
           colorscale: 'Viridis',
           opacity: 0.85
         }
@@ -146,24 +135,20 @@
     }
 
     /* ------------------------------
-       Formula-derived Dataset (Page 1)
+       FORMULA-DERIVED DATASET
+       IMPORTANT: schema = { meta:..., formula:[...] }
     ------------------------------- */
-    const formula = formulaA;
-    const fXYZ = {
-      x: formula.map(p => p.x),
-      y: formula.map(p => p.y),
-      z: formula.map(p => p.z)
-    };
+    const f = formulaA?.formula || [];
 
     Plotly.newPlot('formulaPlot', [{
-      x: fXYZ.x,
-      y: fXYZ.y,
-      z: fXYZ.z,
+      x: f.map(p => p.x),
+      y: f.map(p => p.y),
+      z: f.map(p => p.z),
       mode: 'markers',
       type: 'scatter3d',
       marker: {
         size: 3,
-        color: fXYZ.z,
+        color: f.map(p => p.z),
         colorscale: 'Plasma',
         opacity: 0.85
       }
@@ -185,6 +170,7 @@
         Check file paths or network settings.
       </div>`;
   });
+
 </script>
 
 </body>
