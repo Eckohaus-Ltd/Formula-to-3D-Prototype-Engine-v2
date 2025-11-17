@@ -1,48 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Formula-to-3D • Page 2</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <link rel="stylesheet" href="./style.css" />
-</head>
+  <meta charset="UTF-8">
+  <title>Formula-to-3D Prototype Engine — Page 2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- Plotly -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+  <!-- Page 1 match: Full CSS block -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.5;
+      background-color: #f8f9fa;
+    }
+    header {
+      background-color: #0074D9;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    main {
+      padding: 1rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    .plot-container {
+      width: 100%;
+      height: 55vh;
+      min-height: 300px;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .description {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #333;
+    }
+    a {
+      color: #0074D9;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+
+</head>
 <body>
 
-    <nav style="margin-bottom: 20px;">
-        <a href="./index.html">Page 1</a> |
-        <a href="./page2.html"><strong>Page 2</strong></a>
-    </nav>
+<nav style="margin-bottom: 20px;">
+  <a href="./index.html">Page 1</a> |
+  <a href="./page2.html"><strong>Page 2</strong></a>
+</nav>
 
-    <h2>Page 2 — Comparative Volumetric Display</h2>
-    <p style="max-width: 600px;">
-        This page provides a second comparative layer for volumetric displays,
-        mirroring the Page 1 structure while allowing new datasets or formula
-        constructs to be introduced as the project evolves.
-    </p>
+<header>
+  <h1>Formula-to-3D Prototype Engine — Page 2</h1>
+</header>
 
-    <div id="plot-container-1" style="width: 100%; height: 450px;"></div>
-    <div id="plot-container-2" style="width: 100%; height: 450px; margin-top: 30px;"></div>
+<main>
 
-    <script>
-        /* Placeholder volumetric renderers */
-        function placeholderPlot(target, label) {
-            Plotly.newPlot(target, [{
-                z: [[1, 2], [3, 4]],
-                type: 'surface'
-            }], {
-                title: label
-            });
+  <!-- IERS Plot -->
+  <section>
+    <div class="plot-container" id="iersPlot"></div>
+    <div class="description">
+      <strong>IERS Earth Orientation Parameters (EOP)</strong><br>
+      Same dataset as Page 1, for controlled comparison.<br>
+      Source: <a href="https://www.iers.org" target="_blank">IERS</a>
+    </div>
+  </section>
+
+  <!-- Formula Plot -->
+  <section>
+    <div class="plot-container" id="formulaPlot"></div>
+    <div class="description">
+      <strong>Formula-Derived Volumetric Data (Variant)</strong><br>
+      Generated from <code>compute.py</code>.<br>
+      Underlying model (placeholder): <em>E = mc²</em> (Page 2 variant)<br>
+      Axes: <b>x</b>, <b>y</b>, <b>z</b>.
+    </div>
+  </section>
+
+</main>
+
+<script>
+  fetch('volumetric_data.json')
+    .then(r => r.json())
+    .then(data => {
+
+      /* IERS logic identical to Page 1 */
+      const combined = data?.iers?.combined_eop || [];
+      const predictions = data?.iers?.predictions || [];
+      const fullSeries = [...combined, ...predictions];
+
+      Plotly.newPlot('iersPlot', [{
+        x: fullSeries.map(p => p.x_arcsec),
+        y: fullSeries.map(p => p.y_arcsec),
+        z: fullSeries.map(p => p.mjd),
+        mode: 'markers',
+        type: 'scatter3d',
+        marker: {
+          size: 3,
+          color: fullSeries.map(p => p.mjd),
+          colorscale: 'Viridis',
+          opacity: 0.85
         }
+      }], {
+        margin: { l: 0, r: 0, b: 0, t: 0 },
+        scene: {
+          xaxis: { title: 'x_pole (arcsec)' },
+          yaxis: { title: 'y_pole (arcsec)' },
+          zaxis: { title: 'MJD' }
+        }
+      });
 
-        placeholderPlot('plot-container-1', 'Placeholder Dataset A');
-        placeholderPlot('plot-container-2', 'Placeholder Dataset B');
-    </script>
+      /* Formula — same dataset, labelled differently for now */
+      const formula = data?.formula || [];
+      Plotly.newPlot('formulaPlot', [{
+        x: formula.map(p => p.x),
+        y: formula.map(p => p.y),
+        z: formula.map(p => p.z),
+        mode: 'markers',
+        type: 'scatter3d',
+        marker: {
+          size: 3,
+          color: formula.map(p => p.z),
+          colorscale: 'Plasma',
+          opacity: 0.85
+        }
+      }], {
+        margin: { l: 0, r: 0, b: 0, t: 0 },
+        scene: {
+          xaxis: { title: 'x' },
+          yaxis: { title: 'y' },
+          zaxis: { title: 'z' }
+        }
+      });
 
-    <footer style="margin-top: 40px; font-size: 0.85em; opacity: 0.7;">
-        Version: 1.0 (Main) — Page 2 Scaffold
-    </footer>
+    });
+</script>
+
+<footer style="margin: 2rem auto; text-align:center; font-size:0.85rem; opacity:0.7;">
+  Version: 1.0 — Page 2 Scaffold
+</footer>
 
 </body>
 </html>
