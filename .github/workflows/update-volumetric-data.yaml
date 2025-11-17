@@ -1,4 +1,4 @@
-name: Update Volumetric Data (IERS RS/PC – ser7.dat)
+name: Update Volumetric Data (IERS + Formulas)
 
 on:
   schedule:
@@ -19,19 +19,17 @@ jobs:
 
     steps:
 
-      - name: Checkout main branch
+      # -----------------------------
+      # Checkout the main branch
+      # -----------------------------
+      - name: Checkout main
         uses: actions/checkout@v3
         with:
           ref: main
-          path: main
 
-      - name: Checkout gh-pages branch
-        uses: actions/checkout@v3
-        with:
-          ref: gh-pages
-          token: ${{ env.PAT_TOKEN }}
-          path: gh-pages
-
+      # -----------------------------
+      # Set up Python env
+      # -----------------------------
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
@@ -42,18 +40,27 @@ jobs:
           python -m pip install --upgrade pip
           pip install pandas requests numpy plotly[kaleido]
 
-      - name: Fetch IERS + generate volumetric dataset
-        working-directory: main/engine
+      # -----------------------------
+      # Generate datasets
+      # -----------------------------
+      - name: Generate IERS + Formula datasets
         env:
           IERS_SER7_URL: ${{ env.IERS_SER7_URL }}
           IERS_DEBUG: ${{ env.IERS_DEBUG }}
         run: |
-          python fetch_iers_data.py \
-            --output_json "../../gh-pages/docs/volumetric_data.json" \
-            --images_dir "../../gh-pages/docs/images"
+          # Ensure directory exists
+          mkdir -p docs/volumetric
 
+          # Fetch IERS dataset → docs/volumetric/iers.json
+          python engine/fetch_iers_data.py docs/volumetric/iers.json
+
+          # Generate formula_a.json + formula_b.json
+          python engine/compute.py
+
+      # -----------------------------
+      # Commit + push to main
+      # -----------------------------
       - name: Commit & push changes
-        working-directory: gh-pages
         shell: bash
         env:
           PAT_TOKEN: ${{ env.PAT_TOKEN }}
@@ -61,18 +68,18 @@ jobs:
           git config --local user.email "github-actions@github.com"
           git config --local user.name "GitHub Actions"
 
-          git add docs/volumetric_data.json docs/images/ || true
+          git add docs/volumetric/ || true
 
           if git diff --cached --quiet; then
             echo "No changes to commit."
             exit 0
           fi
 
-          git commit -m "feat(iers): update RS/PC dataset from ser7.dat" \
-            -m "Automated weekday refresh using canonical USNO RS/PC source." \
-            -m "Includes combined+prediction parsing, updated volumetric 3D output, and chart regeneration." \
+          git commit -m "chore(data): refresh volumetric datasets" \
+            -m "Automated weekday update of IERS RS/PC dataset and regenerated formula_a.json / formula_b.json." \
+            -m "Dataset modularised under docs/volumetric/ for cleaner pagination architecture." \
             -m "Co-authored-by: system operator <wanda@openai.com>" \
             -m "Co-authored-by: system administrator <Corvin Nehal Dhali> <info@eckohaus.co.uk>" \
             -m "Co-authored-by: GitHub Copilot <copilot@github.com>"
 
-          git push "https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }}.git" gh-pages
+          git push "https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }}.git" main
