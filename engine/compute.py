@@ -2,7 +2,7 @@
 # compute.py — Formula-to-3D dataset generator
 # --------------------------------------------
 # Outputs:
-#   docs/volumetric/formula_a.json  → Page 1 (local grid demo)
+#   docs/volumetric/formula_a.json  → Page 1 (local demo grid)
 #   docs/volumetric/formula_b.json  → Page 2 (AMRE → volumetric)
 
 import json
@@ -18,9 +18,8 @@ import requests
 
 def compute_formula_a():
     """
-    Simple local 10×10 grid demo used for Page 1.
-
-    z = sqrt(x * y)  (non-trivial surface)
+    Simple 10×10 grid demo for Page 1.
+    z = sqrt(x * y) introduces a non-linear surface.
     """
     points = []
     for x in range(10):
@@ -31,7 +30,7 @@ def compute_formula_a():
     return {
         "meta": {
             "id": "formula_a_e_mc2_demo",
-            "description": "Local E = mc² placeholder grid for Page 1.",
+            "description": "Local demo grid (E = mc² placeholder) for Page 1.",
             "generated_utc": datetime.now().astimezone().isoformat(),
             "version": "1.0.0",
         },
@@ -45,14 +44,14 @@ def compute_formula_a():
 
 AMRE_PONG_URL = os.getenv(
     "AMRE_PONG_URL",
-    "https://raw.githubusercontent.com/Eckohaus/Angular_Momentum_Reaction_Engine_v2"
-    "/main/exports/formulas/pong_phase_overlap.json"
+    "https://raw.githubusercontent.com/Eckohaus/Angular_Momentum_Reaction_Engine/"
+    "main/exports/formulas/pong_phase_overlap.json",
 )
 
 
 def fetch_amre_pong_payload():
     """
-    Pull the Pong Phase Overlap dataset from AMRE.
+    Fetch the phase/overlap lattice exported by AMRE.
     """
     print(f"[compute] Fetching AMRE Pong dataset: {AMRE_PONG_URL}")
     try:
@@ -68,28 +67,19 @@ def fetch_amre_pong_payload():
 
 def compute_formula_b_from_amre():
     """
-    Convert AMRE's polar lattice → Formula-to-3D 3D scatter dataset.
+    Convert AMRE's polar lattice into Formula-to-3D's volumetric dataset.
 
     Mapping:
-      x := overlap_real  (fallback: x)
-      y := overlap_imag  (fallback: y)
+      x := overlap_real  (fallback to AMRE's x)
+      y := overlap_imag  (fallback to AMRE's y)
       z := phase
-
-    Output format:
-      {
-         "meta": {...},
-         "formula": [
-             {"x": <float>, "y": <float>, "z": <float>},
-             ...
-         ]
-      }
     """
     pong = fetch_amre_pong_payload()
 
-    # Validate structure
+    # Ensure points array exists
     points = pong.get("points", [])
     if not isinstance(points, list):
-        print(f"[compute] ERROR: 'points' key invalid; got type={type(points)}")
+        print(f"[compute] ERROR: AMRE 'points' is not a list (got {type(points)}).")
         points = []
 
     converted = []
@@ -99,27 +89,28 @@ def compute_formula_b_from_amre():
         y = p.get("overlap_imag", p.get("y"))
         z = p.get("phase")
 
+        # Skip malformed points
         if x is None or y is None or z is None:
-            print(f"[compute] Skipping malformed AMRE point: {p}")
+            print(f"[compute] Skipping malformed point: {p}")
             continue
 
         try:
             converted.append({
                 "x": float(x),
                 "y": float(y),
-                "z": float(z)
+                "z": float(z),
             })
         except Exception as e:
             print(f"[compute] Conversion error for point {p}: {e}")
             continue
 
-    # Ensure the output is never empty
+    # Avoid empty output (Plotly cannot render empty arrays usefully)
     if not converted:
         print("[compute] WARNING: No valid AMRE points found. "
-              "Injecting placeholder (0,0,0).")
+              "Injecting placeholder point (0,0,0).")
         converted = [{"x": 0.0, "y": 0.0, "z": 0.0}]
 
-    # Build metadata
+    # Construct metadata
     meta = pong.get("meta", {})
     meta_out = {
         "id": meta.get("id", "amre_pong_phase_overlap_v1"),
@@ -128,7 +119,7 @@ def compute_formula_b_from_amre():
             "AMRE Pong phase overlap mapped to (Re overlap, Im overlap, phase)."
         ),
         "source_repo": meta.get(
-            "source_repo", "Eckohaus/Angular_Momentum_Reaction_Engine_v2"
+            "source_repo", "Eckohaus/Angular_Momentum_Reaction_Engine"
         ),
         "source_path": meta.get(
             "source_path", "exports/formulas/pong_phase_overlap.json"
@@ -138,7 +129,6 @@ def compute_formula_b_from_amre():
     }
 
     print(f"[compute] ✓ Converted {len(converted)} AMRE points")
-
     return {"meta": meta_out, "formula": converted}
 
 
