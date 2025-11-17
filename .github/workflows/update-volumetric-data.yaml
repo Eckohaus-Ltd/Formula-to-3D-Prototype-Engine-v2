@@ -9,27 +9,35 @@ on:
 jobs:
   update-data:
     runs-on: ubuntu-latest
+
     permissions:
       contents: write
 
     env:
+      # GitHub tokens
       PAT_TOKEN: ${{ secrets.PAT_TOKEN_FORMULA_3D_PUBLIC }}
+      AMRE_TOKEN: ${{ secrets.AMRE_TOKEN }}
+
+      # External datasets
       IERS_SER7_URL: "https://maia.usno.navy.mil/ser7/ser7.dat"
       IERS_DEBUG: "false"
 
+      # Authenticated AMRE fetch URL (private repo)
+      AMRE_PONG_URL: "https://x-access-token:${{ secrets.AMRE_TOKEN }}@raw.githubusercontent.com/Eckohaus/Angular_Momentum_Reaction_Engine/main/exports/formulas/pong_phase_overlap.json"
+
     steps:
 
-      # -----------------------------
-      # Checkout the main branch
-      # -----------------------------
+      # --------------------------------------------------
+      # Checkout main branch
+      # --------------------------------------------------
       - name: Checkout main
         uses: actions/checkout@v3
         with:
           ref: main
 
-      # -----------------------------
-      # Set up Python env
-      # -----------------------------
+      # --------------------------------------------------
+      # Python environment
+      # --------------------------------------------------
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
@@ -40,26 +48,26 @@ jobs:
           python -m pip install --upgrade pip
           pip install pandas requests numpy plotly[kaleido]
 
-      # -----------------------------
-      # Generate datasets
-      # -----------------------------
+      # --------------------------------------------------
+      # Generate analytic datasets (IERS + AMRE)
+      # --------------------------------------------------
       - name: Generate IERS + Formula datasets
         env:
           IERS_SER7_URL: ${{ env.IERS_SER7_URL }}
           IERS_DEBUG: ${{ env.IERS_DEBUG }}
+          AMRE_PONG_URL: ${{ env.AMRE_PONG_URL }}
         run: |
-          # Ensure directory exists
           mkdir -p docs/volumetric
 
-          # Fetch IERS dataset → docs/volumetric/iers.json
+          # Fetch IERS dataset
           python engine/fetch_iers_data.py docs/volumetric/iers.json
 
-          # Generate formula_a.json + formula_b.json
+          # Generate formula_a.json + formula_b.json (AMRE → 3D)
           python engine/compute.py
 
-      # -----------------------------
-      # Commit + push to main
-      # -----------------------------
+      # --------------------------------------------------
+      # Commit and push changes
+      # --------------------------------------------------
       - name: Commit & push changes
         shell: bash
         env:
