@@ -1,8 +1,8 @@
 {
   "meta": {
     "id": "formula_a_e_mc2_demo",
-    "description": "Local demo grid (E = mc\u00b2 placeholder) for Page 1.",
-    "generated_utc": "2025-11-17T05:23:43.706916+00:00",
+    "description": "Local non-linear grid (E = mc\u00b2 placeholder) for Page 1.",
+    "generated_utc": "2025-11-17T05:47:13.314834+00:00",
     "version": "1.0.0"
   },
   "formula": [
