@@ -98,7 +98,9 @@ Axes: <b>x</b>, <b>y</b>, <b>z</b>.
   }
 
   /* Load JSON file */
-  fetch('volumetric_data.json')
+  fetch('volumetric/iers.json')        // First plot
+  fetch('volumetric/formula_a.json')   // Second plot
+
     .then(r => r.json())
     .then(data => {
 
