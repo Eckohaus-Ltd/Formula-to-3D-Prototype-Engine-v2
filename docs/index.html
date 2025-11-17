@@ -55,11 +55,10 @@
 
 <body>
 
-  <nav style="margin-bottom: 20px;">
-    <a href="./index.html"><strong>Page 1</strong></a> |
-    <a href="./page2.html">Page 2</a>
+<nav style="margin-bottom: 20px;">
+  <a href="./index.html"><strong>Page 1</strong></a> |
+  <a href="./page2.html">Page 2</a>
 </nav>
-
 
 <header>
   <h1>Formula-to-3D Prototype Engine</h1>
@@ -82,9 +81,9 @@
     <div class="plot-container" id="formulaPlot"></div>
     <div class="description">
       <strong>Formula-Derived Volumetric Data</strong><br>
-Generated from <code>compute.py</code> within the engine.<br>
-Placeholder model: <em>E = mc²</em><br>
-Axes: <b>x</b>, <b>y</b>, <b>z</b>.
+      Generated from <code>compute.py</code> within the engine.<br>
+      Underlying placeholder model: <em>E = mc²</em><br>
+      Axes: <b>x</b>, <b>y</b>, <b>z</b>.
     </div>
   </section>
 
@@ -97,95 +96,95 @@ Axes: <b>x</b>, <b>y</b>, <b>z</b>.
     return new Date(mjdEpoch.getTime() + mjd * 86400000).getUTCFullYear();
   }
 
-  /* Load JSON file */
-  fetch('volumetric/iers.json')        // First plot
-  fetch('volumetric/formula_a.json')   // Second plot
+  /* Load both JSON files */
+  Promise.all([
+    fetch('volumetric/iers.json').then(r => r.json()),
+    fetch('volumetric/formula_a.json').then(r => r.json())
+  ])
+  .then(([iersData, formulaA]) => {
 
-    .then(r => r.json())
-    .then(data => {
+    /* ------------------------------
+       IERS Dataset
+    ------------------------------- */
+    const combined = iersData?.iers?.combined_eop || [];
+    const predictions = iersData?.iers?.predictions || [];
+    const fullSeries = [...combined, ...predictions];
 
-      /* ------------------------------
-         IERS EOP Dataset
-      ------------------------------- */
-      const combined = data?.iers?.combined_eop || [];
-      const predictions = data?.iers?.predictions || [];
-      const fullSeries = [...combined, ...predictions];
-
-      if (fullSeries.length === 0) {
-        document.getElementById('iersPlot').innerHTML = `
-          <div style="padding: 1rem; text-align:center; color:#666;">
-            <strong>IERS data unavailable.</strong><br>
-            Only formula-derived data could be loaded.
-          </div>`;
-      } else {
-        const iersXYZ = {
-          x: fullSeries.map(p => p.x_arcsec),
-          y: fullSeries.map(p => p.y_arcsec),
-          z: fullSeries.map(p => p.mjd) // or mjdToYear(p.mjd)
-        };
-
-        Plotly.newPlot('iersPlot', [{
-          x: iersXYZ.x,
-          y: iersXYZ.y,
-          z: iersXYZ.z,
-          mode: 'markers',
-          type: 'scatter3d',
-          marker: {
-            size: 3,
-            color: iersXYZ.z,
-            colorscale: 'Viridis',
-            opacity: 0.85
-          }
-        }], {
-          margin: { l: 0, r: 0, b: 0, t: 0 },
-          scene: {
-            xaxis: { title: 'x_pole (arcsec)' },
-            yaxis: { title: 'y_pole (arcsec)' },
-            zaxis: { title: 'MJD' }
-          }
-        });
-      }
-
-      /* ------------------------------
-         Formula-derived Dataset
-      ------------------------------- */
-      const formula = data?.formula || [];
-      const fXYZ = {
-        x: formula.map(p => p.x),
-        y: formula.map(p => p.y),
-        z: formula.map(p => p.z)
+    if (fullSeries.length === 0) {
+      document.getElementById('iersPlot').innerHTML = `
+        <div style="padding: 1rem; text-align:center; color:#666;">
+          <strong>IERS data unavailable.</strong><br>
+          Only formula-derived data could be loaded.
+        </div>`;
+    } else {
+      const iersXYZ = {
+        x: fullSeries.map(p => p.x_arcsec),
+        y: fullSeries.map(p => p.y_arcsec),
+        z: fullSeries.map(p => p.mjd)
       };
 
-      Plotly.newPlot('formulaPlot', [{
-        x: fXYZ.x,
-        y: fXYZ.y,
-        z: fXYZ.z,
+      Plotly.newPlot('iersPlot', [{
+        x: iersXYZ.x,
+        y: iersXYZ.y,
+        z: iersXYZ.z,
         mode: 'markers',
         type: 'scatter3d',
         marker: {
           size: 3,
-          color: fXYZ.z,
-          colorscale: 'Plasma',
+          color: iersXYZ.z,
+          colorscale: 'Viridis',
           opacity: 0.85
         }
       }], {
         margin: { l: 0, r: 0, b: 0, t: 0 },
         scene: {
-          xaxis: { title: 'x' },
-          yaxis: { title: 'y' },
-          zaxis: { title: 'z' }
+          xaxis: { title: 'x_pole (arcsec)' },
+          yaxis: { title: 'y_pole (arcsec)' },
+          zaxis: { title: 'MJD' }
         }
       });
+    }
 
-    })
-    .catch(err => {
-      console.error("JSON fetch error:", err);
-      document.getElementById('iersPlot').innerHTML = `
-        <div style="padding: 1rem; color: #b00; text-align:center;">
-          <strong>Error loading volumetric_data.json.</strong><br>
-          Check file path or network settings.
-        </div>`;
+    /* ------------------------------
+       Formula-derived Dataset (Page 1)
+    ------------------------------- */
+    const formula = formulaA;
+    const fXYZ = {
+      x: formula.map(p => p.x),
+      y: formula.map(p => p.y),
+      z: formula.map(p => p.z)
+    };
+
+    Plotly.newPlot('formulaPlot', [{
+      x: fXYZ.x,
+      y: fXYZ.y,
+      z: fXYZ.z,
+      mode: 'markers',
+      type: 'scatter3d',
+      marker: {
+        size: 3,
+        color: fXYZ.z,
+        colorscale: 'Plasma',
+        opacity: 0.85
+      }
+    }], {
+      margin: { l: 0, r: 0, b: 0, t: 0 },
+      scene: {
+        xaxis: { title: 'x' },
+        yaxis: { title: 'y' },
+        zaxis: { title: 'z' }
+      }
     });
+
+  })
+  .catch(err => {
+    console.error("JSON fetch error:", err);
+    document.getElementById('iersPlot').innerHTML = `
+      <div style="padding: 1rem; color: #b00; text-align:center;">
+        <strong>Error loading JSON datasets.</strong><br>
+        Check file paths or network settings.
+      </div>`;
+  });
 </script>
 
 </body>
