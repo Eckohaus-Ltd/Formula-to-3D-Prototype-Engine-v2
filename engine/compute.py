@@ -5,18 +5,21 @@ compute.py — Formula-to-3D dataset generator
 
 Outputs:
   docs/volumetric/formula_a.json  → Page 1 (local demo grid)
-  docs/volumetric/formula_b.json  → Page 2 (AMRE → volumetric 3D scatter)
+  docs/volumetric/formula_b.json  → Page 2 (AMRE → volumetric)
 
 Formula A:
-  Simple 10×10 grid with a non-linear surface z = sqrt(x * y).
+  Lightweight non-linear surface (z = sqrt(x*y)) rendered on Page 1.
 
 Formula B:
-  Pulls AMRE's Pong Phase Overlap export from Angular_Momentum_Reaction_Engine
-  and maps it onto (x, y, z) for volumetric visualisation.
+  Fetches AMRE’s pong_phase_overlap.json and maps:
+      x := overlap_real (fallback: x)
+      y := overlap_imag (fallback: y)
+      z := phase
 
-Environment overrides:
-  AMRE_PONG_BRANCH  → branch name to use when building the default raw URL
-  AMRE_PONG_URL     → full override of the Pong JSON URL (takes precedence)
+Branch + URL logic (important):
+  - AMRE currently uses `master`, not `main`
+  - You can override the branch with AMRE_PONG_BRANCH
+  - You can override the full URL with AMRE_PONG_URL
 """
 
 from __future__ import annotations
@@ -29,31 +32,22 @@ from typing import Any, Dict, List
 
 import requests
 
-# ================================================================
-#  Helpers
-# ================================================================
 
+# ================================================================
+#  Utility helpers
+# ================================================================
 
 def now_utc_iso() -> str:
-    """Return an ISO 8601 timestamp with timezone information."""
+    """Return timestamp in ISO8601 with timezone."""
     return datetime.now().astimezone().isoformat()
 
 
 # ================================================================
-#  Formula A — Local demonstration grid (Page 1)
+#  Formula A (Page 1) — fixed local grid
 # ================================================================
 
-
 def compute_formula_a() -> Dict[str, Any]:
-    """
-    Simple 10×10 grid demo for Page 1.
-
-    Surface:
-      z = sqrt(x * y)
-
-    This is intentionally non-linear but cheap to compute, giving Plotly
-    something interesting to render without depending on external data.
-    """
+    """Simple 10×10 demo grid for Page 1."""
     points: List[Dict[str, float]] = []
 
     for x in range(10):
@@ -64,7 +58,7 @@ def compute_formula_a() -> Dict[str, Any]:
     return {
         "meta": {
             "id": "formula_a_e_mc2_demo",
-            "description": "Local demo grid (E = mc² placeholder) for Page 1.",
+            "description": "Local non-linear grid (E = mc² placeholder) for Page 1.",
             "generated_utc": now_utc_iso(),
             "version": "1.0.0",
         },
@@ -73,80 +67,45 @@ def compute_formula_a() -> Dict[str, Any]:
 
 
 # ================================================================
-#  Formula B — AMRE → Formula-to-3D (Page 2)
+#  Formula B (Page 2) — AMRE → Formula-to-3D mapping
 # ================================================================
 
-# Default branch for AMRE raw exports. The repo currently uses `master`,
-# but this can be overridden if you later introduce a `main` branch.
-_AMRE_DEFAULT_BRANCH = os.getenv("AMRE_PONG_BRANCH", "master")
+# Default: AMRE uses *master*.
+_AMRE_BRANCH = os.getenv("AMRE_PONG_BRANCH", "master")
 
+# If AMRE_PONG_URL provided, use it; otherwise construct raw/master URL.
 AMRE_PONG_URL = os.getenv(
     "AMRE_PONG_URL",
-    (
-        "https://raw.githubusercontent.com/"
-        "Eckohaus/Angular_Momentum_Reaction_Engine/"
-        f"{_AMRE_DEFAULT_BRANCH}/exports/formulas/pong_phase_overlap.json"
-    ),
+    f"https://raw.githubusercontent.com/"
+    f"Eckohaus/Angular_Momentum_Reaction_Engine/"
+    f"{_AMRE_BRANCH}/exports/formulas/pong_phase_overlap.json"
 )
 
 
 def fetch_amre_pong_payload() -> Dict[str, Any]:
-    """
-    Fetch the phase/overlap lattice exported by AMRE.
+    """Fetch the pong-phase-overlap dataset from AMRE."""
+    print(f"[compute] Fetching AMRE Pong dataset:")
+    print(f"          → {AMRE_PONG_URL}")
 
-    Returns a dict with at least:
-      - meta: {...}
-      - points: [ {...}, ... ]
-    """
-    print(f"[compute] Fetching AMRE Pong dataset: {AMRE_PONG_URL}")
     try:
         resp = requests.get(AMRE_PONG_URL, timeout=20)
         resp.raise_for_status()
         payload = resp.json()
-        print("[compute] ✓ AMRE payload fetched successfully")
+        print("[compute] ✓ Successfully fetched AMRE dataset")
         return payload
-    except Exception as exc:  # noqa: BLE001 (simple CLI script)
-        print(f"[compute] WARNING: Failed to fetch AMRE dataset: {exc}")
+
+    except Exception as exc:
+        print(f"[compute] WARNING: Fetch failed ({exc})")
         return {"meta": {"error": str(exc)}, "points": []}
 
 
 def compute_formula_b_from_amre() -> Dict[str, Any]:
-    """
-    Convert AMRE's polar lattice into Formula-to-3D's volumetric dataset.
-
-    Expected AMRE point schema (per tools/export_formulas.py):
-
-      {
-        "overlap_real": <float>  # real part of overlap (optional)
-        "overlap_imag": <float>  # imaginary part of overlap (optional)
-        "phase":        <float>, # phase angle
-        "x":            <float>, # optional fallback real axis
-        "y":            <float>, # optional fallback imag axis
-        ...
-      }
-
-    Mapping into Formula-to-3D:
-
-      x := overlap_real  (fallback to AMRE's x)
-      y := overlap_imag  (fallback to AMRE's y)
-      z := phase
-
-    The output structure is:
-
-      {
-         "meta": {...},
-         "formula": [
-             {"x": <float>, "y": <float>, "z": <float>},
-             ...
-         ]
-      }
-    """
+    """Convert AMRE points → Formula-to-3D volumetric structure."""
     pong = fetch_amre_pong_payload()
 
-    # Ensure points array exists
     points = pong.get("points", [])
     if not isinstance(points, list):
-        print(f"[compute] ERROR: AMRE 'points' is not a list (got {type(points)}).")
+        print(f"[compute] ERROR: 'points' is not a list (got {type(points)})")
         points = []
 
     converted: List[Dict[str, float]] = []
@@ -156,46 +115,31 @@ def compute_formula_b_from_amre() -> Dict[str, Any]:
         y = p.get("overlap_imag", p.get("y"))
         z = p.get("phase")
 
-        # Skip malformed points
         if x is None or y is None or z is None:
             print(f"[compute] Skipping malformed point: {p}")
             continue
 
         try:
-            converted.append(
-                {
-                    "x": float(x),
-                    "y": float(y),
-                    "z": float(z),
-                }
-            )
-        except Exception as exc:  # noqa: BLE001
-            print(f"[compute] Conversion error for point {p}: {exc}")
+            converted.append({"x": float(x), "y": float(y), "z": float(z)})
+        except Exception as exc:
+            print(f"[compute] Conversion error for {p}: {exc}")
             continue
 
-    # Avoid empty output so Plotly always has *something* to render
+    # If AMRE fails, ensure one placeholder point exists
     if not converted:
-        print(
-            "[compute] WARNING: No valid AMRE points found. "
-            "Injecting placeholder point (0,0,0)."
-        )
+        print("[compute] WARNING: No valid AMRE points → injecting (0,0,0)")
         converted = [{"x": 0.0, "y": 0.0, "z": 0.0}]
 
-    # Construct metadata (preserve anything AMRE already wrote)
     meta = pong.get("meta", {}) or {}
 
     meta_out = {
         "id": meta.get("id", "amre_pong_phase_overlap_v1"),
         "description": meta.get(
             "description",
-            "AMRE Pong phase overlap mapped to (Re overlap, Im overlap, phase).",
+            "AMRE Pong phase overlap mapped to 3D (Re, Im, phase)."
         ),
-        "source_repo": meta.get(
-            "source_repo", "Eckohaus/Angular_Momentum_Reaction_Engine"
-        ),
-        "source_path": meta.get(
-            "source_path", "exports/formulas/pong_phase_overlap.json"
-        ),
+        "source_repo": meta.get("source_repo", "Eckohaus/Angular_Momentum_Reaction_Engine"),
+        "source_path": meta.get("source_path", "exports/formulas/pong_phase_overlap.json"),
         "fetched_utc": now_utc_iso(),
         "version": meta.get("version", "1.0.0"),
     }
@@ -205,14 +149,10 @@ def compute_formula_b_from_amre() -> Dict[str, Any]:
 
 
 # ================================================================
-#  I/O helpers
+#  JSON save helper
 # ================================================================
 
-
 def save_json(path: str, payload: Dict[str, Any]) -> None:
-    """
-    Write a JSON payload to disk, creating parent directories as needed.
-    """
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding="utf-8") as handle:
         json.dump(payload, handle, indent=2)
@@ -220,9 +160,8 @@ def save_json(path: str, payload: Dict[str, Any]) -> None:
 
 
 # ================================================================
-#  Main execution
+#  Entrypoint
 # ================================================================
-
 
 if __name__ == "__main__":
     save_json("docs/volumetric/formula_a.json", compute_formula_a())
