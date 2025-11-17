@@ -91,7 +91,9 @@
 </main>
 
 <script>
-  fetch('volumetric_data.json')
+  fetch('volumetric/iers.json')        // Same IERS
+  fetch('volumetric/formula_b.json')   // New formula
+
     .then(r => r.json())
     .then(data => {
 
