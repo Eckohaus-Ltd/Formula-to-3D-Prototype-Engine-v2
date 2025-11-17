@@ -1,4 +1,4 @@
-name: Update Volumetric Data (IERS + Formulas)
+name: Update Volumetric Data (IERS + AMRE Formulas)
 
 on:
   schedule:
@@ -14,21 +14,30 @@ jobs:
       contents: write
 
     env:
-      # GitHub tokens
+      # --------------------------------------------------
+      # GitHub tokens (injected via Secrets)
+      # --------------------------------------------------
       PAT_TOKEN: ${{ secrets.PAT_TOKEN_FORMULA_3D_PUBLIC }}
       AMRE_TOKEN: ${{ secrets.AMRE_TOKEN }}
 
-      # External datasets
+      # --------------------------------------------------
+      # External sources
+      # --------------------------------------------------
       IERS_SER7_URL: "https://maia.usno.navy.mil/ser7/ser7.dat"
       IERS_DEBUG: "false"
 
-      # Authenticated AMRE fetch URL (private repo)
-      AMRE_PONG_URL: "https://x-access-token:${{ secrets.AMRE_TOKEN }}@raw.githubusercontent.com/Eckohaus/Angular_Momentum_Reaction_Engine/main/exports/formulas/pong_phase_overlap.json"
+      # --------------------------------------------------
+      # AMRE private repo (branch = master)
+      # This resolves to:
+      #   https://raw.githubusercontent.com/Eckohaus/Angular_Momentum_Reaction_Engine/master/...
+      # but wrapped with token auth
+      # --------------------------------------------------
+      AMRE_PONG_URL: "https://x-access-token:${{ secrets.AMRE_TOKEN }}@raw.githubusercontent.com/Eckohaus/Angular_Momentum_Reaction_Engine/master/exports/formulas/pong_phase_overlap.json"
 
     steps:
 
       # --------------------------------------------------
-      # Checkout main branch
+      # Checkout Formula-to-3D main branch
       # --------------------------------------------------
       - name: Checkout main
         uses: actions/checkout@v3
@@ -59,14 +68,17 @@ jobs:
         run: |
           mkdir -p docs/volumetric
 
-          # Fetch IERS dataset
+          echo "Using AMRE_PONG_URL:"
+          echo "${AMRE_PONG_URL}"
+
+          # Fetch IERS → docs/volumetric/iers.json
           python engine/fetch_iers_data.py docs/volumetric/iers.json
 
           # Generate formula_a.json + formula_b.json (AMRE → 3D)
           python engine/compute.py
 
       # --------------------------------------------------
-      # Commit and push changes
+      # Commit + Push changes to main
       # --------------------------------------------------
       - name: Commit & push changes
         shell: bash
@@ -84,8 +96,9 @@ jobs:
           fi
 
           git commit -m "chore(data): refresh volumetric datasets" \
-            -m "Automated weekday update of IERS RS/PC dataset and regenerated formula_a.json / formula_b.json." \
-            -m "Dataset modularised under docs/volumetric/ for cleaner pagination architecture." \
+            -m "Automated weekday update of IERS RS/PC data + AMRE volumetric mapping." \
+            -m "Fix: AMRE raw URL updated to master-branch authenticated path." \
+            -m "AMRE → Formula B now fully integrated across private/public repos." \
             -m "Co-authored-by: system operator <wanda@openai.com>" \
             -m "Co-authored-by: system administrator <Corvin Nehal Dhali> <info@eckohaus.co.uk>" \
             -m "Co-authored-by: GitHub Copilot <copilot@github.com>"
