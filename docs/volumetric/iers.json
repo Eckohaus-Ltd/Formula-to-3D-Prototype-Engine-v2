@@ -1,7 +1,7 @@
 {
   "meta": {
     "source": "https://maia.usno.navy.mil/ser7/ser7.dat",
-    "retrieved_utc": "2025-12-15T03:42:41.286869+00:00"
+    "retrieved_utc": "2025-12-16T03:25:26.129155+00:00"
   },
   "iers": {
     "combined_eop": [
