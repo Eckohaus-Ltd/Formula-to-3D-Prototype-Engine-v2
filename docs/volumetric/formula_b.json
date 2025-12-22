@@ -4,7 +4,7 @@
     "description": "Phase-lattice inspired by the Pong Algorithm: coherence transport via overlap \u27e8\u03c8\u2081 | \u03c8\u2082\u27e9 = e^{i\u03c6}, encoded on a polar grid (r, \u03b8) with Gaussian envelope.",
     "source_repo": "Eckohaus/Angular_Momentum_Reaction_Engine_v2",
     "source_path": "formulas/pong_algorithm/readme.md",
-    "fetched_utc": "2025-12-19T02:40:04.931171+00:00",
+    "fetched_utc": "2025-12-22T02:45:17.930348+00:00",
     "version": "1.0.0"
   },
   "formula": [
