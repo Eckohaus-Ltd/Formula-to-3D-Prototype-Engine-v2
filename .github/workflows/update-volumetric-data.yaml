@@ -104,4 +104,3 @@ jobs:
             -m "Co-authored-by: GitHub Copilot <copilot@github.com>"
 
           git push "https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }}.git" release
-
