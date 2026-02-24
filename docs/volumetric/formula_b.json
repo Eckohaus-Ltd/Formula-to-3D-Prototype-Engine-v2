@@ -4,7 +4,7 @@
     "description": "AMRE Pong phase overlap mapped to 3D (Re, Im, phase).",
     "source_repo": "Eckohaus/Angular_Momentum_Reaction_Engine",
     "source_path": "exports/formulas/pong_phase_overlap.json",
-    "fetched_utc": "2026-02-23T03:07:00.307256+00:00",
+    "fetched_utc": "2026-02-24T03:04:42.168919+00:00",
     "version": "1.0.0"
   },
   "formula": [
