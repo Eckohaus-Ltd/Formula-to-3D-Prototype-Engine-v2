@@ -1,120 +1,23 @@
 {
   "meta": {
     "source": "https://maia.usno.navy.mil/ser7/ser7.dat",
-    "retrieved_utc": "2026-03-19T04:19:21.539015+00:00"
+    "retrieved_utc": "2026-03-20T04:09:51.599803+00:00"
   },
   "iers": {
     "combined_eop": [
-      {
-        "date": "2026-03-06",
-        "year": 2026,
-        "month": 3,
-        "day": 6,
-        "mjd": 61105,
-        "x_arcsec": 0.10494,
-        "x_err_arcsec": 9e-05,
-        "y_arcsec": 0.39237,
-        "y_err_arcsec": 9e-05,
-        "ut1_utc_sec": 0.064099,
-        "ut1_err_sec": 6e-06,
-        "source": "IERS Bulletin A \u2013 combined RS/PC"
-      },
-      {
-        "date": "2026-03-07",
-        "year": 2026,
-        "month": 3,
-        "day": 7,
-        "mjd": 61106,
-        "x_arcsec": 0.10474,
-        "x_err_arcsec": 9e-05,
-        "y_arcsec": 0.39272,
-        "y_err_arcsec": 9e-05,
-        "ut1_utc_sec": 0.063493,
-        "ut1_err_sec": 1.4e-05,
-        "source": "IERS Bulletin A \u2013 combined RS/PC"
-      },
-      {
-        "date": "2026-03-08",
-        "year": 2026,
-        "month": 3,
-        "day": 8,
-        "mjd": 61107,
-        "x_arcsec": 0.10405,
-        "x_err_arcsec": 9e-05,
-        "y_arcsec": 0.39309,
-        "y_err_arcsec": 9e-05,
-        "ut1_utc_sec": 0.063104,
-        "ut1_err_sec": 1.3e-05,
-        "source": "IERS Bulletin A \u2013 combined RS/PC"
-      },
-      {
-        "date": "2026-03-09",
-        "year": 2026,
-        "month": 3,
-        "day": 9,
-        "mjd": 61108,
-        "x_arcsec": 0.10322,
-        "x_err_arcsec": 9e-05,
-        "y_arcsec": 0.39342,
-        "y_err_arcsec": 9e-05,
-        "ut1_utc_sec": 0.062921,
-        "ut1_err_sec": 6e-06,
-        "source": "IERS Bulletin A \u2013 combined RS/PC"
-      },
-      {
-        "date": "2026-03-10",
-        "year": 2026,
-        "month": 3,
-        "day": 10,
-        "mjd": 61109,
-        "x_arcsec": 0.10297,
-        "x_err_arcsec": 9e-05,
-        "y_arcsec": 0.39384,
-        "y_err_arcsec": 9e-05,
-        "ut1_utc_sec": 0.062813,
-        "ut1_err_sec": 5e-06,
-        "source": "IERS Bulletin A \u2013 combined RS/PC"
-      },
-      {
-        "date": "2026-03-11",
-        "year": 2026,
-        "month": 3,
-        "day": 11,
-        "mjd": 61110,
-        "x_arcsec": 0.1031,
-        "x_err_arcsec": 9e-05,
-        "y_arcsec": 0.39433,
-        "y_err_arcsec": 9e-05,
-        "ut1_utc_sec": 0.062684,
-        "ut1_err_sec": 5e-06,
-        "source": "IERS Bulletin A \u2013 combined RS/PC"
-      },
-      {
-        "date": "2026-03-12",
-        "year": 2026,
-        "month": 3,
-        "day": 12,
-        "mjd": 61111,
-        "x_arcsec": 0.10314,
-        "x_err_arcsec": 9e-05,
-        "y_arcsec": 0.39493,
-        "y_err_arcsec": 9e-05,
-        "ut1_utc_sec": 0.062612,
-        "ut1_err_sec": 5e-06,
-        "source": "IERS Bulletin A \u2013 combined RS/PC"
-      }
-    ],
-    "predictions": [
       {
         "date": "2026-03-13",
         "year": 2026,
         "month": 3,
         "day": 13,
         "mjd": 61112,
-        "x_arcsec": 0.1033,
-        "y_arcsec": 0.3955,
-        "ut1_utc_sec": 0.06262,
-        "source": "IERS Bulletin A \u2013 prediction"
+        "x_arcsec": 0.10282,
+        "x_err_arcsec": 9e-05,
+        "y_arcsec": 0.39542,
+        "y_err_arcsec": 9e-05,
+        "ut1_utc_sec": 0.062645,
+        "ut1_err_sec": 2.3e-05,
+        "source": "IERS Bulletin A \u2013 combined RS/PC"
       },
       {
         "date": "2026-03-14",
@@ -122,10 +25,13 @@
         "month": 3,
         "day": 14,
         "mjd": 61113,
-        "x_arcsec": 0.1034,
-        "y_arcsec": 0.3962,
-        "ut1_utc_sec": 0.06256,
-        "source": "IERS Bulletin A \u2013 prediction"
+        "x_arcsec": 0.10283,
+        "x_err_arcsec": 9e-05,
+        "y_arcsec": 0.39606,
+        "y_err_arcsec": 9e-05,
+        "ut1_utc_sec": 0.062522,
+        "ut1_err_sec": 4.2e-05,
+        "source": "IERS Bulletin A \u2013 combined RS/PC"
       },
       {
         "date": "2026-03-15",
@@ -133,10 +39,13 @@
         "month": 3,
         "day": 15,
         "mjd": 61114,
-        "x_arcsec": 0.1036,
-        "y_arcsec": 0.3968,
-        "ut1_utc_sec": 0.06231,
-        "source": "IERS Bulletin A \u2013 prediction"
+        "x_arcsec": 0.10325,
+        "x_err_arcsec": 9e-05,
+        "y_arcsec": 0.39683,
+        "y_err_arcsec": 9e-05,
+        "ut1_utc_sec": 0.062178,
+        "ut1_err_sec": 3.8e-05,
+        "source": "IERS Bulletin A \u2013 combined RS/PC"
       },
       {
         "date": "2026-03-16",
@@ -144,10 +53,13 @@
         "month": 3,
         "day": 16,
         "mjd": 61115,
-        "x_arcsec": 0.1037,
-        "y_arcsec": 0.3974,
-        "ut1_utc_sec": 0.06184,
-        "source": "IERS Bulletin A \u2013 prediction"
+        "x_arcsec": 0.10404,
+        "x_err_arcsec": 9e-05,
+        "y_arcsec": 0.39768,
+        "y_err_arcsec": 9e-05,
+        "ut1_utc_sec": 0.061605,
+        "ut1_err_sec": 2.7e-05,
+        "source": "IERS Bulletin A \u2013 combined RS/PC"
       },
       {
         "date": "2026-03-17",
@@ -155,10 +67,13 @@
         "month": 3,
         "day": 17,
         "mjd": 61116,
-        "x_arcsec": 0.1038,
-        "y_arcsec": 0.3981,
-        "ut1_utc_sec": 0.06114,
-        "source": "IERS Bulletin A \u2013 prediction"
+        "x_arcsec": 0.10469,
+        "x_err_arcsec": 9e-05,
+        "y_arcsec": 0.39866,
+        "y_err_arcsec": 9e-05,
+        "ut1_utc_sec": 0.060823,
+        "ut1_err_sec": 1.6e-05,
+        "source": "IERS Bulletin A \u2013 combined RS/PC"
       },
       {
         "date": "2026-03-18",
@@ -166,10 +81,13 @@
         "month": 3,
         "day": 18,
         "mjd": 61117,
-        "x_arcsec": 0.1041,
-        "y_arcsec": 0.3987,
-        "ut1_utc_sec": 0.06023,
-        "source": "IERS Bulletin A \u2013 prediction"
+        "x_arcsec": 0.10511,
+        "x_err_arcsec": 9e-05,
+        "y_arcsec": 0.39948,
+        "y_err_arcsec": 9e-05,
+        "ut1_utc_sec": 0.05984,
+        "ut1_err_sec": 1.2e-05,
+        "source": "IERS Bulletin A \u2013 combined RS/PC"
       },
       {
         "date": "2026-03-19",
@@ -177,20 +95,25 @@
         "month": 3,
         "day": 19,
         "mjd": 61118,
-        "x_arcsec": 0.1043,
-        "y_arcsec": 0.3993,
-        "ut1_utc_sec": 0.05916,
-        "source": "IERS Bulletin A \u2013 prediction"
-      },
+        "x_arcsec": 0.10566,
+        "x_err_arcsec": 9e-05,
+        "y_arcsec": 0.40014,
+        "y_err_arcsec": 9e-05,
+        "ut1_utc_sec": 0.058689,
+        "ut1_err_sec": 1.2e-05,
+        "source": "IERS Bulletin A \u2013 combined RS/PC"
+      }
+    ],
+    "predictions": [
       {
         "date": "2026-03-20",
         "year": 2026,
         "month": 3,
         "day": 20,
         "mjd": 61119,
-        "x_arcsec": 0.1046,
-        "y_arcsec": 0.4,
-        "ut1_utc_sec": 0.05805,
+        "x_arcsec": 0.1061,
+        "y_arcsec": 0.4008,
+        "ut1_utc_sec": 0.05745,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -199,9 +122,9 @@
         "month": 3,
         "day": 21,
         "mjd": 61120,
-        "x_arcsec": 0.1049,
-        "y_arcsec": 0.4007,
-        "ut1_utc_sec": 0.05702,
+        "x_arcsec": 0.1065,
+        "y_arcsec": 0.4015,
+        "ut1_utc_sec": 0.05633,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -210,9 +133,9 @@
         "month": 3,
         "day": 22,
         "mjd": 61121,
-        "x_arcsec": 0.1053,
-        "y_arcsec": 0.4013,
-        "ut1_utc_sec": 0.05619,
+        "x_arcsec": 0.107,
+        "y_arcsec": 0.4021,
+        "ut1_utc_sec": 0.05548,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -221,9 +144,9 @@
         "month": 3,
         "day": 23,
         "mjd": 61122,
-        "x_arcsec": 0.1057,
-        "y_arcsec": 0.402,
-        "ut1_utc_sec": 0.05558,
+        "x_arcsec": 0.1075,
+        "y_arcsec": 0.4027,
+        "ut1_utc_sec": 0.05494,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -232,9 +155,9 @@
         "month": 3,
         "day": 24,
         "mjd": 61123,
-        "x_arcsec": 0.1061,
-        "y_arcsec": 0.4026,
-        "ut1_utc_sec": 0.05521,
+        "x_arcsec": 0.108,
+        "y_arcsec": 0.4033,
+        "ut1_utc_sec": 0.05467,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -243,9 +166,9 @@
         "month": 3,
         "day": 25,
         "mjd": 61124,
-        "x_arcsec": 0.1065,
-        "y_arcsec": 0.4032,
-        "ut1_utc_sec": 0.05498,
+        "x_arcsec": 0.1085,
+        "y_arcsec": 0.4039,
+        "ut1_utc_sec": 0.05456,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -254,9 +177,9 @@
         "month": 3,
         "day": 26,
         "mjd": 61125,
-        "x_arcsec": 0.107,
-        "y_arcsec": 0.4039,
-        "ut1_utc_sec": 0.05482,
+        "x_arcsec": 0.109,
+        "y_arcsec": 0.4045,
+        "ut1_utc_sec": 0.05448,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -265,9 +188,9 @@
         "month": 3,
         "day": 27,
         "mjd": 61126,
-        "x_arcsec": 0.1075,
-        "y_arcsec": 0.4045,
-        "ut1_utc_sec": 0.05462,
+        "x_arcsec": 0.1096,
+        "y_arcsec": 0.4051,
+        "ut1_utc_sec": 0.05431,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -276,9 +199,9 @@
         "month": 3,
         "day": 28,
         "mjd": 61127,
-        "x_arcsec": 0.108,
-        "y_arcsec": 0.4051,
-        "ut1_utc_sec": 0.05426,
+        "x_arcsec": 0.1102,
+        "y_arcsec": 0.4057,
+        "ut1_utc_sec": 0.05396,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -287,9 +210,9 @@
         "month": 3,
         "day": 29,
         "mjd": 61128,
-        "x_arcsec": 0.1086,
-        "y_arcsec": 0.4057,
-        "ut1_utc_sec": 0.0537,
+        "x_arcsec": 0.1108,
+        "y_arcsec": 0.4062,
+        "ut1_utc_sec": 0.05341,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -298,9 +221,9 @@
         "month": 3,
         "day": 30,
         "mjd": 61129,
-        "x_arcsec": 0.1091,
-        "y_arcsec": 0.4064,
-        "ut1_utc_sec": 0.05297,
+        "x_arcsec": 0.1114,
+        "y_arcsec": 0.4068,
+        "ut1_utc_sec": 0.05265,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -309,9 +232,9 @@
         "month": 3,
         "day": 31,
         "mjd": 61130,
-        "x_arcsec": 0.1097,
-        "y_arcsec": 0.407,
-        "ut1_utc_sec": 0.05212,
+        "x_arcsec": 0.1121,
+        "y_arcsec": 0.4074,
+        "ut1_utc_sec": 0.05171,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -320,9 +243,9 @@
         "month": 4,
         "day": 1,
         "mjd": 61131,
-        "x_arcsec": 0.1103,
-        "y_arcsec": 0.4075,
-        "ut1_utc_sec": 0.05122,
+        "x_arcsec": 0.1127,
+        "y_arcsec": 0.4079,
+        "ut1_utc_sec": 0.05069,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -331,9 +254,9 @@
         "month": 4,
         "day": 2,
         "mjd": 61132,
-        "x_arcsec": 0.111,
-        "y_arcsec": 0.4081,
-        "ut1_utc_sec": 0.05036,
+        "x_arcsec": 0.1134,
+        "y_arcsec": 0.4084,
+        "ut1_utc_sec": 0.04969,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -342,9 +265,9 @@
         "month": 4,
         "day": 3,
         "mjd": 61133,
-        "x_arcsec": 0.1116,
-        "y_arcsec": 0.4087,
-        "ut1_utc_sec": 0.04964,
+        "x_arcsec": 0.1141,
+        "y_arcsec": 0.409,
+        "ut1_utc_sec": 0.04878,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -353,9 +276,9 @@
         "month": 4,
         "day": 4,
         "mjd": 61134,
-        "x_arcsec": 0.1123,
-        "y_arcsec": 0.4093,
-        "ut1_utc_sec": 0.0491,
+        "x_arcsec": 0.1148,
+        "y_arcsec": 0.4095,
+        "ut1_utc_sec": 0.04804,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -364,9 +287,9 @@
         "month": 4,
         "day": 5,
         "mjd": 61135,
-        "x_arcsec": 0.113,
-        "y_arcsec": 0.4098,
-        "ut1_utc_sec": 0.04879,
+        "x_arcsec": 0.1155,
+        "y_arcsec": 0.41,
+        "ut1_utc_sec": 0.04751,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -375,9 +298,9 @@
         "month": 4,
         "day": 6,
         "mjd": 61136,
-        "x_arcsec": 0.1137,
-        "y_arcsec": 0.4103,
-        "ut1_utc_sec": 0.04869,
+        "x_arcsec": 0.1162,
+        "y_arcsec": 0.4104,
+        "ut1_utc_sec": 0.0472,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -386,9 +309,9 @@
         "month": 4,
         "day": 7,
         "mjd": 61137,
-        "x_arcsec": 0.1144,
+        "x_arcsec": 0.1169,
         "y_arcsec": 0.4109,
-        "ut1_utc_sec": 0.04876,
+        "ut1_utc_sec": 0.04709,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -397,9 +320,9 @@
         "month": 4,
         "day": 8,
         "mjd": 61138,
-        "x_arcsec": 0.1152,
+        "x_arcsec": 0.1176,
         "y_arcsec": 0.4114,
-        "ut1_utc_sec": 0.04894,
+        "ut1_utc_sec": 0.0471,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -408,9 +331,9 @@
         "month": 4,
         "day": 9,
         "mjd": 61139,
-        "x_arcsec": 0.1159,
-        "y_arcsec": 0.4119,
-        "ut1_utc_sec": 0.04915,
+        "x_arcsec": 0.1184,
+        "y_arcsec": 0.4118,
+        "ut1_utc_sec": 0.04718,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -419,9 +342,9 @@
         "month": 4,
         "day": 10,
         "mjd": 61140,
-        "x_arcsec": 0.1167,
-        "y_arcsec": 0.4124,
-        "ut1_utc_sec": 0.0493,
+        "x_arcsec": 0.1191,
+        "y_arcsec": 0.4123,
+        "ut1_utc_sec": 0.04723,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -430,9 +353,9 @@
         "month": 4,
         "day": 11,
         "mjd": 61141,
-        "x_arcsec": 0.1175,
-        "y_arcsec": 0.4129,
-        "ut1_utc_sec": 0.0493,
+        "x_arcsec": 0.1199,
+        "y_arcsec": 0.4127,
+        "ut1_utc_sec": 0.04719,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -441,9 +364,9 @@
         "month": 4,
         "day": 12,
         "mjd": 61142,
-        "x_arcsec": 0.1183,
-        "y_arcsec": 0.4133,
-        "ut1_utc_sec": 0.0491,
+        "x_arcsec": 0.1207,
+        "y_arcsec": 0.4131,
+        "ut1_utc_sec": 0.04696,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -452,9 +375,9 @@
         "month": 4,
         "day": 13,
         "mjd": 61143,
-        "x_arcsec": 0.1191,
-        "y_arcsec": 0.4138,
-        "ut1_utc_sec": 0.04862,
+        "x_arcsec": 0.1215,
+        "y_arcsec": 0.4135,
+        "ut1_utc_sec": 0.04648,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -463,9 +386,9 @@
         "month": 4,
         "day": 14,
         "mjd": 61144,
-        "x_arcsec": 0.12,
-        "y_arcsec": 0.4142,
-        "ut1_utc_sec": 0.04787,
+        "x_arcsec": 0.1223,
+        "y_arcsec": 0.4139,
+        "ut1_utc_sec": 0.04575,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -474,9 +397,9 @@
         "month": 4,
         "day": 15,
         "mjd": 61145,
-        "x_arcsec": 0.1208,
-        "y_arcsec": 0.4147,
-        "ut1_utc_sec": 0.04688,
+        "x_arcsec": 0.1232,
+        "y_arcsec": 0.4143,
+        "ut1_utc_sec": 0.04481,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -485,9 +408,9 @@
         "month": 4,
         "day": 16,
         "mjd": 61146,
-        "x_arcsec": 0.1217,
-        "y_arcsec": 0.4151,
-        "ut1_utc_sec": 0.04576,
+        "x_arcsec": 0.124,
+        "y_arcsec": 0.4147,
+        "ut1_utc_sec": 0.04378,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -496,9 +419,9 @@
         "month": 4,
         "day": 17,
         "mjd": 61147,
-        "x_arcsec": 0.1226,
-        "y_arcsec": 0.4155,
-        "ut1_utc_sec": 0.04465,
+        "x_arcsec": 0.1248,
+        "y_arcsec": 0.415,
+        "ut1_utc_sec": 0.04278,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -507,9 +430,9 @@
         "month": 4,
         "day": 18,
         "mjd": 61148,
-        "x_arcsec": 0.1235,
-        "y_arcsec": 0.4159,
-        "ut1_utc_sec": 0.04371,
+        "x_arcsec": 0.1257,
+        "y_arcsec": 0.4153,
+        "ut1_utc_sec": 0.04196,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -518,9 +441,9 @@
         "month": 4,
         "day": 19,
         "mjd": 61149,
-        "x_arcsec": 0.1244,
-        "y_arcsec": 0.4163,
-        "ut1_utc_sec": 0.04304,
+        "x_arcsec": 0.1266,
+        "y_arcsec": 0.4157,
+        "ut1_utc_sec": 0.04142,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -529,9 +452,9 @@
         "month": 4,
         "day": 20,
         "mjd": 61150,
-        "x_arcsec": 0.1253,
-        "y_arcsec": 0.4166,
-        "ut1_utc_sec": 0.04268,
+        "x_arcsec": 0.1274,
+        "y_arcsec": 0.416,
+        "ut1_utc_sec": 0.04119,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -540,9 +463,9 @@
         "month": 4,
         "day": 21,
         "mjd": 61151,
-        "x_arcsec": 0.1262,
-        "y_arcsec": 0.417,
-        "ut1_utc_sec": 0.04256,
+        "x_arcsec": 0.1283,
+        "y_arcsec": 0.4163,
+        "ut1_utc_sec": 0.04117,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -551,9 +474,9 @@
         "month": 4,
         "day": 22,
         "mjd": 61152,
-        "x_arcsec": 0.1271,
-        "y_arcsec": 0.4173,
-        "ut1_utc_sec": 0.04254,
+        "x_arcsec": 0.1292,
+        "y_arcsec": 0.4166,
+        "ut1_utc_sec": 0.04126,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -562,9 +485,9 @@
         "month": 4,
         "day": 23,
         "mjd": 61153,
-        "x_arcsec": 0.1281,
-        "y_arcsec": 0.4176,
-        "ut1_utc_sec": 0.04249,
+        "x_arcsec": 0.1301,
+        "y_arcsec": 0.4169,
+        "ut1_utc_sec": 0.04129,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -573,9 +496,9 @@
         "month": 4,
         "day": 24,
         "mjd": 61154,
-        "x_arcsec": 0.129,
-        "y_arcsec": 0.4179,
-        "ut1_utc_sec": 0.04229,
+        "x_arcsec": 0.1311,
+        "y_arcsec": 0.4171,
+        "ut1_utc_sec": 0.04116,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -584,9 +507,9 @@
         "month": 4,
         "day": 25,
         "mjd": 61155,
-        "x_arcsec": 0.13,
-        "y_arcsec": 0.4182,
-        "ut1_utc_sec": 0.04188,
+        "x_arcsec": 0.132,
+        "y_arcsec": 0.4174,
+        "ut1_utc_sec": 0.04082,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -595,9 +518,9 @@
         "month": 4,
         "day": 26,
         "mjd": 61156,
-        "x_arcsec": 0.131,
-        "y_arcsec": 0.4185,
-        "ut1_utc_sec": 0.04127,
+        "x_arcsec": 0.1329,
+        "y_arcsec": 0.4176,
+        "ut1_utc_sec": 0.04027,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -606,9 +529,9 @@
         "month": 4,
         "day": 27,
         "mjd": 61157,
-        "x_arcsec": 0.132,
-        "y_arcsec": 0.4188,
-        "ut1_utc_sec": 0.04051,
+        "x_arcsec": 0.1339,
+        "y_arcsec": 0.4178,
+        "ut1_utc_sec": 0.03956,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -617,9 +540,9 @@
         "month": 4,
         "day": 28,
         "mjd": 61158,
-        "x_arcsec": 0.133,
-        "y_arcsec": 0.419,
-        "ut1_utc_sec": 0.03968,
+        "x_arcsec": 0.1348,
+        "y_arcsec": 0.418,
+        "ut1_utc_sec": 0.03879,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -628,9 +551,9 @@
         "month": 4,
         "day": 29,
         "mjd": 61159,
-        "x_arcsec": 0.134,
-        "y_arcsec": 0.4192,
-        "ut1_utc_sec": 0.03888,
+        "x_arcsec": 0.1358,
+        "y_arcsec": 0.4182,
+        "ut1_utc_sec": 0.03804,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -639,9 +562,9 @@
         "month": 4,
         "day": 30,
         "mjd": 61160,
-        "x_arcsec": 0.135,
-        "y_arcsec": 0.4194,
-        "ut1_utc_sec": 0.03819,
+        "x_arcsec": 0.1368,
+        "y_arcsec": 0.4184,
+        "ut1_utc_sec": 0.0374,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -650,9 +573,9 @@
         "month": 5,
         "day": 1,
         "mjd": 61161,
-        "x_arcsec": 0.136,
-        "y_arcsec": 0.4196,
-        "ut1_utc_sec": 0.03767,
+        "x_arcsec": 0.1378,
+        "y_arcsec": 0.4185,
+        "ut1_utc_sec": 0.03694,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -661,9 +584,9 @@
         "month": 5,
         "day": 2,
         "mjd": 61162,
-        "x_arcsec": 0.1371,
-        "y_arcsec": 0.4198,
-        "ut1_utc_sec": 0.03736,
+        "x_arcsec": 0.1387,
+        "y_arcsec": 0.4187,
+        "ut1_utc_sec": 0.03669,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -672,9 +595,9 @@
         "month": 5,
         "day": 3,
         "mjd": 61163,
-        "x_arcsec": 0.1381,
-        "y_arcsec": 0.42,
-        "ut1_utc_sec": 0.03726,
+        "x_arcsec": 0.1397,
+        "y_arcsec": 0.4188,
+        "ut1_utc_sec": 0.03666,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -683,9 +606,9 @@
         "month": 5,
         "day": 4,
         "mjd": 61164,
-        "x_arcsec": 0.1392,
-        "y_arcsec": 0.4201,
-        "ut1_utc_sec": 0.03736,
+        "x_arcsec": 0.1407,
+        "y_arcsec": 0.4189,
+        "ut1_utc_sec": 0.03681,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -694,9 +617,9 @@
         "month": 5,
         "day": 5,
         "mjd": 61165,
-        "x_arcsec": 0.1402,
-        "y_arcsec": 0.4203,
-        "ut1_utc_sec": 0.0376,
+        "x_arcsec": 0.1417,
+        "y_arcsec": 0.419,
+        "ut1_utc_sec": 0.03708,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -705,9 +628,9 @@
         "month": 5,
         "day": 6,
         "mjd": 61166,
-        "x_arcsec": 0.1413,
-        "y_arcsec": 0.4204,
-        "ut1_utc_sec": 0.0379,
+        "x_arcsec": 0.1428,
+        "y_arcsec": 0.4191,
+        "ut1_utc_sec": 0.03742,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -716,9 +639,9 @@
         "month": 5,
         "day": 7,
         "mjd": 61167,
-        "x_arcsec": 0.1423,
-        "y_arcsec": 0.4205,
-        "ut1_utc_sec": 0.0382,
+        "x_arcsec": 0.1438,
+        "y_arcsec": 0.4192,
+        "ut1_utc_sec": 0.03773,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -727,9 +650,9 @@
         "month": 5,
         "day": 8,
         "mjd": 61168,
-        "x_arcsec": 0.1434,
-        "y_arcsec": 0.4206,
-        "ut1_utc_sec": 0.03841,
+        "x_arcsec": 0.1448,
+        "y_arcsec": 0.4192,
+        "ut1_utc_sec": 0.03795,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -738,9 +661,9 @@
         "month": 5,
         "day": 9,
         "mjd": 61169,
-        "x_arcsec": 0.1445,
-        "y_arcsec": 0.4206,
-        "ut1_utc_sec": 0.03847,
+        "x_arcsec": 0.1458,
+        "y_arcsec": 0.4192,
+        "ut1_utc_sec": 0.03801,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -749,9 +672,9 @@
         "month": 5,
         "day": 10,
         "mjd": 61170,
-        "x_arcsec": 0.1456,
-        "y_arcsec": 0.4207,
-        "ut1_utc_sec": 0.03833,
+        "x_arcsec": 0.1469,
+        "y_arcsec": 0.4193,
+        "ut1_utc_sec": 0.03786,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -760,9 +683,9 @@
         "month": 5,
         "day": 11,
         "mjd": 61171,
-        "x_arcsec": 0.1467,
-        "y_arcsec": 0.4207,
-        "ut1_utc_sec": 0.03795,
+        "x_arcsec": 0.1479,
+        "y_arcsec": 0.4193,
+        "ut1_utc_sec": 0.03748,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -771,9 +694,9 @@
         "month": 5,
         "day": 12,
         "mjd": 61172,
-        "x_arcsec": 0.1478,
-        "y_arcsec": 0.4207,
-        "ut1_utc_sec": 0.03736,
+        "x_arcsec": 0.1489,
+        "y_arcsec": 0.4193,
+        "ut1_utc_sec": 0.03689,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -782,9 +705,9 @@
         "month": 5,
         "day": 13,
         "mjd": 61173,
-        "x_arcsec": 0.1489,
-        "y_arcsec": 0.4207,
-        "ut1_utc_sec": 0.03661,
+        "x_arcsec": 0.15,
+        "y_arcsec": 0.4192,
+        "ut1_utc_sec": 0.03614,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -793,9 +716,9 @@
         "month": 5,
         "day": 14,
         "mjd": 61174,
-        "x_arcsec": 0.15,
-        "y_arcsec": 0.4207,
-        "ut1_utc_sec": 0.03581,
+        "x_arcsec": 0.151,
+        "y_arcsec": 0.4192,
+        "ut1_utc_sec": 0.03535,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -804,9 +727,9 @@
         "month": 5,
         "day": 15,
         "mjd": 61175,
-        "x_arcsec": 0.1511,
-        "y_arcsec": 0.4206,
-        "ut1_utc_sec": 0.03512,
+        "x_arcsec": 0.1521,
+        "y_arcsec": 0.4191,
+        "ut1_utc_sec": 0.03468,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -815,9 +738,9 @@
         "month": 5,
         "day": 16,
         "mjd": 61176,
-        "x_arcsec": 0.1522,
-        "y_arcsec": 0.4206,
-        "ut1_utc_sec": 0.03466,
+        "x_arcsec": 0.1531,
+        "y_arcsec": 0.419,
+        "ut1_utc_sec": 0.03425,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -826,9 +749,9 @@
         "month": 5,
         "day": 17,
         "mjd": 61177,
-        "x_arcsec": 0.1533,
-        "y_arcsec": 0.4205,
-        "ut1_utc_sec": 0.0345,
+        "x_arcsec": 0.1542,
+        "y_arcsec": 0.4189,
+        "ut1_utc_sec": 0.03412,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -837,9 +760,9 @@
         "month": 5,
         "day": 18,
         "mjd": 61178,
-        "x_arcsec": 0.1544,
-        "y_arcsec": 0.4204,
-        "ut1_utc_sec": 0.03461,
+        "x_arcsec": 0.1552,
+        "y_arcsec": 0.4188,
+        "ut1_utc_sec": 0.03428,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -848,9 +771,9 @@
         "month": 5,
         "day": 19,
         "mjd": 61179,
-        "x_arcsec": 0.1555,
-        "y_arcsec": 0.4203,
-        "ut1_utc_sec": 0.03489,
+        "x_arcsec": 0.1563,
+        "y_arcsec": 0.4187,
+        "ut1_utc_sec": 0.03461,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -859,9 +782,9 @@
         "month": 5,
         "day": 20,
         "mjd": 61180,
-        "x_arcsec": 0.1566,
-        "y_arcsec": 0.4202,
-        "ut1_utc_sec": 0.0352,
+        "x_arcsec": 0.1574,
+        "y_arcsec": 0.4185,
+        "ut1_utc_sec": 0.03495,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -870,9 +793,9 @@
         "month": 5,
         "day": 21,
         "mjd": 61181,
-        "x_arcsec": 0.1577,
-        "y_arcsec": 0.42,
-        "ut1_utc_sec": 0.03539,
+        "x_arcsec": 0.1584,
+        "y_arcsec": 0.4184,
+        "ut1_utc_sec": 0.03518,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -881,9 +804,9 @@
         "month": 5,
         "day": 22,
         "mjd": 61182,
-        "x_arcsec": 0.1588,
-        "y_arcsec": 0.4199,
-        "ut1_utc_sec": 0.03538,
+        "x_arcsec": 0.1595,
+        "y_arcsec": 0.4182,
+        "ut1_utc_sec": 0.03521,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -892,9 +815,9 @@
         "month": 5,
         "day": 23,
         "mjd": 61183,
-        "x_arcsec": 0.16,
-        "y_arcsec": 0.4197,
-        "ut1_utc_sec": 0.03518,
+        "x_arcsec": 0.1605,
+        "y_arcsec": 0.418,
+        "ut1_utc_sec": 0.03504,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -903,9 +826,9 @@
         "month": 5,
         "day": 24,
         "mjd": 61184,
-        "x_arcsec": 0.1611,
-        "y_arcsec": 0.4195,
-        "ut1_utc_sec": 0.03484,
+        "x_arcsec": 0.1616,
+        "y_arcsec": 0.4178,
+        "ut1_utc_sec": 0.03472,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -914,9 +837,9 @@
         "month": 5,
         "day": 25,
         "mjd": 61185,
-        "x_arcsec": 0.1622,
-        "y_arcsec": 0.4193,
-        "ut1_utc_sec": 0.03445,
+        "x_arcsec": 0.1627,
+        "y_arcsec": 0.4175,
+        "ut1_utc_sec": 0.03435,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -925,9 +848,9 @@
         "month": 5,
         "day": 26,
         "mjd": 61186,
-        "x_arcsec": 0.1633,
-        "y_arcsec": 0.419,
-        "ut1_utc_sec": 0.0341,
+        "x_arcsec": 0.1637,
+        "y_arcsec": 0.4173,
+        "ut1_utc_sec": 0.034,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -936,9 +859,9 @@
         "month": 5,
         "day": 27,
         "mjd": 61187,
-        "x_arcsec": 0.1644,
-        "y_arcsec": 0.4188,
-        "ut1_utc_sec": 0.03386,
+        "x_arcsec": 0.1648,
+        "y_arcsec": 0.417,
+        "ut1_utc_sec": 0.03376,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -947,9 +870,9 @@
         "month": 5,
         "day": 28,
         "mjd": 61188,
-        "x_arcsec": 0.1655,
-        "y_arcsec": 0.4185,
-        "ut1_utc_sec": 0.0338,
+        "x_arcsec": 0.1658,
+        "y_arcsec": 0.4167,
+        "ut1_utc_sec": 0.03369,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -958,9 +881,9 @@
         "month": 5,
         "day": 29,
         "mjd": 61189,
-        "x_arcsec": 0.1666,
-        "y_arcsec": 0.4182,
-        "ut1_utc_sec": 0.03394,
+        "x_arcsec": 0.1669,
+        "y_arcsec": 0.4164,
+        "ut1_utc_sec": 0.03383,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -969,9 +892,9 @@
         "month": 5,
         "day": 30,
         "mjd": 61190,
-        "x_arcsec": 0.1678,
-        "y_arcsec": 0.4179,
-        "ut1_utc_sec": 0.03431,
+        "x_arcsec": 0.1679,
+        "y_arcsec": 0.4161,
+        "ut1_utc_sec": 0.03418,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -980,9 +903,9 @@
         "month": 5,
         "day": 31,
         "mjd": 61191,
-        "x_arcsec": 0.1689,
-        "y_arcsec": 0.4176,
-        "ut1_utc_sec": 0.03487,
+        "x_arcsec": 0.169,
+        "y_arcsec": 0.4158,
+        "ut1_utc_sec": 0.03474,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -992,8 +915,8 @@
         "day": 1,
         "mjd": 61192,
         "x_arcsec": 0.17,
-        "y_arcsec": 0.4172,
-        "ut1_utc_sec": 0.03558,
+        "y_arcsec": 0.4154,
+        "ut1_utc_sec": 0.03544,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1003,8 +926,8 @@
         "day": 2,
         "mjd": 61193,
         "x_arcsec": 0.1711,
-        "y_arcsec": 0.4169,
-        "ut1_utc_sec": 0.03639,
+        "y_arcsec": 0.4151,
+        "ut1_utc_sec": 0.03624,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1014,8 +937,8 @@
         "day": 3,
         "mjd": 61194,
         "x_arcsec": 0.1721,
-        "y_arcsec": 0.4165,
-        "ut1_utc_sec": 0.03721,
+        "y_arcsec": 0.4147,
+        "ut1_utc_sec": 0.03704,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1024,9 +947,9 @@
         "month": 6,
         "day": 4,
         "mjd": 61195,
-        "x_arcsec": 0.1732,
-        "y_arcsec": 0.4161,
-        "ut1_utc_sec": 0.03798,
+        "x_arcsec": 0.1731,
+        "y_arcsec": 0.4143,
+        "ut1_utc_sec": 0.03778,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1035,9 +958,9 @@
         "month": 6,
         "day": 5,
         "mjd": 61196,
-        "x_arcsec": 0.1743,
-        "y_arcsec": 0.4157,
-        "ut1_utc_sec": 0.03863,
+        "x_arcsec": 0.1742,
+        "y_arcsec": 0.4138,
+        "ut1_utc_sec": 0.03839,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1046,9 +969,9 @@
         "month": 6,
         "day": 6,
         "mjd": 61197,
-        "x_arcsec": 0.1754,
-        "y_arcsec": 0.4152,
-        "ut1_utc_sec": 0.03911,
+        "x_arcsec": 0.1752,
+        "y_arcsec": 0.4134,
+        "ut1_utc_sec": 0.03882,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1057,9 +980,9 @@
         "month": 6,
         "day": 7,
         "mjd": 61198,
-        "x_arcsec": 0.1765,
-        "y_arcsec": 0.4148,
-        "ut1_utc_sec": 0.0394,
+        "x_arcsec": 0.1762,
+        "y_arcsec": 0.413,
+        "ut1_utc_sec": 0.03906,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1068,9 +991,9 @@
         "month": 6,
         "day": 8,
         "mjd": 61199,
-        "x_arcsec": 0.1775,
-        "y_arcsec": 0.4143,
-        "ut1_utc_sec": 0.03951,
+        "x_arcsec": 0.1772,
+        "y_arcsec": 0.4125,
+        "ut1_utc_sec": 0.03909,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1079,9 +1002,9 @@
         "month": 6,
         "day": 9,
         "mjd": 61200,
-        "x_arcsec": 0.1786,
-        "y_arcsec": 0.4138,
-        "ut1_utc_sec": 0.03948,
+        "x_arcsec": 0.1782,
+        "y_arcsec": 0.412,
+        "ut1_utc_sec": 0.03897,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1090,9 +1013,9 @@
         "month": 6,
         "day": 10,
         "mjd": 61201,
-        "x_arcsec": 0.1797,
-        "y_arcsec": 0.4133,
-        "ut1_utc_sec": 0.03938,
+        "x_arcsec": 0.1792,
+        "y_arcsec": 0.4115,
+        "ut1_utc_sec": 0.03878,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1101,9 +1024,9 @@
         "month": 6,
         "day": 11,
         "mjd": 61202,
-        "x_arcsec": 0.1807,
-        "y_arcsec": 0.4128,
-        "ut1_utc_sec": 0.03934,
+        "x_arcsec": 0.1802,
+        "y_arcsec": 0.411,
+        "ut1_utc_sec": 0.03864,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1112,9 +1035,9 @@
         "month": 6,
         "day": 12,
         "mjd": 61203,
-        "x_arcsec": 0.1817,
-        "y_arcsec": 0.4123,
-        "ut1_utc_sec": 0.03948,
+        "x_arcsec": 0.1812,
+        "y_arcsec": 0.4104,
+        "ut1_utc_sec": 0.03868,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1123,9 +1046,9 @@
         "month": 6,
         "day": 13,
         "mjd": 61204,
-        "x_arcsec": 0.1828,
-        "y_arcsec": 0.4117,
-        "ut1_utc_sec": 0.03988,
+        "x_arcsec": 0.1822,
+        "y_arcsec": 0.4099,
+        "ut1_utc_sec": 0.03898,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1134,9 +1057,9 @@
         "month": 6,
         "day": 14,
         "mjd": 61205,
-        "x_arcsec": 0.1838,
-        "y_arcsec": 0.4112,
-        "ut1_utc_sec": 0.04057,
+        "x_arcsec": 0.1832,
+        "y_arcsec": 0.4093,
+        "ut1_utc_sec": 0.03957,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1145,9 +1068,9 @@
         "month": 6,
         "day": 15,
         "mjd": 61206,
-        "x_arcsec": 0.1848,
-        "y_arcsec": 0.4106,
-        "ut1_utc_sec": 0.04147,
+        "x_arcsec": 0.1841,
+        "y_arcsec": 0.4087,
+        "ut1_utc_sec": 0.04037,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1156,9 +1079,9 @@
         "month": 6,
         "day": 16,
         "mjd": 61207,
-        "x_arcsec": 0.1858,
-        "y_arcsec": 0.41,
-        "ut1_utc_sec": 0.04244,
+        "x_arcsec": 0.1851,
+        "y_arcsec": 0.4081,
+        "ut1_utc_sec": 0.04126,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1167,9 +1090,9 @@
         "month": 6,
         "day": 17,
         "mjd": 61208,
-        "x_arcsec": 0.1868,
-        "y_arcsec": 0.4093,
-        "ut1_utc_sec": 0.04334,
+        "x_arcsec": 0.186,
+        "y_arcsec": 0.4075,
+        "ut1_utc_sec": 0.04208,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1178,9 +1101,9 @@
         "month": 6,
         "day": 18,
         "mjd": 61209,
-        "x_arcsec": 0.1878,
-        "y_arcsec": 0.4087,
-        "ut1_utc_sec": 0.04404,
+        "x_arcsec": 0.1869,
+        "y_arcsec": 0.4069,
+        "ut1_utc_sec": 0.04272,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1189,9 +1112,9 @@
         "month": 6,
         "day": 19,
         "mjd": 61210,
-        "x_arcsec": 0.1888,
-        "y_arcsec": 0.408,
-        "ut1_utc_sec": 0.04451,
+        "x_arcsec": 0.1879,
+        "y_arcsec": 0.4062,
+        "ut1_utc_sec": 0.04314,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1200,9 +1123,9 @@
         "month": 6,
         "day": 20,
         "mjd": 61211,
-        "x_arcsec": 0.1897,
-        "y_arcsec": 0.4074,
-        "ut1_utc_sec": 0.0448,
+        "x_arcsec": 0.1888,
+        "y_arcsec": 0.4056,
+        "ut1_utc_sec": 0.04339,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1211,9 +1134,9 @@
         "month": 6,
         "day": 21,
         "mjd": 61212,
-        "x_arcsec": 0.1907,
-        "y_arcsec": 0.4067,
-        "ut1_utc_sec": 0.04501,
+        "x_arcsec": 0.1897,
+        "y_arcsec": 0.4049,
+        "ut1_utc_sec": 0.04356,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1222,9 +1145,9 @@
         "month": 6,
         "day": 22,
         "mjd": 61213,
-        "x_arcsec": 0.1916,
-        "y_arcsec": 0.406,
-        "ut1_utc_sec": 0.04524,
+        "x_arcsec": 0.1906,
+        "y_arcsec": 0.4042,
+        "ut1_utc_sec": 0.04376,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1233,9 +1156,9 @@
         "month": 6,
         "day": 23,
         "mjd": 61214,
-        "x_arcsec": 0.1926,
-        "y_arcsec": 0.4052,
-        "ut1_utc_sec": 0.04558,
+        "x_arcsec": 0.1914,
+        "y_arcsec": 0.4035,
+        "ut1_utc_sec": 0.04408,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1244,9 +1167,9 @@
         "month": 6,
         "day": 24,
         "mjd": 61215,
-        "x_arcsec": 0.1935,
-        "y_arcsec": 0.4045,
-        "ut1_utc_sec": 0.04609,
+        "x_arcsec": 0.1923,
+        "y_arcsec": 0.4028,
+        "ut1_utc_sec": 0.04458,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1255,9 +1178,9 @@
         "month": 6,
         "day": 25,
         "mjd": 61216,
-        "x_arcsec": 0.1944,
-        "y_arcsec": 0.4038,
-        "ut1_utc_sec": 0.0468,
+        "x_arcsec": 0.1932,
+        "y_arcsec": 0.402,
+        "ut1_utc_sec": 0.04529,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1266,9 +1189,9 @@
         "month": 6,
         "day": 26,
         "mjd": 61217,
-        "x_arcsec": 0.1953,
-        "y_arcsec": 0.403,
-        "ut1_utc_sec": 0.04774,
+        "x_arcsec": 0.194,
+        "y_arcsec": 0.4013,
+        "ut1_utc_sec": 0.04621,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1277,9 +1200,9 @@
         "month": 6,
         "day": 27,
         "mjd": 61218,
-        "x_arcsec": 0.1962,
-        "y_arcsec": 0.4022,
-        "ut1_utc_sec": 0.04886,
+        "x_arcsec": 0.1948,
+        "y_arcsec": 0.4005,
+        "ut1_utc_sec": 0.04733,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1288,9 +1211,9 @@
         "month": 6,
         "day": 28,
         "mjd": 61219,
-        "x_arcsec": 0.1971,
-        "y_arcsec": 0.4014,
-        "ut1_utc_sec": 0.05015,
+        "x_arcsec": 0.1957,
+        "y_arcsec": 0.3997,
+        "ut1_utc_sec": 0.04861,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1299,9 +1222,9 @@
         "month": 6,
         "day": 29,
         "mjd": 61220,
-        "x_arcsec": 0.1979,
-        "y_arcsec": 0.4006,
-        "ut1_utc_sec": 0.0515,
+        "x_arcsec": 0.1965,
+        "y_arcsec": 0.3989,
+        "ut1_utc_sec": 0.04998,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1310,9 +1233,9 @@
         "month": 6,
         "day": 30,
         "mjd": 61221,
-        "x_arcsec": 0.1988,
-        "y_arcsec": 0.3998,
-        "ut1_utc_sec": 0.05287,
+        "x_arcsec": 0.1973,
+        "y_arcsec": 0.3981,
+        "ut1_utc_sec": 0.05138,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1321,9 +1244,9 @@
         "month": 7,
         "day": 1,
         "mjd": 61222,
-        "x_arcsec": 0.1996,
-        "y_arcsec": 0.3989,
-        "ut1_utc_sec": 0.05418,
+        "x_arcsec": 0.198,
+        "y_arcsec": 0.3973,
+        "ut1_utc_sec": 0.05271,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1332,9 +1255,9 @@
         "month": 7,
         "day": 2,
         "mjd": 61223,
-        "x_arcsec": 0.2004,
-        "y_arcsec": 0.3981,
-        "ut1_utc_sec": 0.05536,
+        "x_arcsec": 0.1988,
+        "y_arcsec": 0.3964,
+        "ut1_utc_sec": 0.05392,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1343,9 +1266,9 @@
         "month": 7,
         "day": 3,
         "mjd": 61224,
-        "x_arcsec": 0.2012,
-        "y_arcsec": 0.3972,
-        "ut1_utc_sec": 0.05637,
+        "x_arcsec": 0.1995,
+        "y_arcsec": 0.3956,
+        "ut1_utc_sec": 0.05495,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1354,9 +1277,9 @@
         "month": 7,
         "day": 4,
         "mjd": 61225,
-        "x_arcsec": 0.202,
-        "y_arcsec": 0.3963,
-        "ut1_utc_sec": 0.05717,
+        "x_arcsec": 0.2003,
+        "y_arcsec": 0.3947,
+        "ut1_utc_sec": 0.05577,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1365,9 +1288,9 @@
         "month": 7,
         "day": 5,
         "mjd": 61226,
-        "x_arcsec": 0.2028,
-        "y_arcsec": 0.3954,
-        "ut1_utc_sec": 0.05778,
+        "x_arcsec": 0.201,
+        "y_arcsec": 0.3938,
+        "ut1_utc_sec": 0.0564,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1376,9 +1299,9 @@
         "month": 7,
         "day": 6,
         "mjd": 61227,
-        "x_arcsec": 0.2035,
-        "y_arcsec": 0.3945,
-        "ut1_utc_sec": 0.05823,
+        "x_arcsec": 0.2017,
+        "y_arcsec": 0.393,
+        "ut1_utc_sec": 0.05684,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1387,9 +1310,9 @@
         "month": 7,
         "day": 7,
         "mjd": 61228,
-        "x_arcsec": 0.2043,
-        "y_arcsec": 0.3936,
-        "ut1_utc_sec": 0.0586,
+        "x_arcsec": 0.2024,
+        "y_arcsec": 0.392,
+        "ut1_utc_sec": 0.0572,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1398,9 +1321,9 @@
         "month": 7,
         "day": 8,
         "mjd": 61229,
-        "x_arcsec": 0.205,
-        "y_arcsec": 0.3926,
-        "ut1_utc_sec": 0.05898,
+        "x_arcsec": 0.203,
+        "y_arcsec": 0.3911,
+        "ut1_utc_sec": 0.05756,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1409,9 +1332,9 @@
         "month": 7,
         "day": 9,
         "mjd": 61230,
-        "x_arcsec": 0.2057,
-        "y_arcsec": 0.3917,
-        "ut1_utc_sec": 0.05949,
+        "x_arcsec": 0.2037,
+        "y_arcsec": 0.3902,
+        "ut1_utc_sec": 0.05805,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1420,9 +1343,9 @@
         "month": 7,
         "day": 10,
         "mjd": 61231,
-        "x_arcsec": 0.2064,
-        "y_arcsec": 0.3907,
-        "ut1_utc_sec": 0.0602,
+        "x_arcsec": 0.2043,
+        "y_arcsec": 0.3893,
+        "ut1_utc_sec": 0.05874,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1431,9 +1354,9 @@
         "month": 7,
         "day": 11,
         "mjd": 61232,
-        "x_arcsec": 0.207,
-        "y_arcsec": 0.3897,
-        "ut1_utc_sec": 0.06116,
+        "x_arcsec": 0.205,
+        "y_arcsec": 0.3883,
+        "ut1_utc_sec": 0.05969,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1442,9 +1365,9 @@
         "month": 7,
         "day": 12,
         "mjd": 61233,
-        "x_arcsec": 0.2077,
-        "y_arcsec": 0.3888,
-        "ut1_utc_sec": 0.06233,
+        "x_arcsec": 0.2056,
+        "y_arcsec": 0.3874,
+        "ut1_utc_sec": 0.06085,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1453,9 +1376,9 @@
         "month": 7,
         "day": 13,
         "mjd": 61234,
-        "x_arcsec": 0.2083,
-        "y_arcsec": 0.3878,
-        "ut1_utc_sec": 0.06361,
+        "x_arcsec": 0.2061,
+        "y_arcsec": 0.3864,
+        "ut1_utc_sec": 0.06211,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1464,9 +1387,9 @@
         "month": 7,
         "day": 14,
         "mjd": 61235,
-        "x_arcsec": 0.2089,
-        "y_arcsec": 0.3868,
-        "ut1_utc_sec": 0.06485,
+        "x_arcsec": 0.2067,
+        "y_arcsec": 0.3854,
+        "ut1_utc_sec": 0.06333,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1475,9 +1398,9 @@
         "month": 7,
         "day": 15,
         "mjd": 61236,
-        "x_arcsec": 0.2095,
-        "y_arcsec": 0.3857,
-        "ut1_utc_sec": 0.0659,
+        "x_arcsec": 0.2073,
+        "y_arcsec": 0.3844,
+        "ut1_utc_sec": 0.06438,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1486,9 +1409,9 @@
         "month": 7,
         "day": 16,
         "mjd": 61237,
-        "x_arcsec": 0.2101,
-        "y_arcsec": 0.3847,
-        "ut1_utc_sec": 0.0667,
+        "x_arcsec": 0.2078,
+        "y_arcsec": 0.3834,
+        "ut1_utc_sec": 0.06516,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1497,9 +1420,9 @@
         "month": 7,
         "day": 17,
         "mjd": 61238,
-        "x_arcsec": 0.2107,
-        "y_arcsec": 0.3837,
-        "ut1_utc_sec": 0.06725,
+        "x_arcsec": 0.2083,
+        "y_arcsec": 0.3824,
+        "ut1_utc_sec": 0.0657,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1508,9 +1431,9 @@
         "month": 7,
         "day": 18,
         "mjd": 61239,
-        "x_arcsec": 0.2112,
-        "y_arcsec": 0.3826,
-        "ut1_utc_sec": 0.06764,
+        "x_arcsec": 0.2088,
+        "y_arcsec": 0.3814,
+        "ut1_utc_sec": 0.06609,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1519,9 +1442,9 @@
         "month": 7,
         "day": 19,
         "mjd": 61240,
-        "x_arcsec": 0.2117,
-        "y_arcsec": 0.3815,
-        "ut1_utc_sec": 0.06799,
+        "x_arcsec": 0.2093,
+        "y_arcsec": 0.3803,
+        "ut1_utc_sec": 0.06644,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1530,9 +1453,9 @@
         "month": 7,
         "day": 20,
         "mjd": 61241,
-        "x_arcsec": 0.2122,
-        "y_arcsec": 0.3805,
-        "ut1_utc_sec": 0.06842,
+        "x_arcsec": 0.2097,
+        "y_arcsec": 0.3793,
+        "ut1_utc_sec": 0.06687,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1541,9 +1464,9 @@
         "month": 7,
         "day": 21,
         "mjd": 61242,
-        "x_arcsec": 0.2127,
-        "y_arcsec": 0.3794,
-        "ut1_utc_sec": 0.06901,
+        "x_arcsec": 0.2102,
+        "y_arcsec": 0.3783,
+        "ut1_utc_sec": 0.06747,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1552,9 +1475,9 @@
         "month": 7,
         "day": 22,
         "mjd": 61243,
-        "x_arcsec": 0.2132,
-        "y_arcsec": 0.3783,
-        "ut1_utc_sec": 0.06981,
+        "x_arcsec": 0.2106,
+        "y_arcsec": 0.3772,
+        "ut1_utc_sec": 0.06827,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1563,9 +1486,9 @@
         "month": 7,
         "day": 23,
         "mjd": 61244,
-        "x_arcsec": 0.2136,
-        "y_arcsec": 0.3772,
-        "ut1_utc_sec": 0.07081,
+        "x_arcsec": 0.211,
+        "y_arcsec": 0.3761,
+        "ut1_utc_sec": 0.06928,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1574,9 +1497,9 @@
         "month": 7,
         "day": 24,
         "mjd": 61245,
-        "x_arcsec": 0.214,
-        "y_arcsec": 0.3761,
-        "ut1_utc_sec": 0.07201,
+        "x_arcsec": 0.2114,
+        "y_arcsec": 0.3751,
+        "ut1_utc_sec": 0.07049,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1585,9 +1508,9 @@
         "month": 7,
         "day": 25,
         "mjd": 61246,
-        "x_arcsec": 0.2144,
-        "y_arcsec": 0.375,
-        "ut1_utc_sec": 0.07336,
+        "x_arcsec": 0.2117,
+        "y_arcsec": 0.374,
+        "ut1_utc_sec": 0.07185,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1596,9 +1519,9 @@
         "month": 7,
         "day": 26,
         "mjd": 61247,
-        "x_arcsec": 0.2148,
-        "y_arcsec": 0.3739,
-        "ut1_utc_sec": 0.07481,
+        "x_arcsec": 0.2121,
+        "y_arcsec": 0.3729,
+        "ut1_utc_sec": 0.07332,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1607,9 +1530,9 @@
         "month": 7,
         "day": 27,
         "mjd": 61248,
-        "x_arcsec": 0.2151,
-        "y_arcsec": 0.3727,
-        "ut1_utc_sec": 0.07629,
+        "x_arcsec": 0.2124,
+        "y_arcsec": 0.3718,
+        "ut1_utc_sec": 0.0748,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1618,9 +1541,9 @@
         "month": 7,
         "day": 28,
         "mjd": 61249,
-        "x_arcsec": 0.2155,
-        "y_arcsec": 0.3716,
-        "ut1_utc_sec": 0.0777,
+        "x_arcsec": 0.2127,
+        "y_arcsec": 0.3707,
+        "ut1_utc_sec": 0.07623,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1629,9 +1552,9 @@
         "month": 7,
         "day": 29,
         "mjd": 61250,
-        "x_arcsec": 0.2158,
-        "y_arcsec": 0.3704,
-        "ut1_utc_sec": 0.07899,
+        "x_arcsec": 0.213,
+        "y_arcsec": 0.3696,
+        "ut1_utc_sec": 0.07753,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1640,9 +1563,9 @@
         "month": 7,
         "day": 30,
         "mjd": 61251,
-        "x_arcsec": 0.2161,
-        "y_arcsec": 0.3693,
-        "ut1_utc_sec": 0.08008,
+        "x_arcsec": 0.2132,
+        "y_arcsec": 0.3685,
+        "ut1_utc_sec": 0.07864,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1651,9 +1574,9 @@
         "month": 7,
         "day": 31,
         "mjd": 61252,
-        "x_arcsec": 0.2164,
-        "y_arcsec": 0.3681,
-        "ut1_utc_sec": 0.08095,
+        "x_arcsec": 0.2134,
+        "y_arcsec": 0.3674,
+        "ut1_utc_sec": 0.07952,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1662,9 +1585,9 @@
         "month": 8,
         "day": 1,
         "mjd": 61253,
-        "x_arcsec": 0.2166,
-        "y_arcsec": 0.367,
-        "ut1_utc_sec": 0.08159,
+        "x_arcsec": 0.2137,
+        "y_arcsec": 0.3662,
+        "ut1_utc_sec": 0.08019,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1673,9 +1596,9 @@
         "month": 8,
         "day": 2,
         "mjd": 61254,
-        "x_arcsec": 0.2168,
-        "y_arcsec": 0.3658,
-        "ut1_utc_sec": 0.08206,
+        "x_arcsec": 0.2138,
+        "y_arcsec": 0.3651,
+        "ut1_utc_sec": 0.08067,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1684,9 +1607,9 @@
         "month": 8,
         "day": 3,
         "mjd": 61255,
-        "x_arcsec": 0.217,
-        "y_arcsec": 0.3646,
-        "ut1_utc_sec": 0.08241,
+        "x_arcsec": 0.214,
+        "y_arcsec": 0.364,
+        "ut1_utc_sec": 0.08105,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1695,9 +1618,9 @@
         "month": 8,
         "day": 4,
         "mjd": 61256,
-        "x_arcsec": 0.2172,
-        "y_arcsec": 0.3634,
-        "ut1_utc_sec": 0.08274,
+        "x_arcsec": 0.2142,
+        "y_arcsec": 0.3628,
+        "ut1_utc_sec": 0.08142,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1706,9 +1629,9 @@
         "month": 8,
         "day": 5,
         "mjd": 61257,
-        "x_arcsec": 0.2174,
-        "y_arcsec": 0.3623,
-        "ut1_utc_sec": 0.08317,
+        "x_arcsec": 0.2143,
+        "y_arcsec": 0.3617,
+        "ut1_utc_sec": 0.08187,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1717,9 +1640,9 @@
         "month": 8,
         "day": 6,
         "mjd": 61258,
-        "x_arcsec": 0.2175,
-        "y_arcsec": 0.3611,
-        "ut1_utc_sec": 0.08377,
+        "x_arcsec": 0.2144,
+        "y_arcsec": 0.3605,
+        "ut1_utc_sec": 0.08251,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1728,9 +1651,9 @@
         "month": 8,
         "day": 7,
         "mjd": 61259,
-        "x_arcsec": 0.2176,
-        "y_arcsec": 0.3599,
-        "ut1_utc_sec": 0.08459,
+        "x_arcsec": 0.2145,
+        "y_arcsec": 0.3594,
+        "ut1_utc_sec": 0.08336,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1739,9 +1662,9 @@
         "month": 8,
         "day": 8,
         "mjd": 61260,
-        "x_arcsec": 0.2177,
-        "y_arcsec": 0.3587,
-        "ut1_utc_sec": 0.08561,
+        "x_arcsec": 0.2145,
+        "y_arcsec": 0.3582,
+        "ut1_utc_sec": 0.08441,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1750,9 +1673,9 @@
         "month": 8,
         "day": 9,
         "mjd": 61261,
-        "x_arcsec": 0.2178,
-        "y_arcsec": 0.3575,
-        "ut1_utc_sec": 0.08675,
+        "x_arcsec": 0.2146,
+        "y_arcsec": 0.3571,
+        "ut1_utc_sec": 0.08559,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1761,9 +1684,9 @@
         "month": 8,
         "day": 10,
         "mjd": 61262,
-        "x_arcsec": 0.2178,
-        "y_arcsec": 0.3563,
-        "ut1_utc_sec": 0.08788,
+        "x_arcsec": 0.2146,
+        "y_arcsec": 0.3559,
+        "ut1_utc_sec": 0.08676,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1772,9 +1695,9 @@
         "month": 8,
         "day": 11,
         "mjd": 61263,
-        "x_arcsec": 0.2178,
-        "y_arcsec": 0.3551,
-        "ut1_utc_sec": 0.08886,
+        "x_arcsec": 0.2146,
+        "y_arcsec": 0.3548,
+        "ut1_utc_sec": 0.08777,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1783,9 +1706,9 @@
         "month": 8,
         "day": 12,
         "mjd": 61264,
-        "x_arcsec": 0.2178,
-        "y_arcsec": 0.3539,
-        "ut1_utc_sec": 0.08958,
+        "x_arcsec": 0.2145,
+        "y_arcsec": 0.3536,
+        "ut1_utc_sec": 0.08853,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1794,9 +1717,9 @@
         "month": 8,
         "day": 13,
         "mjd": 61265,
-        "x_arcsec": 0.2178,
-        "y_arcsec": 0.3527,
-        "ut1_utc_sec": 0.09002,
+        "x_arcsec": 0.2145,
+        "y_arcsec": 0.3525,
+        "ut1_utc_sec": 0.089,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1805,9 +1728,9 @@
         "month": 8,
         "day": 14,
         "mjd": 61266,
-        "x_arcsec": 0.2177,
-        "y_arcsec": 0.3515,
-        "ut1_utc_sec": 0.09022,
+        "x_arcsec": 0.2144,
+        "y_arcsec": 0.3513,
+        "ut1_utc_sec": 0.08924,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1816,9 +1739,9 @@
         "month": 8,
         "day": 15,
         "mjd": 61267,
-        "x_arcsec": 0.2176,
-        "y_arcsec": 0.3503,
-        "ut1_utc_sec": 0.09031,
+        "x_arcsec": 0.2143,
+        "y_arcsec": 0.3501,
+        "ut1_utc_sec": 0.08935,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1827,9 +1750,9 @@
         "month": 8,
         "day": 16,
         "mjd": 61268,
-        "x_arcsec": 0.2175,
-        "y_arcsec": 0.3491,
-        "ut1_utc_sec": 0.0904,
+        "x_arcsec": 0.2142,
+        "y_arcsec": 0.349,
+        "ut1_utc_sec": 0.08947,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1838,9 +1761,9 @@
         "month": 8,
         "day": 17,
         "mjd": 61269,
-        "x_arcsec": 0.2174,
-        "y_arcsec": 0.3479,
-        "ut1_utc_sec": 0.09061,
+        "x_arcsec": 0.214,
+        "y_arcsec": 0.3478,
+        "ut1_utc_sec": 0.0897,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1849,9 +1772,9 @@
         "month": 8,
         "day": 18,
         "mjd": 61270,
-        "x_arcsec": 0.2173,
+        "x_arcsec": 0.2138,
         "y_arcsec": 0.3466,
-        "ut1_utc_sec": 0.09102,
+        "ut1_utc_sec": 0.09013,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1860,9 +1783,9 @@
         "month": 8,
         "day": 19,
         "mjd": 61271,
-        "x_arcsec": 0.2171,
-        "y_arcsec": 0.3454,
-        "ut1_utc_sec": 0.09164,
+        "x_arcsec": 0.2136,
+        "y_arcsec": 0.3455,
+        "ut1_utc_sec": 0.09076,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1871,9 +1794,9 @@
         "month": 8,
         "day": 20,
         "mjd": 61272,
-        "x_arcsec": 0.2169,
-        "y_arcsec": 0.3442,
-        "ut1_utc_sec": 0.09246,
+        "x_arcsec": 0.2134,
+        "y_arcsec": 0.3443,
+        "ut1_utc_sec": 0.09159,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1882,9 +1805,9 @@
         "month": 8,
         "day": 21,
         "mjd": 61273,
-        "x_arcsec": 0.2167,
-        "y_arcsec": 0.343,
-        "ut1_utc_sec": 0.09345,
+        "x_arcsec": 0.2132,
+        "y_arcsec": 0.3432,
+        "ut1_utc_sec": 0.09259,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1893,9 +1816,9 @@
         "month": 8,
         "day": 22,
         "mjd": 61274,
-        "x_arcsec": 0.2164,
-        "y_arcsec": 0.3418,
-        "ut1_utc_sec": 0.09454,
+        "x_arcsec": 0.2129,
+        "y_arcsec": 0.342,
+        "ut1_utc_sec": 0.09369,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1904,9 +1827,9 @@
         "month": 8,
         "day": 23,
         "mjd": 61275,
-        "x_arcsec": 0.2161,
-        "y_arcsec": 0.3406,
-        "ut1_utc_sec": 0.09567,
+        "x_arcsec": 0.2126,
+        "y_arcsec": 0.3409,
+        "ut1_utc_sec": 0.09482,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1915,9 +1838,9 @@
         "month": 8,
         "day": 24,
         "mjd": 61276,
-        "x_arcsec": 0.2159,
-        "y_arcsec": 0.3394,
-        "ut1_utc_sec": 0.09676,
+        "x_arcsec": 0.2123,
+        "y_arcsec": 0.3397,
+        "ut1_utc_sec": 0.0959,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1926,9 +1849,9 @@
         "month": 8,
         "day": 25,
         "mjd": 61277,
-        "x_arcsec": 0.2155,
-        "y_arcsec": 0.3382,
-        "ut1_utc_sec": 0.09772,
+        "x_arcsec": 0.212,
+        "y_arcsec": 0.3386,
+        "ut1_utc_sec": 0.09687,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1937,9 +1860,9 @@
         "month": 8,
         "day": 26,
         "mjd": 61278,
-        "x_arcsec": 0.2152,
-        "y_arcsec": 0.337,
-        "ut1_utc_sec": 0.0985,
+        "x_arcsec": 0.2116,
+        "y_arcsec": 0.3374,
+        "ut1_utc_sec": 0.09764,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1948,9 +1871,9 @@
         "month": 8,
         "day": 27,
         "mjd": 61279,
-        "x_arcsec": 0.2148,
-        "y_arcsec": 0.3359,
-        "ut1_utc_sec": 0.09905,
+        "x_arcsec": 0.2113,
+        "y_arcsec": 0.3363,
+        "ut1_utc_sec": 0.09818,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1959,9 +1882,9 @@
         "month": 8,
         "day": 28,
         "mjd": 61280,
-        "x_arcsec": 0.2144,
-        "y_arcsec": 0.3347,
-        "ut1_utc_sec": 0.09936,
+        "x_arcsec": 0.2109,
+        "y_arcsec": 0.3351,
+        "ut1_utc_sec": 0.09848,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1970,9 +1893,9 @@
         "month": 8,
         "day": 29,
         "mjd": 61281,
-        "x_arcsec": 0.214,
-        "y_arcsec": 0.3335,
-        "ut1_utc_sec": 0.09945,
+        "x_arcsec": 0.2104,
+        "y_arcsec": 0.334,
+        "ut1_utc_sec": 0.09856,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1981,9 +1904,9 @@
         "month": 8,
         "day": 30,
         "mjd": 61282,
-        "x_arcsec": 0.2136,
-        "y_arcsec": 0.3323,
-        "ut1_utc_sec": 0.09939,
+        "x_arcsec": 0.21,
+        "y_arcsec": 0.3329,
+        "ut1_utc_sec": 0.0985,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -1992,9 +1915,9 @@
         "month": 8,
         "day": 31,
         "mjd": 61283,
-        "x_arcsec": 0.2131,
-        "y_arcsec": 0.3312,
-        "ut1_utc_sec": 0.09929,
+        "x_arcsec": 0.2095,
+        "y_arcsec": 0.3318,
+        "ut1_utc_sec": 0.09839,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2003,9 +1926,9 @@
         "month": 9,
         "day": 1,
         "mjd": 61284,
-        "x_arcsec": 0.2126,
-        "y_arcsec": 0.33,
-        "ut1_utc_sec": 0.09927,
+        "x_arcsec": 0.209,
+        "y_arcsec": 0.3307,
+        "ut1_utc_sec": 0.09836,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2014,9 +1937,9 @@
         "month": 9,
         "day": 2,
         "mjd": 61285,
-        "x_arcsec": 0.2121,
-        "y_arcsec": 0.3288,
-        "ut1_utc_sec": 0.09942,
+        "x_arcsec": 0.2085,
+        "y_arcsec": 0.3295,
+        "ut1_utc_sec": 0.09849,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2025,9 +1948,9 @@
         "month": 9,
         "day": 3,
         "mjd": 61286,
-        "x_arcsec": 0.2116,
-        "y_arcsec": 0.3277,
-        "ut1_utc_sec": 0.09978,
+        "x_arcsec": 0.2079,
+        "y_arcsec": 0.3284,
+        "ut1_utc_sec": 0.09884,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2036,9 +1959,9 @@
         "month": 9,
         "day": 4,
         "mjd": 61287,
-        "x_arcsec": 0.211,
-        "y_arcsec": 0.3265,
-        "ut1_utc_sec": 0.10036,
+        "x_arcsec": 0.2074,
+        "y_arcsec": 0.3273,
+        "ut1_utc_sec": 0.0994,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2047,9 +1970,9 @@
         "month": 9,
         "day": 5,
         "mjd": 61288,
-        "x_arcsec": 0.2105,
-        "y_arcsec": 0.3254,
-        "ut1_utc_sec": 0.10108,
+        "x_arcsec": 0.2068,
+        "y_arcsec": 0.3263,
+        "ut1_utc_sec": 0.1001,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2058,9 +1981,9 @@
         "month": 9,
         "day": 6,
         "mjd": 61289,
-        "x_arcsec": 0.2099,
-        "y_arcsec": 0.3243,
-        "ut1_utc_sec": 0.10183,
+        "x_arcsec": 0.2062,
+        "y_arcsec": 0.3252,
+        "ut1_utc_sec": 0.10082,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2069,9 +1992,9 @@
         "month": 9,
         "day": 7,
         "mjd": 61290,
-        "x_arcsec": 0.2092,
-        "y_arcsec": 0.3231,
-        "ut1_utc_sec": 0.10247,
+        "x_arcsec": 0.2056,
+        "y_arcsec": 0.3241,
+        "ut1_utc_sec": 0.10144,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2080,9 +2003,9 @@
         "month": 9,
         "day": 8,
         "mjd": 61291,
-        "x_arcsec": 0.2086,
-        "y_arcsec": 0.322,
-        "ut1_utc_sec": 0.1029,
+        "x_arcsec": 0.2049,
+        "y_arcsec": 0.323,
+        "ut1_utc_sec": 0.10183,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2091,9 +2014,9 @@
         "month": 9,
         "day": 9,
         "mjd": 61292,
-        "x_arcsec": 0.2079,
-        "y_arcsec": 0.3209,
-        "ut1_utc_sec": 0.10305,
+        "x_arcsec": 0.2042,
+        "y_arcsec": 0.322,
+        "ut1_utc_sec": 0.10195,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2102,9 +2025,9 @@
         "month": 9,
         "day": 10,
         "mjd": 61293,
-        "x_arcsec": 0.2072,
-        "y_arcsec": 0.3198,
-        "ut1_utc_sec": 0.10295,
+        "x_arcsec": 0.2035,
+        "y_arcsec": 0.3209,
+        "ut1_utc_sec": 0.1018,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2113,9 +2036,9 @@
         "month": 9,
         "day": 11,
         "mjd": 61294,
-        "x_arcsec": 0.2065,
-        "y_arcsec": 0.3187,
-        "ut1_utc_sec": 0.10268,
+        "x_arcsec": 0.2028,
+        "y_arcsec": 0.3199,
+        "ut1_utc_sec": 0.10146,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2124,9 +2047,9 @@
         "month": 9,
         "day": 12,
         "mjd": 61295,
-        "x_arcsec": 0.2057,
-        "y_arcsec": 0.3177,
-        "ut1_utc_sec": 0.10237,
+        "x_arcsec": 0.2021,
+        "y_arcsec": 0.3189,
+        "ut1_utc_sec": 0.10107,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2135,9 +2058,9 @@
         "month": 9,
         "day": 13,
         "mjd": 61296,
-        "x_arcsec": 0.205,
-        "y_arcsec": 0.3166,
-        "ut1_utc_sec": 0.10214,
+        "x_arcsec": 0.2013,
+        "y_arcsec": 0.3179,
+        "ut1_utc_sec": 0.10074,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2146,9 +2069,9 @@
         "month": 9,
         "day": 14,
         "mjd": 61297,
-        "x_arcsec": 0.2042,
-        "y_arcsec": 0.3155,
-        "ut1_utc_sec": 0.10209,
+        "x_arcsec": 0.2005,
+        "y_arcsec": 0.3169,
+        "ut1_utc_sec": 0.10057,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2157,9 +2080,9 @@
         "month": 9,
         "day": 15,
         "mjd": 61298,
-        "x_arcsec": 0.2034,
-        "y_arcsec": 0.3145,
-        "ut1_utc_sec": 0.10229,
+        "x_arcsec": 0.1997,
+        "y_arcsec": 0.3159,
+        "ut1_utc_sec": 0.10062,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2168,9 +2091,9 @@
         "month": 9,
         "day": 16,
         "mjd": 61299,
-        "x_arcsec": 0.2026,
-        "y_arcsec": 0.3135,
-        "ut1_utc_sec": 0.10274,
+        "x_arcsec": 0.1989,
+        "y_arcsec": 0.3149,
+        "ut1_utc_sec": 0.10089,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2179,9 +2102,9 @@
         "month": 9,
         "day": 17,
         "mjd": 61300,
-        "x_arcsec": 0.2017,
-        "y_arcsec": 0.3124,
-        "ut1_utc_sec": 0.10341,
+        "x_arcsec": 0.198,
+        "y_arcsec": 0.3139,
+        "ut1_utc_sec": 0.10134,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2190,9 +2113,9 @@
         "month": 9,
         "day": 18,
         "mjd": 61301,
-        "x_arcsec": 0.2008,
-        "y_arcsec": 0.3114,
-        "ut1_utc_sec": 0.10426,
+        "x_arcsec": 0.1972,
+        "y_arcsec": 0.3129,
+        "ut1_utc_sec": 0.10193,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2201,9 +2124,9 @@
         "month": 9,
         "day": 19,
         "mjd": 61302,
-        "x_arcsec": 0.1999,
-        "y_arcsec": 0.3104,
-        "ut1_utc_sec": 0.10521,
+        "x_arcsec": 0.1963,
+        "y_arcsec": 0.312,
+        "ut1_utc_sec": 0.1026,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2212,9 +2135,9 @@
         "month": 9,
         "day": 20,
         "mjd": 61303,
-        "x_arcsec": 0.199,
-        "y_arcsec": 0.3094,
-        "ut1_utc_sec": 0.10618,
+        "x_arcsec": 0.1954,
+        "y_arcsec": 0.3111,
+        "ut1_utc_sec": 0.10326,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2223,9 +2146,9 @@
         "month": 9,
         "day": 21,
         "mjd": 61304,
-        "x_arcsec": 0.1981,
-        "y_arcsec": 0.3085,
-        "ut1_utc_sec": 0.10708,
+        "x_arcsec": 0.1944,
+        "y_arcsec": 0.3101,
+        "ut1_utc_sec": 0.10385,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2234,9 +2157,9 @@
         "month": 9,
         "day": 22,
         "mjd": 61305,
-        "x_arcsec": 0.1971,
-        "y_arcsec": 0.3075,
-        "ut1_utc_sec": 0.10781,
+        "x_arcsec": 0.1935,
+        "y_arcsec": 0.3092,
+        "ut1_utc_sec": 0.10429,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2245,9 +2168,9 @@
         "month": 9,
         "day": 23,
         "mjd": 61306,
-        "x_arcsec": 0.1961,
-        "y_arcsec": 0.3066,
-        "ut1_utc_sec": 0.10832,
+        "x_arcsec": 0.1925,
+        "y_arcsec": 0.3083,
+        "ut1_utc_sec": 0.10454,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2256,9 +2179,9 @@
         "month": 9,
         "day": 24,
         "mjd": 61307,
-        "x_arcsec": 0.1951,
-        "y_arcsec": 0.3056,
-        "ut1_utc_sec": 0.10855,
+        "x_arcsec": 0.1915,
+        "y_arcsec": 0.3074,
+        "ut1_utc_sec": 0.10457,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2267,9 +2190,9 @@
         "month": 9,
         "day": 25,
         "mjd": 61308,
-        "x_arcsec": 0.1941,
-        "y_arcsec": 0.3047,
-        "ut1_utc_sec": 0.10851,
+        "x_arcsec": 0.1905,
+        "y_arcsec": 0.3066,
+        "ut1_utc_sec": 0.1044,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2278,9 +2201,9 @@
         "month": 9,
         "day": 26,
         "mjd": 61309,
-        "x_arcsec": 0.1931,
-        "y_arcsec": 0.3038,
-        "ut1_utc_sec": 0.10823,
+        "x_arcsec": 0.1895,
+        "y_arcsec": 0.3057,
+        "ut1_utc_sec": 0.10409,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2289,9 +2212,9 @@
         "month": 9,
         "day": 27,
         "mjd": 61310,
-        "x_arcsec": 0.192,
-        "y_arcsec": 0.3029,
-        "ut1_utc_sec": 0.10781,
+        "x_arcsec": 0.1885,
+        "y_arcsec": 0.3049,
+        "ut1_utc_sec": 0.10373,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2300,9 +2223,9 @@
         "month": 9,
         "day": 28,
         "mjd": 61311,
-        "x_arcsec": 0.1909,
-        "y_arcsec": 0.302,
-        "ut1_utc_sec": 0.10737,
+        "x_arcsec": 0.1874,
+        "y_arcsec": 0.3041,
+        "ut1_utc_sec": 0.10343,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2311,9 +2234,9 @@
         "month": 9,
         "day": 29,
         "mjd": 61312,
-        "x_arcsec": 0.1898,
-        "y_arcsec": 0.3012,
-        "ut1_utc_sec": 0.10705,
+        "x_arcsec": 0.1863,
+        "y_arcsec": 0.3032,
+        "ut1_utc_sec": 0.10331,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2322,9 +2245,9 @@
         "month": 9,
         "day": 30,
         "mjd": 61313,
-        "x_arcsec": 0.1887,
-        "y_arcsec": 0.3003,
-        "ut1_utc_sec": 0.10693,
+        "x_arcsec": 0.1852,
+        "y_arcsec": 0.3024,
+        "ut1_utc_sec": 0.10344,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2333,9 +2256,9 @@
         "month": 10,
         "day": 1,
         "mjd": 61314,
-        "x_arcsec": 0.1876,
-        "y_arcsec": 0.2995,
-        "ut1_utc_sec": 0.10703,
+        "x_arcsec": 0.1841,
+        "y_arcsec": 0.3017,
+        "ut1_utc_sec": 0.10381,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2344,9 +2267,9 @@
         "month": 10,
         "day": 2,
         "mjd": 61315,
-        "x_arcsec": 0.1864,
-        "y_arcsec": 0.2987,
-        "ut1_utc_sec": 0.10731,
+        "x_arcsec": 0.1829,
+        "y_arcsec": 0.3009,
+        "ut1_utc_sec": 0.10435,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2355,9 +2278,9 @@
         "month": 10,
         "day": 3,
         "mjd": 61316,
-        "x_arcsec": 0.1853,
-        "y_arcsec": 0.2979,
-        "ut1_utc_sec": 0.10766,
+        "x_arcsec": 0.1818,
+        "y_arcsec": 0.3002,
+        "ut1_utc_sec": 0.10493,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2366,9 +2289,9 @@
         "month": 10,
         "day": 4,
         "mjd": 61317,
-        "x_arcsec": 0.1841,
-        "y_arcsec": 0.2971,
-        "ut1_utc_sec": 0.10795,
+        "x_arcsec": 0.1806,
+        "y_arcsec": 0.2994,
+        "ut1_utc_sec": 0.10541,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2377,9 +2300,9 @@
         "month": 10,
         "day": 5,
         "mjd": 61318,
-        "x_arcsec": 0.1829,
-        "y_arcsec": 0.2964,
-        "ut1_utc_sec": 0.10807,
+        "x_arcsec": 0.1794,
+        "y_arcsec": 0.2987,
+        "ut1_utc_sec": 0.10567,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2388,9 +2311,9 @@
         "month": 10,
         "day": 6,
         "mjd": 61319,
-        "x_arcsec": 0.1816,
-        "y_arcsec": 0.2956,
-        "ut1_utc_sec": 0.10795,
+        "x_arcsec": 0.1782,
+        "y_arcsec": 0.298,
+        "ut1_utc_sec": 0.10564,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2399,9 +2322,9 @@
         "month": 10,
         "day": 7,
         "mjd": 61320,
-        "x_arcsec": 0.1804,
-        "y_arcsec": 0.2949,
-        "ut1_utc_sec": 0.10758,
+        "x_arcsec": 0.177,
+        "y_arcsec": 0.2974,
+        "ut1_utc_sec": 0.10531,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2410,9 +2333,9 @@
         "month": 10,
         "day": 8,
         "mjd": 61321,
-        "x_arcsec": 0.1791,
-        "y_arcsec": 0.2942,
-        "ut1_utc_sec": 0.10701,
+        "x_arcsec": 0.1758,
+        "y_arcsec": 0.2967,
+        "ut1_utc_sec": 0.10475,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2421,9 +2344,9 @@
         "month": 10,
         "day": 9,
         "mjd": 61322,
-        "x_arcsec": 0.1779,
-        "y_arcsec": 0.2935,
-        "ut1_utc_sec": 0.10635,
+        "x_arcsec": 0.1745,
+        "y_arcsec": 0.2961,
+        "ut1_utc_sec": 0.10407,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2432,9 +2355,9 @@
         "month": 10,
         "day": 10,
         "mjd": 61323,
-        "x_arcsec": 0.1766,
-        "y_arcsec": 0.2928,
-        "ut1_utc_sec": 0.10572,
+        "x_arcsec": 0.1733,
+        "y_arcsec": 0.2954,
+        "ut1_utc_sec": 0.10339,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2443,9 +2366,9 @@
         "month": 10,
         "day": 11,
         "mjd": 61324,
-        "x_arcsec": 0.1753,
-        "y_arcsec": 0.2922,
-        "ut1_utc_sec": 0.10523,
+        "x_arcsec": 0.172,
+        "y_arcsec": 0.2948,
+        "ut1_utc_sec": 0.10282,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2454,9 +2377,9 @@
         "month": 10,
         "day": 12,
         "mjd": 61325,
-        "x_arcsec": 0.174,
-        "y_arcsec": 0.2916,
-        "ut1_utc_sec": 0.10496,
+        "x_arcsec": 0.1707,
+        "y_arcsec": 0.2942,
+        "ut1_utc_sec": 0.10245,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2465,9 +2388,9 @@
         "month": 10,
         "day": 13,
         "mjd": 61326,
-        "x_arcsec": 0.1726,
-        "y_arcsec": 0.291,
-        "ut1_utc_sec": 0.10495,
+        "x_arcsec": 0.1694,
+        "y_arcsec": 0.2937,
+        "ut1_utc_sec": 0.1023,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2476,9 +2399,9 @@
         "month": 10,
         "day": 14,
         "mjd": 61327,
-        "x_arcsec": 0.1713,
-        "y_arcsec": 0.2904,
-        "ut1_utc_sec": 0.10518,
+        "x_arcsec": 0.1681,
+        "y_arcsec": 0.2931,
+        "ut1_utc_sec": 0.10237,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2487,9 +2410,9 @@
         "month": 10,
         "day": 15,
         "mjd": 61328,
-        "x_arcsec": 0.1699,
-        "y_arcsec": 0.2898,
-        "ut1_utc_sec": 0.10558,
+        "x_arcsec": 0.1667,
+        "y_arcsec": 0.2926,
+        "ut1_utc_sec": 0.10262,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2498,9 +2421,9 @@
         "month": 10,
         "day": 16,
         "mjd": 61329,
-        "x_arcsec": 0.1685,
-        "y_arcsec": 0.2892,
-        "ut1_utc_sec": 0.10605,
+        "x_arcsec": 0.1654,
+        "y_arcsec": 0.2921,
+        "ut1_utc_sec": 0.10298,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2509,9 +2432,9 @@
         "month": 10,
         "day": 17,
         "mjd": 61330,
-        "x_arcsec": 0.1671,
-        "y_arcsec": 0.2887,
-        "ut1_utc_sec": 0.10649,
+        "x_arcsec": 0.164,
+        "y_arcsec": 0.2916,
+        "ut1_utc_sec": 0.10335,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2520,9 +2443,9 @@
         "month": 10,
         "day": 18,
         "mjd": 61331,
-        "x_arcsec": 0.1657,
-        "y_arcsec": 0.2882,
-        "ut1_utc_sec": 0.10682,
+        "x_arcsec": 0.1626,
+        "y_arcsec": 0.2911,
+        "ut1_utc_sec": 0.10367,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2531,9 +2454,9 @@
         "month": 10,
         "day": 19,
         "mjd": 61332,
-        "x_arcsec": 0.1643,
-        "y_arcsec": 0.2877,
-        "ut1_utc_sec": 0.10697,
+        "x_arcsec": 0.1612,
+        "y_arcsec": 0.2907,
+        "ut1_utc_sec": 0.10385,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2542,9 +2465,9 @@
         "month": 10,
         "day": 20,
         "mjd": 61333,
-        "x_arcsec": 0.1629,
-        "y_arcsec": 0.2872,
-        "ut1_utc_sec": 0.10688,
+        "x_arcsec": 0.1598,
+        "y_arcsec": 0.2903,
+        "ut1_utc_sec": 0.10384,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2553,9 +2476,9 @@
         "month": 10,
         "day": 21,
         "mjd": 61334,
-        "x_arcsec": 0.1615,
-        "y_arcsec": 0.2868,
-        "ut1_utc_sec": 0.10652,
+        "x_arcsec": 0.1584,
+        "y_arcsec": 0.2899,
+        "ut1_utc_sec": 0.10361,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2564,9 +2487,9 @@
         "month": 10,
         "day": 22,
         "mjd": 61335,
-        "x_arcsec": 0.16,
-        "y_arcsec": 0.2864,
-        "ut1_utc_sec": 0.10592,
+        "x_arcsec": 0.157,
+        "y_arcsec": 0.2895,
+        "ut1_utc_sec": 0.10315,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2575,9 +2498,9 @@
         "month": 10,
         "day": 23,
         "mjd": 61336,
-        "x_arcsec": 0.1585,
-        "y_arcsec": 0.286,
-        "ut1_utc_sec": 0.1051,
+        "x_arcsec": 0.1556,
+        "y_arcsec": 0.2891,
+        "ut1_utc_sec": 0.10249,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2586,9 +2509,9 @@
         "month": 10,
         "day": 24,
         "mjd": 61337,
-        "x_arcsec": 0.1571,
-        "y_arcsec": 0.2856,
-        "ut1_utc_sec": 0.1042,
+        "x_arcsec": 0.1542,
+        "y_arcsec": 0.2888,
+        "ut1_utc_sec": 0.10172,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2597,9 +2520,9 @@
         "month": 10,
         "day": 25,
         "mjd": 61338,
-        "x_arcsec": 0.1556,
-        "y_arcsec": 0.2852,
-        "ut1_utc_sec": 0.10333,
+        "x_arcsec": 0.1527,
+        "y_arcsec": 0.2885,
+        "ut1_utc_sec": 0.10095,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2608,9 +2531,9 @@
         "month": 10,
         "day": 26,
         "mjd": 61339,
-        "x_arcsec": 0.1541,
-        "y_arcsec": 0.2849,
-        "ut1_utc_sec": 0.10256,
+        "x_arcsec": 0.1512,
+        "y_arcsec": 0.2882,
+        "ut1_utc_sec": 0.10036,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2619,9 +2542,9 @@
         "month": 10,
         "day": 27,
         "mjd": 61340,
-        "x_arcsec": 0.1526,
-        "y_arcsec": 0.2846,
-        "ut1_utc_sec": 0.10201,
+        "x_arcsec": 0.1498,
+        "y_arcsec": 0.2879,
+        "ut1_utc_sec": 0.10002,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2630,9 +2553,9 @@
         "month": 10,
         "day": 28,
         "mjd": 61341,
-        "x_arcsec": 0.1511,
-        "y_arcsec": 0.2843,
-        "ut1_utc_sec": 0.10175,
+        "x_arcsec": 0.1483,
+        "y_arcsec": 0.2876,
+        "ut1_utc_sec": 0.09997,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2641,9 +2564,9 @@
         "month": 10,
         "day": 29,
         "mjd": 61342,
-        "x_arcsec": 0.1496,
-        "y_arcsec": 0.284,
-        "ut1_utc_sec": 0.10168,
+        "x_arcsec": 0.1468,
+        "y_arcsec": 0.2874,
+        "ut1_utc_sec": 0.10014,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2652,9 +2575,9 @@
         "month": 10,
         "day": 30,
         "mjd": 61343,
-        "x_arcsec": 0.148,
-        "y_arcsec": 0.2838,
-        "ut1_utc_sec": 0.10171,
+        "x_arcsec": 0.1453,
+        "y_arcsec": 0.2872,
+        "ut1_utc_sec": 0.1004,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2663,9 +2586,9 @@
         "month": 10,
         "day": 31,
         "mjd": 61344,
-        "x_arcsec": 0.1465,
-        "y_arcsec": 0.2835,
-        "ut1_utc_sec": 0.10173,
+        "x_arcsec": 0.1438,
+        "y_arcsec": 0.287,
+        "ut1_utc_sec": 0.10058,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2674,9 +2597,9 @@
         "month": 11,
         "day": 1,
         "mjd": 61345,
-        "x_arcsec": 0.145,
-        "y_arcsec": 0.2833,
-        "ut1_utc_sec": 0.10157,
+        "x_arcsec": 0.1423,
+        "y_arcsec": 0.2868,
+        "ut1_utc_sec": 0.10054,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2685,9 +2608,9 @@
         "month": 11,
         "day": 2,
         "mjd": 61346,
-        "x_arcsec": 0.1434,
-        "y_arcsec": 0.2832,
-        "ut1_utc_sec": 0.10118,
+        "x_arcsec": 0.1408,
+        "y_arcsec": 0.2867,
+        "ut1_utc_sec": 0.10028,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2696,9 +2619,9 @@
         "month": 11,
         "day": 3,
         "mjd": 61347,
-        "x_arcsec": 0.1419,
-        "y_arcsec": 0.283,
-        "ut1_utc_sec": 0.10054,
+        "x_arcsec": 0.1393,
+        "y_arcsec": 0.2866,
+        "ut1_utc_sec": 0.09971,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2707,9 +2630,9 @@
         "month": 11,
         "day": 4,
         "mjd": 61348,
-        "x_arcsec": 0.1403,
-        "y_arcsec": 0.2829,
-        "ut1_utc_sec": 0.0997,
+        "x_arcsec": 0.1378,
+        "y_arcsec": 0.2865,
+        "ut1_utc_sec": 0.0989,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2718,9 +2641,9 @@
         "month": 11,
         "day": 5,
         "mjd": 61349,
-        "x_arcsec": 0.1387,
-        "y_arcsec": 0.2828,
-        "ut1_utc_sec": 0.09868,
+        "x_arcsec": 0.1362,
+        "y_arcsec": 0.2864,
+        "ut1_utc_sec": 0.09801,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2729,9 +2652,9 @@
         "month": 11,
         "day": 6,
         "mjd": 61350,
-        "x_arcsec": 0.1372,
-        "y_arcsec": 0.2827,
-        "ut1_utc_sec": 0.09757,
+        "x_arcsec": 0.1347,
+        "y_arcsec": 0.2864,
+        "ut1_utc_sec": 0.09709,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2740,9 +2663,9 @@
         "month": 11,
         "day": 7,
         "mjd": 61351,
-        "x_arcsec": 0.1356,
-        "y_arcsec": 0.2826,
-        "ut1_utc_sec": 0.09655,
+        "x_arcsec": 0.1332,
+        "y_arcsec": 0.2863,
+        "ut1_utc_sec": 0.09634,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2751,9 +2674,9 @@
         "month": 11,
         "day": 8,
         "mjd": 61352,
-        "x_arcsec": 0.134,
-        "y_arcsec": 0.2826,
-        "ut1_utc_sec": 0.0956,
+        "x_arcsec": 0.1316,
+        "y_arcsec": 0.2863,
+        "ut1_utc_sec": 0.0958,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2762,9 +2685,9 @@
         "month": 11,
         "day": 9,
         "mjd": 61353,
-        "x_arcsec": 0.1324,
-        "y_arcsec": 0.2826,
-        "ut1_utc_sec": 0.09484,
+        "x_arcsec": 0.1301,
+        "y_arcsec": 0.2864,
+        "ut1_utc_sec": 0.09547,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2773,9 +2696,9 @@
         "month": 11,
         "day": 10,
         "mjd": 61354,
-        "x_arcsec": 0.1308,
-        "y_arcsec": 0.2826,
-        "ut1_utc_sec": 0.09431,
+        "x_arcsec": 0.1286,
+        "y_arcsec": 0.2864,
+        "ut1_utc_sec": 0.09537,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2784,9 +2707,9 @@
         "month": 11,
         "day": 11,
         "mjd": 61355,
-        "x_arcsec": 0.1292,
-        "y_arcsec": 0.2826,
-        "ut1_utc_sec": 0.09393,
+        "x_arcsec": 0.127,
+        "y_arcsec": 0.2865,
+        "ut1_utc_sec": 0.09548,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2795,9 +2718,9 @@
         "month": 11,
         "day": 12,
         "mjd": 61356,
-        "x_arcsec": 0.1276,
-        "y_arcsec": 0.2827,
-        "ut1_utc_sec": 0.09364,
+        "x_arcsec": 0.1255,
+        "y_arcsec": 0.2866,
+        "ut1_utc_sec": 0.09569,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2806,9 +2729,9 @@
         "month": 11,
         "day": 13,
         "mjd": 61357,
-        "x_arcsec": 0.126,
-        "y_arcsec": 0.2828,
-        "ut1_utc_sec": 0.09339,
+        "x_arcsec": 0.1239,
+        "y_arcsec": 0.2867,
+        "ut1_utc_sec": 0.09592,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2817,9 +2740,9 @@
         "month": 11,
         "day": 14,
         "mjd": 61358,
-        "x_arcsec": 0.1244,
-        "y_arcsec": 0.2829,
-        "ut1_utc_sec": 0.09314,
+        "x_arcsec": 0.1224,
+        "y_arcsec": 0.2868,
+        "ut1_utc_sec": 0.09614,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2828,9 +2751,9 @@
         "month": 11,
         "day": 15,
         "mjd": 61359,
-        "x_arcsec": 0.1228,
-        "y_arcsec": 0.283,
-        "ut1_utc_sec": 0.09279,
+        "x_arcsec": 0.1208,
+        "y_arcsec": 0.287,
+        "ut1_utc_sec": 0.09624,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2839,9 +2762,9 @@
         "month": 11,
         "day": 16,
         "mjd": 61360,
-        "x_arcsec": 0.1212,
-        "y_arcsec": 0.2832,
-        "ut1_utc_sec": 0.09227,
+        "x_arcsec": 0.1192,
+        "y_arcsec": 0.2872,
+        "ut1_utc_sec": 0.09617,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2850,9 +2773,9 @@
         "month": 11,
         "day": 17,
         "mjd": 61361,
-        "x_arcsec": 0.1197,
-        "y_arcsec": 0.2834,
-        "ut1_utc_sec": 0.09169,
+        "x_arcsec": 0.1177,
+        "y_arcsec": 0.2874,
+        "ut1_utc_sec": 0.09588,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2861,9 +2784,9 @@
         "month": 11,
         "day": 18,
         "mjd": 61362,
-        "x_arcsec": 0.1181,
-        "y_arcsec": 0.2836,
-        "ut1_utc_sec": 0.0909,
+        "x_arcsec": 0.1161,
+        "y_arcsec": 0.2876,
+        "ut1_utc_sec": 0.09538,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2872,9 +2795,9 @@
         "month": 11,
         "day": 19,
         "mjd": 61363,
-        "x_arcsec": 0.1165,
-        "y_arcsec": 0.2838,
-        "ut1_utc_sec": 0.08997,
+        "x_arcsec": 0.1146,
+        "y_arcsec": 0.2879,
+        "ut1_utc_sec": 0.0946,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2883,9 +2806,9 @@
         "month": 11,
         "day": 20,
         "mjd": 61364,
-        "x_arcsec": 0.1149,
-        "y_arcsec": 0.2841,
-        "ut1_utc_sec": 0.08893,
+        "x_arcsec": 0.113,
+        "y_arcsec": 0.2882,
+        "ut1_utc_sec": 0.09358,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2894,9 +2817,9 @@
         "month": 11,
         "day": 21,
         "mjd": 61365,
-        "x_arcsec": 0.1133,
-        "y_arcsec": 0.2843,
-        "ut1_utc_sec": 0.08799,
+        "x_arcsec": 0.1115,
+        "y_arcsec": 0.2885,
+        "ut1_utc_sec": 0.09249,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2905,9 +2828,9 @@
         "month": 11,
         "day": 22,
         "mjd": 61366,
-        "x_arcsec": 0.1117,
-        "y_arcsec": 0.2847,
-        "ut1_utc_sec": 0.08707,
+        "x_arcsec": 0.11,
+        "y_arcsec": 0.2888,
+        "ut1_utc_sec": 0.09133,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2916,9 +2839,9 @@
         "month": 11,
         "day": 23,
         "mjd": 61367,
-        "x_arcsec": 0.1101,
-        "y_arcsec": 0.285,
-        "ut1_utc_sec": 0.08621,
+        "x_arcsec": 0.1084,
+        "y_arcsec": 0.2892,
+        "ut1_utc_sec": 0.09033,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2927,9 +2850,9 @@
         "month": 11,
         "day": 24,
         "mjd": 61368,
-        "x_arcsec": 0.1085,
-        "y_arcsec": 0.2853,
-        "ut1_utc_sec": 0.08563,
+        "x_arcsec": 0.1069,
+        "y_arcsec": 0.2895,
+        "ut1_utc_sec": 0.08957,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2938,9 +2861,9 @@
         "month": 11,
         "day": 25,
         "mjd": 61369,
-        "x_arcsec": 0.1069,
-        "y_arcsec": 0.2857,
-        "ut1_utc_sec": 0.08538,
+        "x_arcsec": 0.1053,
+        "y_arcsec": 0.2899,
+        "ut1_utc_sec": 0.08903,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2949,9 +2872,9 @@
         "month": 11,
         "day": 26,
         "mjd": 61370,
-        "x_arcsec": 0.1053,
-        "y_arcsec": 0.2861,
-        "ut1_utc_sec": 0.0853,
+        "x_arcsec": 0.1038,
+        "y_arcsec": 0.2904,
+        "ut1_utc_sec": 0.08863,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2960,9 +2883,9 @@
         "month": 11,
         "day": 27,
         "mjd": 61371,
-        "x_arcsec": 0.1038,
-        "y_arcsec": 0.2865,
-        "ut1_utc_sec": 0.08531,
+        "x_arcsec": 0.1023,
+        "y_arcsec": 0.2908,
+        "ut1_utc_sec": 0.08825,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2971,9 +2894,9 @@
         "month": 11,
         "day": 28,
         "mjd": 61372,
-        "x_arcsec": 0.1022,
-        "y_arcsec": 0.287,
-        "ut1_utc_sec": 0.08526,
+        "x_arcsec": 0.1008,
+        "y_arcsec": 0.2913,
+        "ut1_utc_sec": 0.08779,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2982,9 +2905,9 @@
         "month": 11,
         "day": 29,
         "mjd": 61373,
-        "x_arcsec": 0.1006,
-        "y_arcsec": 0.2875,
-        "ut1_utc_sec": 0.08501,
+        "x_arcsec": 0.0993,
+        "y_arcsec": 0.2918,
+        "ut1_utc_sec": 0.08712,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -2993,9 +2916,9 @@
         "month": 11,
         "day": 30,
         "mjd": 61374,
-        "x_arcsec": 0.0991,
-        "y_arcsec": 0.288,
-        "ut1_utc_sec": 0.08449,
+        "x_arcsec": 0.0978,
+        "y_arcsec": 0.2923,
+        "ut1_utc_sec": 0.08619,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3004,9 +2927,9 @@
         "month": 12,
         "day": 1,
         "mjd": 61375,
-        "x_arcsec": 0.0975,
-        "y_arcsec": 0.2885,
-        "ut1_utc_sec": 0.08387,
+        "x_arcsec": 0.0963,
+        "y_arcsec": 0.2929,
+        "ut1_utc_sec": 0.08521,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3015,9 +2938,9 @@
         "month": 12,
         "day": 2,
         "mjd": 61376,
-        "x_arcsec": 0.096,
-        "y_arcsec": 0.289,
-        "ut1_utc_sec": 0.08322,
+        "x_arcsec": 0.0948,
+        "y_arcsec": 0.2934,
+        "ut1_utc_sec": 0.08411,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3026,9 +2949,9 @@
         "month": 12,
         "day": 3,
         "mjd": 61377,
-        "x_arcsec": 0.0945,
-        "y_arcsec": 0.2896,
-        "ut1_utc_sec": 0.08253,
+        "x_arcsec": 0.0933,
+        "y_arcsec": 0.294,
+        "ut1_utc_sec": 0.08309,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3037,9 +2960,9 @@
         "month": 12,
         "day": 4,
         "mjd": 61378,
-        "x_arcsec": 0.0929,
-        "y_arcsec": 0.2902,
-        "ut1_utc_sec": 0.0819,
+        "x_arcsec": 0.0918,
+        "y_arcsec": 0.2946,
+        "ut1_utc_sec": 0.08221,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3048,9 +2971,9 @@
         "month": 12,
         "day": 5,
         "mjd": 61379,
-        "x_arcsec": 0.0914,
-        "y_arcsec": 0.2908,
-        "ut1_utc_sec": 0.08146,
+        "x_arcsec": 0.0903,
+        "y_arcsec": 0.2953,
+        "ut1_utc_sec": 0.08166,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3059,9 +2982,9 @@
         "month": 12,
         "day": 6,
         "mjd": 61380,
-        "x_arcsec": 0.0899,
-        "y_arcsec": 0.2915,
-        "ut1_utc_sec": 0.08124,
+        "x_arcsec": 0.0889,
+        "y_arcsec": 0.2959,
+        "ut1_utc_sec": 0.0813,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3070,9 +2993,9 @@
         "month": 12,
         "day": 7,
         "mjd": 61381,
-        "x_arcsec": 0.0884,
-        "y_arcsec": 0.2921,
-        "ut1_utc_sec": 0.08129,
+        "x_arcsec": 0.0874,
+        "y_arcsec": 0.2966,
+        "ut1_utc_sec": 0.08104,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3081,9 +3004,9 @@
         "month": 12,
         "day": 8,
         "mjd": 61382,
-        "x_arcsec": 0.0869,
-        "y_arcsec": 0.2928,
-        "ut1_utc_sec": 0.0816,
+        "x_arcsec": 0.086,
+        "y_arcsec": 0.2973,
+        "ut1_utc_sec": 0.08102,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3092,9 +3015,9 @@
         "month": 12,
         "day": 9,
         "mjd": 61383,
-        "x_arcsec": 0.0854,
-        "y_arcsec": 0.2935,
-        "ut1_utc_sec": 0.08205,
+        "x_arcsec": 0.0846,
+        "y_arcsec": 0.298,
+        "ut1_utc_sec": 0.08122,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3103,9 +3026,9 @@
         "month": 12,
         "day": 10,
         "mjd": 61384,
-        "x_arcsec": 0.084,
-        "y_arcsec": 0.2943,
-        "ut1_utc_sec": 0.08258,
+        "x_arcsec": 0.0832,
+        "y_arcsec": 0.2988,
+        "ut1_utc_sec": 0.08149,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3114,9 +3037,9 @@
         "month": 12,
         "day": 11,
         "mjd": 61385,
-        "x_arcsec": 0.0825,
-        "y_arcsec": 0.295,
-        "ut1_utc_sec": 0.08314,
+        "x_arcsec": 0.0818,
+        "y_arcsec": 0.2996,
+        "ut1_utc_sec": 0.08181,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3125,9 +3048,9 @@
         "month": 12,
         "day": 12,
         "mjd": 61386,
-        "x_arcsec": 0.0811,
-        "y_arcsec": 0.2958,
-        "ut1_utc_sec": 0.08361,
+        "x_arcsec": 0.0804,
+        "y_arcsec": 0.3003,
+        "ut1_utc_sec": 0.08211,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3136,9 +3059,9 @@
         "month": 12,
         "day": 13,
         "mjd": 61387,
-        "x_arcsec": 0.0796,
-        "y_arcsec": 0.2966,
-        "ut1_utc_sec": 0.08389,
+        "x_arcsec": 0.079,
+        "y_arcsec": 0.3012,
+        "ut1_utc_sec": 0.08228,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3147,9 +3070,9 @@
         "month": 12,
         "day": 14,
         "mjd": 61388,
-        "x_arcsec": 0.0782,
-        "y_arcsec": 0.2975,
-        "ut1_utc_sec": 0.08397,
+        "x_arcsec": 0.0776,
+        "y_arcsec": 0.302,
+        "ut1_utc_sec": 0.08224,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3158,9 +3081,9 @@
         "month": 12,
         "day": 15,
         "mjd": 61389,
-        "x_arcsec": 0.0768,
-        "y_arcsec": 0.2983,
-        "ut1_utc_sec": 0.08393,
+        "x_arcsec": 0.0762,
+        "y_arcsec": 0.3029,
+        "ut1_utc_sec": 0.08211,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3169,9 +3092,9 @@
         "month": 12,
         "day": 16,
         "mjd": 61390,
-        "x_arcsec": 0.0754,
-        "y_arcsec": 0.2992,
-        "ut1_utc_sec": 0.08371,
+        "x_arcsec": 0.0749,
+        "y_arcsec": 0.3037,
+        "ut1_utc_sec": 0.08186,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3180,9 +3103,9 @@
         "month": 12,
         "day": 17,
         "mjd": 61391,
-        "x_arcsec": 0.074,
-        "y_arcsec": 0.3001,
-        "ut1_utc_sec": 0.08315,
+        "x_arcsec": 0.0736,
+        "y_arcsec": 0.3046,
+        "ut1_utc_sec": 0.08142,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3191,9 +3114,9 @@
         "month": 12,
         "day": 18,
         "mjd": 61392,
-        "x_arcsec": 0.0727,
-        "y_arcsec": 0.301,
-        "ut1_utc_sec": 0.08254,
+        "x_arcsec": 0.0723,
+        "y_arcsec": 0.3056,
+        "ut1_utc_sec": 0.08085,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3202,9 +3125,9 @@
         "month": 12,
         "day": 19,
         "mjd": 61393,
-        "x_arcsec": 0.0713,
-        "y_arcsec": 0.3019,
-        "ut1_utc_sec": 0.08192,
+        "x_arcsec": 0.071,
+        "y_arcsec": 0.3065,
+        "ut1_utc_sec": 0.0803,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3213,9 +3136,9 @@
         "month": 12,
         "day": 20,
         "mjd": 61394,
-        "x_arcsec": 0.07,
-        "y_arcsec": 0.3029,
-        "ut1_utc_sec": 0.08143,
+        "x_arcsec": 0.0697,
+        "y_arcsec": 0.3075,
+        "ut1_utc_sec": 0.07988,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3224,9 +3147,9 @@
         "month": 12,
         "day": 21,
         "mjd": 61395,
-        "x_arcsec": 0.0687,
-        "y_arcsec": 0.3039,
-        "ut1_utc_sec": 0.08112,
+        "x_arcsec": 0.0684,
+        "y_arcsec": 0.3085,
+        "ut1_utc_sec": 0.0797,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3235,9 +3158,9 @@
         "month": 12,
         "day": 22,
         "mjd": 61396,
-        "x_arcsec": 0.0673,
-        "y_arcsec": 0.3049,
-        "ut1_utc_sec": 0.08103,
+        "x_arcsec": 0.0672,
+        "y_arcsec": 0.3095,
+        "ut1_utc_sec": 0.07982,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3246,9 +3169,9 @@
         "month": 12,
         "day": 23,
         "mjd": 61397,
-        "x_arcsec": 0.0661,
-        "y_arcsec": 0.3059,
-        "ut1_utc_sec": 0.08112,
+        "x_arcsec": 0.0659,
+        "y_arcsec": 0.3105,
+        "ut1_utc_sec": 0.08013,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3257,9 +3180,9 @@
         "month": 12,
         "day": 24,
         "mjd": 61398,
-        "x_arcsec": 0.0648,
-        "y_arcsec": 0.3069,
-        "ut1_utc_sec": 0.08123,
+        "x_arcsec": 0.0647,
+        "y_arcsec": 0.3115,
+        "ut1_utc_sec": 0.08054,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3269,8 +3192,8 @@
         "day": 25,
         "mjd": 61399,
         "x_arcsec": 0.0635,
-        "y_arcsec": 0.308,
-        "ut1_utc_sec": 0.08133,
+        "y_arcsec": 0.3126,
+        "ut1_utc_sec": 0.08091,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3280,8 +3203,8 @@
         "day": 26,
         "mjd": 61400,
         "x_arcsec": 0.0623,
-        "y_arcsec": 0.3091,
-        "ut1_utc_sec": 0.08123,
+        "y_arcsec": 0.3137,
+        "ut1_utc_sec": 0.08107,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3291,8 +3214,8 @@
         "day": 27,
         "mjd": 61401,
         "x_arcsec": 0.0611,
-        "y_arcsec": 0.3102,
-        "ut1_utc_sec": 0.08087,
+        "y_arcsec": 0.3148,
+        "ut1_utc_sec": 0.08091,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3301,9 +3224,9 @@
         "month": 12,
         "day": 28,
         "mjd": 61402,
-        "x_arcsec": 0.0599,
-        "y_arcsec": 0.3113,
-        "ut1_utc_sec": 0.08026,
+        "x_arcsec": 0.06,
+        "y_arcsec": 0.3159,
+        "ut1_utc_sec": 0.08048,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3312,9 +3235,9 @@
         "month": 12,
         "day": 29,
         "mjd": 61403,
-        "x_arcsec": 0.0587,
-        "y_arcsec": 0.3124,
-        "ut1_utc_sec": 0.07956,
+        "x_arcsec": 0.0589,
+        "y_arcsec": 0.317,
+        "ut1_utc_sec": 0.07997,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3323,9 +3246,9 @@
         "month": 12,
         "day": 30,
         "mjd": 61404,
-        "x_arcsec": 0.0575,
-        "y_arcsec": 0.3136,
-        "ut1_utc_sec": 0.0788,
+        "x_arcsec": 0.0578,
+        "y_arcsec": 0.3182,
+        "ut1_utc_sec": 0.07945,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3334,9 +3257,9 @@
         "month": 12,
         "day": 31,
         "mjd": 61405,
-        "x_arcsec": 0.0564,
-        "y_arcsec": 0.3147,
-        "ut1_utc_sec": 0.07807,
+        "x_arcsec": 0.0567,
+        "y_arcsec": 0.3194,
+        "ut1_utc_sec": 0.07885,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3345,9 +3268,9 @@
         "month": 1,
         "day": 1,
         "mjd": 61406,
-        "x_arcsec": 0.0553,
-        "y_arcsec": 0.3159,
-        "ut1_utc_sec": 0.07754,
+        "x_arcsec": 0.0556,
+        "y_arcsec": 0.3205,
+        "ut1_utc_sec": 0.07845,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3356,9 +3279,9 @@
         "month": 1,
         "day": 2,
         "mjd": 61407,
-        "x_arcsec": 0.0542,
-        "y_arcsec": 0.3172,
-        "ut1_utc_sec": 0.07728,
+        "x_arcsec": 0.0545,
+        "y_arcsec": 0.3217,
+        "ut1_utc_sec": 0.07825,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3367,9 +3290,9 @@
         "month": 1,
         "day": 3,
         "mjd": 61408,
-        "x_arcsec": 0.0531,
-        "y_arcsec": 0.3184,
-        "ut1_utc_sec": 0.07724,
+        "x_arcsec": 0.0535,
+        "y_arcsec": 0.323,
+        "ut1_utc_sec": 0.07829,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3378,9 +3301,9 @@
         "month": 1,
         "day": 4,
         "mjd": 61409,
-        "x_arcsec": 0.052,
-        "y_arcsec": 0.3196,
-        "ut1_utc_sec": 0.07739,
+        "x_arcsec": 0.0525,
+        "y_arcsec": 0.3242,
+        "ut1_utc_sec": 0.07852,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3389,9 +3312,9 @@
         "month": 1,
         "day": 5,
         "mjd": 61410,
-        "x_arcsec": 0.051,
-        "y_arcsec": 0.3209,
-        "ut1_utc_sec": 0.0777,
+        "x_arcsec": 0.0515,
+        "y_arcsec": 0.3255,
+        "ut1_utc_sec": 0.07887,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3400,9 +3323,9 @@
         "month": 1,
         "day": 6,
         "mjd": 61411,
-        "x_arcsec": 0.05,
-        "y_arcsec": 0.3222,
-        "ut1_utc_sec": 0.07808,
+        "x_arcsec": 0.0506,
+        "y_arcsec": 0.3267,
+        "ut1_utc_sec": 0.07929,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3411,9 +3334,9 @@
         "month": 1,
         "day": 7,
         "mjd": 61412,
-        "x_arcsec": 0.049,
-        "y_arcsec": 0.3235,
-        "ut1_utc_sec": 0.07844,
+        "x_arcsec": 0.0496,
+        "y_arcsec": 0.328,
+        "ut1_utc_sec": 0.07966,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3422,9 +3345,9 @@
         "month": 1,
         "day": 8,
         "mjd": 61413,
-        "x_arcsec": 0.048,
-        "y_arcsec": 0.3248,
-        "ut1_utc_sec": 0.07868,
+        "x_arcsec": 0.0487,
+        "y_arcsec": 0.3293,
+        "ut1_utc_sec": 0.08003,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3433,9 +3356,9 @@
         "month": 1,
         "day": 9,
         "mjd": 61414,
-        "x_arcsec": 0.047,
-        "y_arcsec": 0.3261,
-        "ut1_utc_sec": 0.07879,
+        "x_arcsec": 0.0478,
+        "y_arcsec": 0.3307,
+        "ut1_utc_sec": 0.08027,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3444,9 +3367,9 @@
         "month": 1,
         "day": 10,
         "mjd": 61415,
-        "x_arcsec": 0.0461,
-        "y_arcsec": 0.3275,
-        "ut1_utc_sec": 0.07875,
+        "x_arcsec": 0.0469,
+        "y_arcsec": 0.332,
+        "ut1_utc_sec": 0.08033,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3455,9 +3378,9 @@
         "month": 1,
         "day": 11,
         "mjd": 61416,
-        "x_arcsec": 0.0452,
-        "y_arcsec": 0.3288,
-        "ut1_utc_sec": 0.07854,
+        "x_arcsec": 0.0461,
+        "y_arcsec": 0.3333,
+        "ut1_utc_sec": 0.08019,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3466,9 +3389,9 @@
         "month": 1,
         "day": 12,
         "mjd": 61417,
-        "x_arcsec": 0.0443,
-        "y_arcsec": 0.3302,
-        "ut1_utc_sec": 0.07811,
+        "x_arcsec": 0.0452,
+        "y_arcsec": 0.3347,
+        "ut1_utc_sec": 0.07991,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3477,9 +3400,9 @@
         "month": 1,
         "day": 13,
         "mjd": 61418,
-        "x_arcsec": 0.0435,
-        "y_arcsec": 0.3316,
-        "ut1_utc_sec": 0.07756,
+        "x_arcsec": 0.0444,
+        "y_arcsec": 0.3361,
+        "ut1_utc_sec": 0.07945,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3488,9 +3411,9 @@
         "month": 1,
         "day": 14,
         "mjd": 61419,
-        "x_arcsec": 0.0426,
-        "y_arcsec": 0.333,
-        "ut1_utc_sec": 0.07694,
+        "x_arcsec": 0.0436,
+        "y_arcsec": 0.3375,
+        "ut1_utc_sec": 0.07882,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3499,9 +3422,9 @@
         "month": 1,
         "day": 15,
         "mjd": 61420,
-        "x_arcsec": 0.0418,
-        "y_arcsec": 0.3344,
-        "ut1_utc_sec": 0.07637,
+        "x_arcsec": 0.0429,
+        "y_arcsec": 0.3389,
+        "ut1_utc_sec": 0.0782,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3510,9 +3433,9 @@
         "month": 1,
         "day": 16,
         "mjd": 61421,
-        "x_arcsec": 0.0411,
-        "y_arcsec": 0.3358,
-        "ut1_utc_sec": 0.07603,
+        "x_arcsec": 0.0421,
+        "y_arcsec": 0.3403,
+        "ut1_utc_sec": 0.0777,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3521,9 +3444,9 @@
         "month": 1,
         "day": 17,
         "mjd": 61422,
-        "x_arcsec": 0.0403,
-        "y_arcsec": 0.3373,
-        "ut1_utc_sec": 0.07585,
+        "x_arcsec": 0.0414,
+        "y_arcsec": 0.3417,
+        "ut1_utc_sec": 0.07737,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3532,9 +3455,9 @@
         "month": 1,
         "day": 18,
         "mjd": 61423,
-        "x_arcsec": 0.0396,
-        "y_arcsec": 0.3387,
-        "ut1_utc_sec": 0.07594,
+        "x_arcsec": 0.0407,
+        "y_arcsec": 0.3432,
+        "ut1_utc_sec": 0.07723,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3543,9 +3466,9 @@
         "month": 1,
         "day": 19,
         "mjd": 61424,
-        "x_arcsec": 0.0389,
-        "y_arcsec": 0.3402,
-        "ut1_utc_sec": 0.07616,
+        "x_arcsec": 0.0401,
+        "y_arcsec": 0.3446,
+        "ut1_utc_sec": 0.07729,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3554,9 +3477,9 @@
         "month": 1,
         "day": 20,
         "mjd": 61425,
-        "x_arcsec": 0.0382,
-        "y_arcsec": 0.3417,
-        "ut1_utc_sec": 0.0764,
+        "x_arcsec": 0.0395,
+        "y_arcsec": 0.3461,
+        "ut1_utc_sec": 0.07745,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3565,9 +3488,9 @@
         "month": 1,
         "day": 21,
         "mjd": 61426,
-        "x_arcsec": 0.0375,
-        "y_arcsec": 0.3431,
-        "ut1_utc_sec": 0.07658,
+        "x_arcsec": 0.0388,
+        "y_arcsec": 0.3475,
+        "ut1_utc_sec": 0.07756,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3576,9 +3499,9 @@
         "month": 1,
         "day": 22,
         "mjd": 61427,
-        "x_arcsec": 0.0369,
-        "y_arcsec": 0.3446,
-        "ut1_utc_sec": 0.0766,
+        "x_arcsec": 0.0383,
+        "y_arcsec": 0.349,
+        "ut1_utc_sec": 0.07744,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3587,9 +3510,9 @@
         "month": 1,
         "day": 23,
         "mjd": 61428,
-        "x_arcsec": 0.0363,
-        "y_arcsec": 0.3462,
-        "ut1_utc_sec": 0.07636,
+        "x_arcsec": 0.0377,
+        "y_arcsec": 0.3505,
+        "ut1_utc_sec": 0.07705,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3598,9 +3521,9 @@
         "month": 1,
         "day": 24,
         "mjd": 61429,
-        "x_arcsec": 0.0357,
-        "y_arcsec": 0.3477,
-        "ut1_utc_sec": 0.07584,
+        "x_arcsec": 0.0372,
+        "y_arcsec": 0.352,
+        "ut1_utc_sec": 0.07639,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3609,9 +3532,9 @@
         "month": 1,
         "day": 25,
         "mjd": 61430,
-        "x_arcsec": 0.0352,
-        "y_arcsec": 0.3492,
-        "ut1_utc_sec": 0.0751,
+        "x_arcsec": 0.0367,
+        "y_arcsec": 0.3535,
+        "ut1_utc_sec": 0.07552,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3620,9 +3543,9 @@
         "month": 1,
         "day": 26,
         "mjd": 61431,
-        "x_arcsec": 0.0347,
-        "y_arcsec": 0.3507,
-        "ut1_utc_sec": 0.07434,
+        "x_arcsec": 0.0362,
+        "y_arcsec": 0.355,
+        "ut1_utc_sec": 0.07452,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3631,9 +3554,9 @@
         "month": 1,
         "day": 27,
         "mjd": 61432,
-        "x_arcsec": 0.0342,
-        "y_arcsec": 0.3523,
-        "ut1_utc_sec": 0.07367,
+        "x_arcsec": 0.0358,
+        "y_arcsec": 0.3566,
+        "ut1_utc_sec": 0.07361,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3642,9 +3565,9 @@
         "month": 1,
         "day": 28,
         "mjd": 61433,
-        "x_arcsec": 0.0337,
-        "y_arcsec": 0.3539,
-        "ut1_utc_sec": 0.07325,
+        "x_arcsec": 0.0353,
+        "y_arcsec": 0.3581,
+        "ut1_utc_sec": 0.07289,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3653,9 +3576,9 @@
         "month": 1,
         "day": 29,
         "mjd": 61434,
-        "x_arcsec": 0.0333,
-        "y_arcsec": 0.3554,
-        "ut1_utc_sec": 0.0731,
+        "x_arcsec": 0.035,
+        "y_arcsec": 0.3596,
+        "ut1_utc_sec": 0.07244,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3664,9 +3587,9 @@
         "month": 1,
         "day": 30,
         "mjd": 61435,
-        "x_arcsec": 0.0329,
-        "y_arcsec": 0.357,
-        "ut1_utc_sec": 0.0732,
+        "x_arcsec": 0.0346,
+        "y_arcsec": 0.3612,
+        "ut1_utc_sec": 0.0724,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3675,9 +3598,9 @@
         "month": 1,
         "day": 31,
         "mjd": 61436,
-        "x_arcsec": 0.0325,
-        "y_arcsec": 0.3586,
-        "ut1_utc_sec": 0.07347,
+        "x_arcsec": 0.0343,
+        "y_arcsec": 0.3628,
+        "ut1_utc_sec": 0.07256,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3686,9 +3609,9 @@
         "month": 2,
         "day": 1,
         "mjd": 61437,
-        "x_arcsec": 0.0321,
-        "y_arcsec": 0.3602,
-        "ut1_utc_sec": 0.07384,
+        "x_arcsec": 0.0339,
+        "y_arcsec": 0.3643,
+        "ut1_utc_sec": 0.07295,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3697,9 +3620,9 @@
         "month": 2,
         "day": 2,
         "mjd": 61438,
-        "x_arcsec": 0.0318,
-        "y_arcsec": 0.3617,
-        "ut1_utc_sec": 0.07434,
+        "x_arcsec": 0.0337,
+        "y_arcsec": 0.3659,
+        "ut1_utc_sec": 0.07339,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3708,9 +3631,9 @@
         "month": 2,
         "day": 3,
         "mjd": 61439,
-        "x_arcsec": 0.0315,
-        "y_arcsec": 0.3633,
-        "ut1_utc_sec": 0.07487,
+        "x_arcsec": 0.0334,
+        "y_arcsec": 0.3675,
+        "ut1_utc_sec": 0.07375,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3719,9 +3642,9 @@
         "month": 2,
         "day": 4,
         "mjd": 61440,
-        "x_arcsec": 0.0313,
-        "y_arcsec": 0.365,
-        "ut1_utc_sec": 0.07534,
+        "x_arcsec": 0.0332,
+        "y_arcsec": 0.369,
+        "ut1_utc_sec": 0.07402,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3730,9 +3653,9 @@
         "month": 2,
         "day": 5,
         "mjd": 61441,
-        "x_arcsec": 0.031,
-        "y_arcsec": 0.3666,
-        "ut1_utc_sec": 0.07568,
+        "x_arcsec": 0.033,
+        "y_arcsec": 0.3706,
+        "ut1_utc_sec": 0.07417,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3741,9 +3664,9 @@
         "month": 2,
         "day": 6,
         "mjd": 61442,
-        "x_arcsec": 0.0308,
-        "y_arcsec": 0.3682,
-        "ut1_utc_sec": 0.07592,
+        "x_arcsec": 0.0328,
+        "y_arcsec": 0.3722,
+        "ut1_utc_sec": 0.07416,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3752,9 +3675,9 @@
         "month": 2,
         "day": 7,
         "mjd": 61443,
-        "x_arcsec": 0.0306,
-        "y_arcsec": 0.3698,
-        "ut1_utc_sec": 0.07596,
+        "x_arcsec": 0.0327,
+        "y_arcsec": 0.3738,
+        "ut1_utc_sec": 0.07397,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3763,9 +3686,9 @@
         "month": 2,
         "day": 8,
         "mjd": 61444,
-        "x_arcsec": 0.0305,
-        "y_arcsec": 0.3714,
-        "ut1_utc_sec": 0.07575,
+        "x_arcsec": 0.0326,
+        "y_arcsec": 0.3754,
+        "ut1_utc_sec": 0.07358,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3774,9 +3697,9 @@
         "month": 2,
         "day": 9,
         "mjd": 61445,
-        "x_arcsec": 0.0304,
-        "y_arcsec": 0.373,
-        "ut1_utc_sec": 0.0754,
+        "x_arcsec": 0.0325,
+        "y_arcsec": 0.377,
+        "ut1_utc_sec": 0.0731,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3785,9 +3708,9 @@
         "month": 2,
         "day": 10,
         "mjd": 61446,
-        "x_arcsec": 0.0303,
-        "y_arcsec": 0.3747,
-        "ut1_utc_sec": 0.07502,
+        "x_arcsec": 0.0325,
+        "y_arcsec": 0.3786,
+        "ut1_utc_sec": 0.07254,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3796,9 +3719,9 @@
         "month": 2,
         "day": 11,
         "mjd": 61447,
-        "x_arcsec": 0.0302,
-        "y_arcsec": 0.3763,
-        "ut1_utc_sec": 0.07464,
+        "x_arcsec": 0.0324,
+        "y_arcsec": 0.3802,
+        "ut1_utc_sec": 0.07205,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3807,9 +3730,9 @@
         "month": 2,
         "day": 12,
         "mjd": 61448,
-        "x_arcsec": 0.0302,
-        "y_arcsec": 0.3779,
-        "ut1_utc_sec": 0.07432,
+        "x_arcsec": 0.0325,
+        "y_arcsec": 0.3818,
+        "ut1_utc_sec": 0.07166,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3818,9 +3741,9 @@
         "month": 2,
         "day": 13,
         "mjd": 61449,
-        "x_arcsec": 0.0302,
-        "y_arcsec": 0.3796,
-        "ut1_utc_sec": 0.07418,
+        "x_arcsec": 0.0325,
+        "y_arcsec": 0.3834,
+        "ut1_utc_sec": 0.07142,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3829,9 +3752,9 @@
         "month": 2,
         "day": 14,
         "mjd": 61450,
-        "x_arcsec": 0.0302,
-        "y_arcsec": 0.3812,
-        "ut1_utc_sec": 0.07424,
+        "x_arcsec": 0.0326,
+        "y_arcsec": 0.385,
+        "ut1_utc_sec": 0.07133,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3840,9 +3763,9 @@
         "month": 2,
         "day": 15,
         "mjd": 61451,
-        "x_arcsec": 0.0303,
-        "y_arcsec": 0.3828,
-        "ut1_utc_sec": 0.07445,
+        "x_arcsec": 0.0327,
+        "y_arcsec": 0.3866,
+        "ut1_utc_sec": 0.07137,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3851,9 +3774,9 @@
         "month": 2,
         "day": 16,
         "mjd": 61452,
-        "x_arcsec": 0.0304,
-        "y_arcsec": 0.3845,
-        "ut1_utc_sec": 0.07473,
+        "x_arcsec": 0.0328,
+        "y_arcsec": 0.3882,
+        "ut1_utc_sec": 0.07157,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3862,9 +3785,9 @@
         "month": 2,
         "day": 17,
         "mjd": 61453,
-        "x_arcsec": 0.0305,
-        "y_arcsec": 0.3861,
-        "ut1_utc_sec": 0.07501,
+        "x_arcsec": 0.0329,
+        "y_arcsec": 0.3898,
+        "ut1_utc_sec": 0.07181,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3873,9 +3796,9 @@
         "month": 2,
         "day": 18,
         "mjd": 61454,
-        "x_arcsec": 0.0307,
-        "y_arcsec": 0.3877,
-        "ut1_utc_sec": 0.07517,
+        "x_arcsec": 0.0331,
+        "y_arcsec": 0.3914,
+        "ut1_utc_sec": 0.07191,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3884,9 +3807,9 @@
         "month": 2,
         "day": 19,
         "mjd": 61455,
-        "x_arcsec": 0.0309,
-        "y_arcsec": 0.3894,
-        "ut1_utc_sec": 0.07512,
+        "x_arcsec": 0.0333,
+        "y_arcsec": 0.393,
+        "ut1_utc_sec": 0.07176,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3895,9 +3818,9 @@
         "month": 2,
         "day": 20,
         "mjd": 61456,
-        "x_arcsec": 0.0311,
-        "y_arcsec": 0.391,
-        "ut1_utc_sec": 0.07482,
+        "x_arcsec": 0.0336,
+        "y_arcsec": 0.3946,
+        "ut1_utc_sec": 0.07138,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3906,9 +3829,9 @@
         "month": 2,
         "day": 21,
         "mjd": 61457,
-        "x_arcsec": 0.0313,
-        "y_arcsec": 0.3926,
-        "ut1_utc_sec": 0.07421,
+        "x_arcsec": 0.0339,
+        "y_arcsec": 0.3962,
+        "ut1_utc_sec": 0.07072,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3917,9 +3840,9 @@
         "month": 2,
         "day": 22,
         "mjd": 61458,
-        "x_arcsec": 0.0316,
-        "y_arcsec": 0.3942,
-        "ut1_utc_sec": 0.07339,
+        "x_arcsec": 0.0342,
+        "y_arcsec": 0.3978,
+        "ut1_utc_sec": 0.06982,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3928,9 +3851,9 @@
         "month": 2,
         "day": 23,
         "mjd": 61459,
-        "x_arcsec": 0.0319,
-        "y_arcsec": 0.3959,
-        "ut1_utc_sec": 0.07256,
+        "x_arcsec": 0.0345,
+        "y_arcsec": 0.3993,
+        "ut1_utc_sec": 0.06892,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3939,9 +3862,9 @@
         "month": 2,
         "day": 24,
         "mjd": 61460,
-        "x_arcsec": 0.0322,
-        "y_arcsec": 0.3975,
-        "ut1_utc_sec": 0.07183,
+        "x_arcsec": 0.0349,
+        "y_arcsec": 0.4009,
+        "ut1_utc_sec": 0.0682,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3950,9 +3873,9 @@
         "month": 2,
         "day": 25,
         "mjd": 61461,
-        "x_arcsec": 0.0326,
-        "y_arcsec": 0.3991,
-        "ut1_utc_sec": 0.0713,
+        "x_arcsec": 0.0353,
+        "y_arcsec": 0.4025,
+        "ut1_utc_sec": 0.06772,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3961,9 +3884,9 @@
         "month": 2,
         "day": 26,
         "mjd": 61462,
-        "x_arcsec": 0.033,
-        "y_arcsec": 0.4007,
-        "ut1_utc_sec": 0.07102,
+        "x_arcsec": 0.0357,
+        "y_arcsec": 0.4041,
+        "ut1_utc_sec": 0.06749,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3972,9 +3895,9 @@
         "month": 2,
         "day": 27,
         "mjd": 61463,
-        "x_arcsec": 0.0334,
-        "y_arcsec": 0.4023,
-        "ut1_utc_sec": 0.07098,
+        "x_arcsec": 0.0361,
+        "y_arcsec": 0.4056,
+        "ut1_utc_sec": 0.06754,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3983,9 +3906,9 @@
         "month": 2,
         "day": 28,
         "mjd": 61464,
-        "x_arcsec": 0.0339,
-        "y_arcsec": 0.4039,
-        "ut1_utc_sec": 0.0711,
+        "x_arcsec": 0.0366,
+        "y_arcsec": 0.4072,
+        "ut1_utc_sec": 0.06779,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -3994,9 +3917,9 @@
         "month": 3,
         "day": 1,
         "mjd": 61465,
-        "x_arcsec": 0.0344,
-        "y_arcsec": 0.4055,
-        "ut1_utc_sec": 0.07135,
+        "x_arcsec": 0.0371,
+        "y_arcsec": 0.4087,
+        "ut1_utc_sec": 0.06811,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -4005,9 +3928,9 @@
         "month": 3,
         "day": 2,
         "mjd": 61466,
-        "x_arcsec": 0.0349,
-        "y_arcsec": 0.4071,
-        "ut1_utc_sec": 0.07166,
+        "x_arcsec": 0.0377,
+        "y_arcsec": 0.4103,
+        "ut1_utc_sec": 0.06842,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -4016,9 +3939,9 @@
         "month": 3,
         "day": 3,
         "mjd": 61467,
-        "x_arcsec": 0.0354,
-        "y_arcsec": 0.4087,
-        "ut1_utc_sec": 0.07199,
+        "x_arcsec": 0.0382,
+        "y_arcsec": 0.4118,
+        "ut1_utc_sec": 0.06869,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -4027,9 +3950,9 @@
         "month": 3,
         "day": 4,
         "mjd": 61468,
-        "x_arcsec": 0.036,
-        "y_arcsec": 0.4102,
-        "ut1_utc_sec": 0.07225,
+        "x_arcsec": 0.0388,
+        "y_arcsec": 0.4134,
+        "ut1_utc_sec": 0.06886,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -4038,9 +3961,9 @@
         "month": 3,
         "day": 5,
         "mjd": 61469,
-        "x_arcsec": 0.0366,
-        "y_arcsec": 0.4118,
-        "ut1_utc_sec": 0.0724,
+        "x_arcsec": 0.0395,
+        "y_arcsec": 0.4149,
+        "ut1_utc_sec": 0.0689,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -4049,9 +3972,9 @@
         "month": 3,
         "day": 6,
         "mjd": 61470,
-        "x_arcsec": 0.0372,
-        "y_arcsec": 0.4133,
-        "ut1_utc_sec": 0.07239,
+        "x_arcsec": 0.0401,
+        "y_arcsec": 0.4164,
+        "ut1_utc_sec": 0.0688,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -4060,9 +3983,9 @@
         "month": 3,
         "day": 7,
         "mjd": 61471,
-        "x_arcsec": 0.0379,
-        "y_arcsec": 0.4149,
-        "ut1_utc_sec": 0.07222,
+        "x_arcsec": 0.0408,
+        "y_arcsec": 0.4179,
+        "ut1_utc_sec": 0.06846,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -4071,9 +3994,9 @@
         "month": 3,
         "day": 8,
         "mjd": 61472,
-        "x_arcsec": 0.0386,
-        "y_arcsec": 0.4164,
-        "ut1_utc_sec": 0.07181,
+        "x_arcsec": 0.0415,
+        "y_arcsec": 0.4194,
+        "ut1_utc_sec": 0.06792,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -4082,9 +4005,9 @@
         "month": 3,
         "day": 9,
         "mjd": 61473,
-        "x_arcsec": 0.0393,
-        "y_arcsec": 0.418,
-        "ut1_utc_sec": 0.0713,
+        "x_arcsec": 0.0422,
+        "y_arcsec": 0.4209,
+        "ut1_utc_sec": 0.06727,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -4093,9 +4016,9 @@
         "month": 3,
         "day": 10,
         "mjd": 61474,
-        "x_arcsec": 0.04,
-        "y_arcsec": 0.4195,
-        "ut1_utc_sec": 0.07074,
+        "x_arcsec": 0.043,
+        "y_arcsec": 0.4224,
+        "ut1_utc_sec": 0.06655,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -4104,9 +4027,9 @@
         "month": 3,
         "day": 11,
         "mjd": 61475,
-        "x_arcsec": 0.0408,
-        "y_arcsec": 0.421,
-        "ut1_utc_sec": 0.0702,
+        "x_arcsec": 0.0438,
+        "y_arcsec": 0.4238,
+        "ut1_utc_sec": 0.06587,
         "source": "IERS Bulletin A \u2013 prediction"
       },
       {
@@ -4115,9 +4038,86 @@
         "month": 3,
         "day": 12,
         "mjd": 61476,
-        "x_arcsec": 0.0416,
-        "y_arcsec": 0.4225,
-        "ut1_utc_sec": 0.06978,
+        "x_arcsec": 0.0446,
+        "y_arcsec": 0.4253,
+        "ut1_utc_sec": 0.06533,
+        "source": "IERS Bulletin A \u2013 prediction"
+      },
+      {
+        "date": "2027-03-13",
+        "year": 2027,
+        "month": 3,
+        "day": 13,
+        "mjd": 61477,
+        "x_arcsec": 0.0455,
+        "y_arcsec": 0.4267,
+        "ut1_utc_sec": 0.06498,
+        "source": "IERS Bulletin A \u2013 prediction"
+      },
+      {
+        "date": "2027-03-14",
+        "year": 2027,
+        "month": 3,
+        "day": 14,
+        "mjd": 61478,
+        "x_arcsec": 0.0464,
+        "y_arcsec": 0.4281,
+        "ut1_utc_sec": 0.0648,
+        "source": "IERS Bulletin A \u2013 prediction"
+      },
+      {
+        "date": "2027-03-15",
+        "year": 2027,
+        "month": 3,
+        "day": 15,
+        "mjd": 61479,
+        "x_arcsec": 0.0473,
+        "y_arcsec": 0.4296,
+        "ut1_utc_sec": 0.06479,
+        "source": "IERS Bulletin A \u2013 prediction"
+      },
+      {
+        "date": "2027-03-16",
+        "year": 2027,
+        "month": 3,
+        "day": 16,
+        "mjd": 61480,
+        "x_arcsec": 0.0482,
+        "y_arcsec": 0.431,
+        "ut1_utc_sec": 0.06487,
+        "source": "IERS Bulletin A \u2013 prediction"
+      },
+      {
+        "date": "2027-03-17",
+        "year": 2027,
+        "month": 3,
+        "day": 17,
+        "mjd": 61481,
+        "x_arcsec": 0.0492,
+        "y_arcsec": 0.4324,
+        "ut1_utc_sec": 0.06492,
+        "source": "IERS Bulletin A \u2013 prediction"
+      },
+      {
+        "date": "2027-03-18",
+        "year": 2027,
+        "month": 3,
+        "day": 18,
+        "mjd": 61482,
+        "x_arcsec": 0.0502,
+        "y_arcsec": 0.4337,
+        "ut1_utc_sec": 0.06482,
+        "source": "IERS Bulletin A \u2013 prediction"
+      },
+      {
+        "date": "2027-03-19",
+        "year": 2027,
+        "month": 3,
+        "day": 19,
+        "mjd": 61483,
+        "x_arcsec": 0.0512,
+        "y_arcsec": 0.4351,
+        "ut1_utc_sec": 0.06449,
         "source": "IERS Bulletin A \u2013 prediction"
       }
     ]
