@@ -2,7 +2,7 @@
 """
 compute.py — Formula-to-3D dataset generator
 --------------------------------------------
-Status: GitHub API Base64 Decoding + Formula Key Mapping
+Status: GitHub API Base64 Decoding + Formula Key Mapping + Token Sanitization
 """
 
 from __future__ import annotations
@@ -62,8 +62,9 @@ AMRE_PONG_URL = os.getenv(
     "AMRE_PONG_URL",
     f"https://api.github.com/repos/Eckohaus/Angular_Momentum_Reaction_Engine/contents/exports/formulas/pong_phase_overlap.json?ref={_AMRE_BRANCH}"
 )
-       def fetch_amre_pong_payload() -> Dict[str, Any] | None:
-    """Fetch the dataset via GitHub API and decode Base64."""
+
+def fetch_amre_pong_payload() -> Dict[str, Any] | None:
+    """Fetch the dataset via GitHub API, sanitize token, and decode Base64."""
     print(f"[compute] Fetching AMRE Pong dataset via API: {AMRE_PONG_URL}")
     try:
         # FIX: .strip() removes any accidental newlines or spaces from the secret
@@ -82,15 +83,6 @@ AMRE_PONG_URL = os.getenv(
             print("[compute] ABORT: API response missing 'content' field.")
             return None
             
-        # Decode the file payload
-        file_content = base64.b64decode(api_data['content']).decode('utf-8')
-        print("[compute] ✓ Successfully fetched and decoded AMRE dataset")
-        return json.loads(file_content)
-        
-    except Exception as exc:
-        print(f"[compute] ABORT: API Fetch failed ({exc})")
-        return None
-        
         # Decode the file payload
         file_content = base64.b64decode(api_data['content']).decode('utf-8')
         print("[compute] ✓ Successfully fetched and decoded AMRE dataset")
