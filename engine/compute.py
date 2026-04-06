@@ -99,7 +99,7 @@ def compute_formula_b_from_amre() -> Dict[str, Any] | None:
         return None
 
     # Target the 'formula' key from the decoded AMRE export
-    raw_points = pong.get("formula", [])
+    raw_points = pong.get("points", [])
     
     if not isinstance(raw_points, list) or len(raw_points) == 0:
         print("[compute] ABORT: No valid points found in source JSON.")
