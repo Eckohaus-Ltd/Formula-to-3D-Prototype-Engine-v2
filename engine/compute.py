@@ -2,7 +2,7 @@
 """
 compute.py — Formula-to-3D dataset generator
 --------------------------------------------
-Mitigation: Updated to align with AMRE 'formula' key and prevent null-overwrites.
+Status: Fixed NameError for save_json.
 """
 
 from __future__ import annotations
@@ -20,13 +20,22 @@ import requests
 # ================================================================
 
 def now_utc_iso() -> str:
+    """Return timestamp in ISO8601 with timezone."""
     return datetime.now().astimezone().isoformat()
+
+def save_json(path: str, payload: Dict[str, Any]) -> None:
+    """Helper to ensure directory exists and write JSON."""
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding="utf-8") as handle:
+        json.dump(payload, handle, indent=2)
+    print(f"[compute] ✓ Wrote {path}")
 
 # ================================================================
 #  Formula A (Page 1) — fixed local grid
 # ================================================================
 
 def compute_formula_a() -> Dict[str, Any]:
+    """Simple 10×10 demo grid for Page 1."""
     points: List[Dict[str, float]] = []
     for x in range(10):
         for y in range(10):
@@ -54,10 +63,9 @@ AMRE_PONG_URL = os.getenv(
 )
 
 def fetch_amre_pong_payload() -> Dict[str, Any] | None:
-    """Fetch from AMRE with explicit error handling."""
+    """Fetch the pong-phase-overlap dataset from AMRE."""
     print(f"[compute] Fetching AMRE Pong dataset: {AMRE_PONG_URL}")
     try:
-        # If private repo, we might need headers={'Authorization': f'token {os.getenv("AMRE_TOKEN")}'}
         resp = requests.get(AMRE_PONG_URL, timeout=20)
         resp.raise_for_status()
         return resp.json()
@@ -66,12 +74,12 @@ def fetch_amre_pong_payload() -> Dict[str, Any] | None:
         return None
 
 def compute_formula_b_from_amre() -> Dict[str, Any] | None:
-    """Convert AMRE 'formula' key → Formula-to-3D structure."""
+    """Convert AMRE 'formula' key → Formula-to-3D volumetric structure."""
     pong = fetch_amre_pong_payload()
     if not pong:
         return None
 
-    # FIX: AMRE uses "formula", not "points"
+    # Target the 'formula' key from AMRE export
     raw_points = pong.get("formula", [])
     
     if not isinstance(raw_points, list) or len(raw_points) == 0:
@@ -81,7 +89,6 @@ def compute_formula_b_from_amre() -> Dict[str, Any] | None:
     converted: List[Dict[str, float]] = []
 
     for p in raw_points:
-        # Mapping logic with fallbacks
         x = p.get("overlap_real", p.get("x"))
         y = p.get("overlap_imag", p.get("y"))
         z = p.get("phase", p.get("z"))
@@ -109,24 +116,18 @@ def compute_formula_b_from_amre() -> Dict[str, Any] | None:
     return {"meta": meta_out, "formula": converted}
 
 # ================================================================
-#  Main Execution
+#  Entrypoint
 # ================================================================
 
 if __name__ == "__main__":
-    # Always update Page 1
+    # 1. Update Page 1
     save_json("docs/volumetric/formula_a.json", compute_formula_a())
     
-    # Conditionally update Page 2
+    # 2. Update Page 2 (Only if fetch succeeded)
     formula_b = compute_formula_b_from_amre()
     if formula_b:
         save_json("docs/volumetric/formula_b.json", formula_b)
     else:
         print("[compute] SKIPPING formula_b.json update to preserve existing data.")
         
-    print("[compute] Completed execution cycle.")
-
-def save_json(path: str, payload: Dict[str, Any]) -> None:
-    os.makedirs(os.path.dirname(path), exist_ok=True)
-    with open(path, "w", encoding="utf-8") as handle:
-        json.dump(payload, handle, indent=2)
-    print(f"[compute] ✓ Wrote {path}")
+    print("[compute] Completed all volumetric dataset outputs.")
