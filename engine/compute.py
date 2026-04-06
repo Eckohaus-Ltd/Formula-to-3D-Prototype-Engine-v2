@@ -2,11 +2,12 @@
 """
 compute.py — Formula-to-3D dataset generator
 --------------------------------------------
-Status: Fixed NameError for save_json.
+Status: GitHub API Base64 Decoding + Formula Key Mapping
 """
 
 from __future__ import annotations
 
+import base64
 import json
 import math
 import os
@@ -59,18 +60,34 @@ def compute_formula_a() -> Dict[str, Any]:
 _AMRE_BRANCH = os.getenv("AMRE_PONG_BRANCH", "master")
 AMRE_PONG_URL = os.getenv(
     "AMRE_PONG_URL",
-    f"https://raw.githubusercontent.com/Eckohaus/Angular_Momentum_Reaction_Engine/{_AMRE_BRANCH}/exports/formulas/pong_phase_overlap.json"
+    f"https://api.github.com/repos/Eckohaus/Angular_Momentum_Reaction_Engine/contents/exports/formulas/pong_phase_overlap.json?ref={_AMRE_BRANCH}"
 )
 
 def fetch_amre_pong_payload() -> Dict[str, Any] | None:
-    """Fetch the pong-phase-overlap dataset from AMRE."""
-    print(f"[compute] Fetching AMRE Pong dataset: {AMRE_PONG_URL}")
+    """Fetch the dataset via GitHub API and decode Base64."""
+    print(f"[compute] Fetching AMRE Pong dataset via API: {AMRE_PONG_URL}")
     try:
-        resp = requests.get(AMRE_PONG_URL, timeout=20)
+        token = os.getenv("AMRE_TOKEN")
+        headers = {'Accept': 'application/vnd.github.v3+json'}
+        if token:
+            headers['Authorization'] = f'token {token}'
+            
+        resp = requests.get(AMRE_PONG_URL, headers=headers, timeout=20)
         resp.raise_for_status()
-        return resp.json()
+        
+        # Extract base64 content from the API wrapper
+        api_data = resp.json()
+        if 'content' not in api_data:
+            print("[compute] ABORT: API response missing 'content' field.")
+            return None
+            
+        # Decode the file payload
+        file_content = base64.b64decode(api_data['content']).decode('utf-8')
+        print("[compute] ✓ Successfully fetched and decoded AMRE dataset")
+        return json.loads(file_content)
+        
     except Exception as exc:
-        print(f"[compute] ABORT: Fetch failed ({exc})")
+        print(f"[compute] ABORT: API Fetch failed ({exc})")
         return None
 
 def compute_formula_b_from_amre() -> Dict[str, Any] | None:
@@ -79,7 +96,7 @@ def compute_formula_b_from_amre() -> Dict[str, Any] | None:
     if not pong:
         return None
 
-    # Target the 'formula' key from AMRE export
+    # Target the 'formula' key from the decoded AMRE export
     raw_points = pong.get("formula", [])
     
     if not isinstance(raw_points, list) or len(raw_points) == 0:
@@ -123,7 +140,7 @@ if __name__ == "__main__":
     # 1. Update Page 1
     save_json("docs/volumetric/formula_a.json", compute_formula_a())
     
-    # 2. Update Page 2 (Only if fetch succeeded)
+    # 2. Update Page 2 (Only if fetch and decode succeeded)
     formula_b = compute_formula_b_from_amre()
     if formula_b:
         save_json("docs/volumetric/formula_b.json", formula_b)
