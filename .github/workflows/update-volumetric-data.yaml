@@ -27,12 +27,10 @@ jobs:
       IERS_DEBUG: "false"
 
       # --------------------------------------------------
-      # AMRE private repo (branch = master)
-      # This resolves to:
-      #   https://raw.githubusercontent.com/Eckohaus/Angular_Momentum_Reaction_Engine/master/...
-      # but wrapped with token auth
+      # AMRE API Endpoint (branch = master)
+      # Bypasses raw CDN caching to reliably fetch the JSON
       # --------------------------------------------------
-      AMRE_PONG_URL: "https://x-access-token:${{ secrets.AMRE_TOKEN }}@raw.githubusercontent.com/Eckohaus/Angular_Momentum_Reaction_Engine/master/exports/formulas/pong_phase_overlap.json"
+      AMRE_PONG_URL: "https://api.github.com/repos/Eckohaus/Angular_Momentum_Reaction_Engine/contents/exports/formulas/pong_phase_overlap.json?ref=master"
 
     steps:
 
@@ -40,15 +38,13 @@ jobs:
       # Checkout Formula-to-3D main branch
       # --------------------------------------------------
       - name: Checkout main
-        uses: actions/checkout@v3
-        with:
-          ref: main
+        uses: actions/checkout@v4
 
       # --------------------------------------------------
       # Python environment
       # --------------------------------------------------
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: "3.x"
 
@@ -97,10 +93,9 @@ jobs:
 
           git commit -m "chore(data): refresh volumetric datasets" \
             -m "Automated weekday update of IERS RS/PC data + AMRE volumetric mapping." \
-            -m "Fix: AMRE raw URL updated to master-branch authenticated path." \
-            -m "AMRE → Formula B now fully integrated across private/public repos." \
-            -m "Co-authored-by: system operator <wanda@openai.com>" \
-            -m "Co-authored-by: system administrator <Corvin Nehal Dhali> <info@eckohaus.co.uk>" \
-            -m "Co-authored-by: GitHub Copilot <copilot@github.com>"
+            -m "Fix: Shifted AMRE ingestion to GitHub API endpoint to resolve CDN caching." \
+            -m "AMRE → Formula B now fully integrated and validated." \
+            -m "Co-authored-by: Gemini <gemini@google.com>" \
+            -m "Co-authored-by: system administrator <Corvin Nehal Dhali> <info@eckohaus.co.uk>"
 
           git push "https://x-access-token:${PAT_TOKEN}@github.com/${{ github.repository }}.git" main
