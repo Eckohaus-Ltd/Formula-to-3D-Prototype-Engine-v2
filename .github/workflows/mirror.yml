@@ -2,17 +2,20 @@ name: Org Repository Mirror
 
 on:
   push:
-    branches: [ main ] # Adjust to 'master' if your default branch is different
+    branches: [ main ]
 
 jobs:
   mirror-to-org:
+    # THE GATEKEEPER: Only run if the account executing this is the personal 'Eckohaus' account
+    if: github.repository_owner == 'Eckohaus'
+    
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Personal Repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Pulls the entire commit history
-          persist-credentials: false # <-- THIS PREVENTS THE BOT TOKEN OVERRIDE
+          fetch-depth: 0
+          persist-credentials: false
 
       - name: Inject Custom Domain (CNAME)
         run: |
