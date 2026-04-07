@@ -1,0 +1,27 @@
+name: Org Repository Mirror
+
+on:
+  push:
+    branches: [ main ] # Adjust to 'master' if your default branch is different
+
+jobs:
+  mirror-to-org:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Personal Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Pulls the entire commit history
+
+      - name: Inject Custom Domain (CNAME)
+        run: |
+          echo "eckohaus.co.uk" > CNAME
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add CNAME
+          git commit -m "chore: auto-inject CNAME for domain routing" || echo "CNAME already exists"
+
+      - name: Push to Eckohaus-Ltd
+        run: |
+          git remote add org-repo https://${{ secrets.ORG_MIRROR_TOKEN }}@github.com/Eckohaus-Ltd/Formula-to-3D-Prototype-Engine-v2.git
+          git push org-repo main --force
